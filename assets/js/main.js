@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   initLoader();
   initStickyNavbar();
+  initBackToTop();
   initActiveNav();
   initMobileMenu();
   initAOS();
@@ -40,21 +41,23 @@ function initLoader() {
   const loader = document.getElementById('page-loader');
   if (!loader) return;
 
+  let hidden = false;
   const hideLoader = () => {
+    if (hidden) return;
+    hidden = true;
     loader.classList.add('loader-hidden');
     setTimeout(() => {
       loader.style.display = 'none';
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }, 450);
   };
 
   // Check if page already loaded or wait for window load
   if (document.readyState === 'complete') {
-    setTimeout(hideLoader, 300);
+    setTimeout(hideLoader, 250);
   } else {
-    window.addEventListener('load', () => setTimeout(hideLoader, 350));
-    // Hard fallback timeout (1.5 seconds) to ensure accessibility
-    setTimeout(hideLoader, 1500);
+    window.addEventListener('load', () => setTimeout(hideLoader, 250));
+    // Hard fallback timeout to ensure accessibility
+    setTimeout(hideLoader, 1200);
   }
 }
 
@@ -62,11 +65,12 @@ function initLoader() {
    2. STICKY NAVBAR BEHAVIOR
    ========================================================================== */
 function initStickyNavbar() {
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector('.site-header, .dash-header, .auth-top-header');
   if (!header) return;
 
   const handleScroll = () => {
-    if (window.scrollY > 20) {
+    const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (scrollPos > 20) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -74,7 +78,54 @@ function initStickyNavbar() {
   };
 
   window.addEventListener('scroll', handleScroll, { passive: true });
+  document.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
+}
+
+/* ==========================================================================
+   2.1 BACK TO TOP BUTTON
+   ========================================================================== */
+function initBackToTop() {
+  let backBtn = document.getElementById('back-to-top');
+
+  // If button not already in the markup, create it dynamically
+  if (!backBtn) {
+    backBtn = document.createElement('button');
+    backBtn.id = 'back-to-top';
+    backBtn.className = 'back-to-top';
+    backBtn.setAttribute('aria-label', 'Back to top');
+    backBtn.setAttribute('title', 'Back to top');
+    backBtn.innerHTML = `
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    `;
+    document.body.appendChild(backBtn);
+  }
+
+  const handleBackToTopScroll = () => {
+    const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (scrollPos > 250) {
+      backBtn.classList.add('visible');
+    } else {
+      backBtn.classList.remove('visible');
+    }
+  };
+
+  window.addEventListener('scroll', handleBackToTopScroll, { passive: true });
+  document.addEventListener('scroll', handleBackToTopScroll, { passive: true });
+  handleBackToTopScroll();
+
+  backBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    // Also scroll documentElement / body for legacy browsers
+    document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  });
 }
 
 /* ==========================================================================
