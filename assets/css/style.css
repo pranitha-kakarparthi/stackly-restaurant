@@ -957,7 +957,10 @@ h4 { font-size: 1.25rem; font-weight: 700; }
 
 .hero-img-card {
   position: relative;
-  border-radius: 26px;
+  width: 100%;
+  max-width: 490px;
+  height: 440px;
+  border-radius: 28px;
   background: #FFFFFF;
   padding: 12px;
   box-shadow: 0 20px 48px rgba(33, 18, 32, 0.12),
@@ -967,6 +970,10 @@ h4 { font-size: 1.25rem; font-weight: 700; }
               box-shadow 0.3s ease;
   z-index: 3;
   will-change: transform;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-img-card:hover {
@@ -974,48 +981,64 @@ h4 { font-size: 1.25rem; font-weight: 700; }
               0 10px 24px rgba(234, 78, 24, 0.16);
 }
 
-.hero-img-card img {
-  border-radius: 18px;
-  object-fit: cover;
+.hero-img-frame {
+  position: relative;
   width: 100%;
-  max-height: 460px;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-img-card img,
+.hero-img-frame img {
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
   display: block;
   transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Floating Card with Twinkling Gold Star & Live Order Count */
+/* Floating Dish Name Card with Inset Corner Alignment & Balanced Padding/Margins */
 .hero-floating-card {
   position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(12px);
-  padding: 14px 22px;
-  border-radius: var(--radius-md);
-  box-shadow: 0 14px 34px rgba(33, 18, 32, 0.14),
+  bottom: 24px;
+  left: 24px;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 12px 18px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(33, 18, 32, 0.16),
               0 4px 10px rgba(234, 78, 24, 0.1);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
-  border: 1px solid rgba(234, 78, 24, 0.2);
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
   z-index: 5;
   transform-style: preserve-3d;
-  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, opacity 0.25s ease;
   animation: floatAnim 4.5s ease-in-out infinite alternate;
+  max-width: calc(100% - 48px);
+  box-sizing: border-box;
+  pointer-events: auto;
 }
 
 .floating-icon {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
   border-radius: 50%;
   background: linear-gradient(135deg, #EA4E18 0%, #FFA875 100%);
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   box-shadow: 0 4px 12px rgba(234, 78, 24, 0.35);
   animation: starTwinkle 3s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 @keyframes starTwinkle {
@@ -1023,11 +1046,25 @@ h4 { font-size: 1.25rem; font-weight: 700; }
   50% { transform: scale(1.1) rotate(10deg); }
 }
 
+.floating-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  text-align: left;
+  min-width: 0;
+}
+
 .floating-text h5 {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 2px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: all 0.25s ease;
 }
 
@@ -1035,6 +1072,12 @@ h4 { font-size: 1.25rem; font-weight: 700; }
   font-size: 0.82rem;
   color: var(--color-primary);
   font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: all 0.25s ease;
 }
 
@@ -1381,17 +1424,16 @@ h4 { font-size: 1.25rem; font-weight: 700; }
     flex-wrap: wrap;
     justify-content: center;
   }
-}
 
-@media (max-width: 600px) {
+  .hero-img-card {
+    max-width: 440px;
+    height: 390px;
+  }
+
   .hero-floating-card {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    margin-top: 14px;
-    width: 100%;
-    box-sizing: border-box;
-    animation: none;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 16px;
   }
 }
 
@@ -1423,14 +1465,65 @@ h4 { font-size: 1.25rem; font-weight: 700; }
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION & SUBTLE ANIMATED BACKGROUND
    ========================================================================== */
 .hero-section {
   position: relative;
   padding: 60px 0 80px;
   overflow: hidden;
-  background: radial-gradient(circle at 85% 20%, rgba(234, 78, 24, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 10% 70%, rgba(36, 19, 35, 0.05) 0%, transparent 40%);
+  background-color: var(--bg-body);
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Subtle Animated Ambiance Background Layer */
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+  background-image: url('../images/restaurant-ambiance-interior-dining.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.085;
+  filter: blur(1.5px) saturate(110%);
+  will-change: transform;
+  animation: heroBgDrift 28s ease-in-out infinite alternate;
+}
+
+@keyframes heroBgDrift {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.06) translate(-1.5%, -0.8%);
+  }
+  100% {
+    transform: scale(1.02) translate(1%, 0.6%);
+  }
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 85% 20%, rgba(234, 78, 24, 0.09) 0%, transparent 55%),
+              radial-gradient(circle at 10% 70%, rgba(36, 19, 35, 0.05) 0%, transparent 45%),
+              linear-gradient(180deg, rgba(250, 245, 238, 0.90) 0%, rgba(250, 245, 238, 0.82) 50%, rgba(250, 245, 238, 0.95) 100%);
 }
 
 .hero-grid {
@@ -1475,70 +1568,6 @@ h4 { font-size: 1.25rem; font-weight: 700; }
   margin-bottom: 30px;
 }
 
-.hero-visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-
-.hero-img-card {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  background: #FFFFFF;
-  padding: 10px;
-}
-
-.hero-img-card img {
-  border-radius: calc(var(--radius-lg) - 8px);
-  object-fit: cover;
-  width: 100%;
-  max-height: 480px;
-}
-
-.hero-floating-card {
-  position: absolute;
-  bottom: -20px;
-  left: -20px;
-  background-color: #FFFFFF;
-  padding: 14px 20px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  border: 1px solid var(--border-subtle);
-  animation: floatAnim 4s ease-in-out infinite;
-}
-
-@keyframes floatAnim {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.floating-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--color-primary-light);
-  color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-}
-
-.floating-text h5 {
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-
-.floating-text p {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-}
-
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1551,10 +1580,6 @@ h4 { font-size: 1.25rem; font-weight: 700; }
   }
   .hero-btn-group {
     justify-content: center;
-  }
-  .hero-floating-card {
-    left: 10px;
-    bottom: -15px;
   }
 }
 
@@ -1621,13 +1646,32 @@ h4 { font-size: 1.25rem; font-weight: 700; }
     width: 100%;
   }
 
+  .hero-img-card {
+    max-width: 100%;
+    height: 330px;
+  }
+
   .hero-floating-card {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    margin-top: 14px;
-    width: 100%;
-    box-sizing: border-box;
+    bottom: 16px;
+    left: 16px;
+    padding: 8px 14px;
+    gap: 10px;
+    max-width: calc(100% - 32px);
+  }
+
+  .floating-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 1rem;
+  }
+
+  .floating-text h5 {
+    font-size: 0.86rem;
+  }
+
+  .floating-text p {
+    font-size: 0.76rem;
   }
 
   .container, .container-wide {

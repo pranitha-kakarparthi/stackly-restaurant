@@ -85,6 +85,12 @@
   <main id="main-content">
     <!-- SECTION 1: HERO SECTION (Inspired by Demo Reference) -->
     <section class="hero-section" data-aos>
+      <!-- Subtle animated atmospheric dining ambiance background -->
+      <div class="hero-bg-layer" aria-hidden="true">
+        <div class="hero-bg-img"></div>
+        <div class="hero-bg-overlay"></div>
+      </div>
+
       <div class="container hero-grid">
         <div class="hero-text-content">
           <span class="hero-badge"><span class="badge-fire-dot"></span> Authentic Culinary Heritage • Wok-Fired</span>
@@ -118,7 +124,9 @@
           </div>
 
           <div class="hero-img-card" id="hero-plate-card">
-            <img src="assets/images/asian-crispy-corn-chicken-dish.webp" id="hero-active-dish-img" alt="Stackly Signature Crispy Corn Chicken Dish" loading="eager" width="600" height="450">
+            <div class="hero-img-frame">
+              <img src="assets/images/asian-crispy-corn-chicken-dish.webp" id="hero-active-dish-img" alt="Stackly Signature Crispy Corn Chicken Dish" loading="eager" width="600" height="450">
+            </div>
             <div class="hero-floating-card" id="hero-dish-badge">
               <div class="floating-icon">⭐</div>
               <div class="floating-text">
