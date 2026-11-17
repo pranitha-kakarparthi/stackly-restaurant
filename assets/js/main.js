@@ -3,7 +3,26 @@
  * High Performance, Zero Bloat, Accessibility Focused
  */
 
+// Force page positioning to the absolute top of window upon initial load and page reload
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+});
+
+window.addEventListener('pageshow', () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+});
+
+window.addEventListener('load', () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   initLoader();
   initStickyNavbar();
   initActiveNav();
@@ -25,6 +44,7 @@ function initLoader() {
     loader.classList.add('loader-hidden');
     setTimeout(() => {
       loader.style.display = 'none';
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }, 450);
   };
 
@@ -193,11 +213,21 @@ function initAOS() {
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.05,
+      rootMargin: '60px 0px 60px 0px'
     });
 
     animatedElements.forEach(el => observer.observe(el));
+
+    // Instant reveal for above-the-fold elements
+    setTimeout(() => {
+      document.querySelectorAll('[data-aos]').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight + 100) {
+          el.classList.add('aos-animate');
+        }
+      });
+    }, 150);
   } else {
     // Fallback for older browsers
     animatedElements.forEach(el => el.classList.add('aos-animate'));
