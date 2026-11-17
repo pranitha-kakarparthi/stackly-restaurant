@@ -24,6 +24,7 @@ window.addEventListener('load', () => {
 document.addEventListener('DOMContentLoaded', () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   initLoader();
+  initHeroAnimations();
   initStickyNavbar();
   initBackToTop();
   initActiveNav();
@@ -58,6 +59,51 @@ function initLoader() {
     window.addEventListener('load', () => setTimeout(hideLoader, 250));
     // Hard fallback timeout to ensure accessibility
     setTimeout(hideLoader, 1200);
+  }
+}
+
+/* ==========================================================================
+   1.1 HERO ENTRANCE ANIMATION CHOREOGRAPHY (Phase 1 & Phase 2)
+   GPU-Composited, Zero Layout Shift, Accessible, Fluid Culinary Easing
+   ========================================================================== */
+function initHeroAnimations() {
+  const heroElements = document.querySelectorAll('.hero-section, .page-hero-banner, .error-page-section');
+  if (!heroElements.length) return;
+
+  // Set initial GPU composited prep state
+  heroElements.forEach(hero => hero.classList.add('hero-animate-init'));
+
+  const activateHeroes = () => {
+    heroElements.forEach(hero => {
+      hero.classList.remove('hero-animate-init');
+      hero.classList.add('hero-animate-active');
+    });
+  };
+
+  const loader = document.getElementById('page-loader');
+  if (loader && !loader.classList.contains('loader-hidden') && window.getComputedStyle(loader).display !== 'none') {
+    let triggered = false;
+    const triggerOnce = () => {
+      if (triggered) return;
+      triggered = true;
+      setTimeout(activateHeroes, 60);
+    };
+
+    const observer = new MutationObserver(() => {
+      if (loader.classList.contains('loader-hidden') || loader.style.display === 'none') {
+        observer.disconnect();
+        triggerOnce();
+      }
+    });
+    observer.observe(loader, { attributes: true, attributeFilter: ['class', 'style'] });
+
+    // Safety fallback: if loader hangs or takes > 1.2s, animate hero
+    setTimeout(triggerOnce, 1100);
+  } else {
+    // No loader present or already dismissed, trigger immediately with micro-tick
+    requestAnimationFrame(() => {
+      setTimeout(activateHeroes, 60);
+    });
   }
 }
 
