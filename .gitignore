@@ -1,0 +1,23 @@
+# Dependencies and caches
+node_modules/
+.cache/
+dist/
+build/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.suo
+*.user
+*.swp
+
+# Temporary and log files
+*.log
+*.tmp
+temp/
+scratch/

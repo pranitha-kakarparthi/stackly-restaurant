@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Asian Cuisine | Authentic Fine Dining & Artisan Flavors</title>
+  <meta name="description" content="Welcome to Stackly Asian Cuisine. Experience authentic artisanal recipes, master chef specials, farm-fresh ingredients, and unforgettable dining.">
+  <meta property="og:title" content="Stackly Asian Cuisine | Modern Fine Dining">
+  <meta property="og:description" content="Artisan bowls, master chef creations, and unforgettable Asian flavors crafted with passion.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- 1. FULL VIEWPORT LOADER -->
+  <div id="page-loader" aria-live="polite" role="status">
+    <div class="loader-content">
+      <img src="assets/images/logoStackly.webp" alt="Stackly Restaurant Logo" class="loader-logo">
+      <div class="loader-spinner" aria-hidden="true"></div>
+      <p class="loader-text">Preparing Culinary Excellence...</p>
+    </div>
+  </div>
+
+  <!-- 2. STICKY NAVBAR -->
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- Clickable Logo linking to index.html -->
+      <a href="index.html" class="nav-brand" aria-label="Stackly Restaurant Home">
+        <img src="assets/images/logoStackly.webp" alt="Stackly Asian Cuisine Restaurant Logo" class="brand-logo">
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link active">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a href="lunch-specials.html" class="nav-link">
+            Menu 
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="lunch-specials.html" class="dropdown-link">Lunch Specials & Bento</a>
+            <a href="dinner-menu.html" class="dropdown-link">Dinner & Tasting Menu</a>
+            <a href="catering.html" class="dropdown-link">Event Catering Packages</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="catering.html" class="nav-link">Catering</a>
+        </div>
+        <div class="nav-item">
+          <a href="pricing.html" class="nav-link">Tasting Passes</a>
+        </div>
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Action buttons inside mobile drawer only (avoiding duplicates) -->
+        <div class="mobile-nav-ctas">
+          <a href="sign-in.html" class="btn btn-secondary">Sign In</a>
+          <a href="sign-up.html" class="btn btn-primary">Reserve Table <span class="btn-arrow">→</span></a>
+        </div>
+      </nav>
+
+      <!-- Navbar Desktop Actions -->
+      <div class="nav-actions">
+        <div class="nav-search-box">
+          <svg class="nav-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" class="nav-search-input" placeholder="Search dishes..." aria-label="Search dishes">
+        </div>
+        <button class="cart-btn" aria-label="Open Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge">1</span>
+        </button>
+        <a href="sign-in.html" class="btn btn-secondary btn-sm">Sign In</a>
+        <a href="sign-up.html" class="btn btn-primary btn-sm">Reserve Table <span class="btn-arrow">→</span></a>
+        <button class="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- SECTION 1: HERO SECTION (Inspired by Demo Reference) -->
+    <section class="hero-section" data-aos>
+      <div class="container hero-grid">
+        <div class="hero-text-content">
+          <span class="hero-badge">Authentic Culinary Heritage</span>
+          <h1 class="hero-title">Asian <span>Cuisine</span> & Artisan Dining</h1>
+          <p class="hero-description">
+            At Stackly Asian Cuisine, we strive to bring people together over unforgettable culinary experiences, using the freshest hand-picked produce, authentic wood-fired woks, and 100% pure organic oils.
+          </p>
+          <div class="hero-btn-group">
+            <a href="lunch-specials.html" class="btn btn-primary btn-lg">Order Now <span class="btn-arrow">→</span></a>
+            <a href="dinner-menu.html" class="btn btn-secondary btn-lg">Explore Menu <span class="btn-arrow">→</span></a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px; margin-top: 20px;">
+            <div style="display: flex; margin-left: 6px;">
+              <img src="assets/images/customer-sarah-jenkins-review.webp" alt="Satisfied Customer Sarah" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #FFF; margin-left: -8px;">
+              <img src="assets/images/customer-david-kim-review.webp" alt="Satisfied Customer David" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #FFF; margin-left: -8px;">
+              <img src="assets/images/customer-priya-sharma-review.webp" alt="Satisfied Customer Priya" style="width: 38px; height: 38px; border-radius: 50%; border: 2px solid #FFF; margin-left: -8px;">
+            </div>
+            <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-secondary);">Loved by 10,000+ happy patrons</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-img-card">
+            <img src="assets/images/asian-crispy-corn-chicken-dish.webp" alt="Stackly Signature Crispy Corn Chicken Dish" loading="eager" width="600" height="450">
+            <div class="hero-floating-card">
+              <div class="floating-icon">⭐</div>
+              <div class="floating-text">
+                <h5>Chef's Choice 2026</h5>
+                <p>Crispy Corn Chicken ($22.50)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: STATISTICS ROW (Exact Match to Demo Reference) -->
+    <section class="stats-section" data-aos>
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">10 000+</div>
+          <div class="stat-label">Orders was delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">4.9 <span class="stat-star">★</span></div>
+          <div class="stat-label">Google score</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">328</div>
+          <div class="stat-label">Receipts we have</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">98%</div>
+          <div class="stat-label">Natural product we use</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CHEF'S SPECIALS SECTION (Matching Demo Reference) -->
+    <section class="section-spacer" data-aos>
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Signature Selection</span>
+          <h2 class="section-title">Chef's Specials</h2>
+          <p class="section-desc">
+            Our Chef Qun Lin has been crafting Asian delicacies for more than 16 years, using the best meats and organic vegetables made fresh to order every day and cooked with 100% cold-pressed vegetable oil.
+          </p>
+        </div>
+
+        <div class="dishes-grid">
+          <!-- Dish 1 -->
+          <article class="dish-card">
+            <div class="dish-img-wrap">
+              <span class="dish-tag">Bestseller</span>
+              <img src="assets/images/asian-crispy-corn-chicken-dish.webp" alt="Crispy Corn Chicken" loading="lazy">
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">Crispy Corn Chicken</h3>
+              <p class="dish-desc">Fried slices of white meat chicken, golden crisp sweet corn kernels tossed with diced sweet red pepper and wok scallions.</p>
+              <div class="dish-footer">
+                <span class="dish-price">$22.50</span>
+                <button class="dish-add-btn" aria-label="Add Crispy Corn Chicken to order">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish 2 -->
+          <article class="dish-card">
+            <div class="dish-img-wrap">
+              <span class="dish-tag">Chef Favorite</span>
+              <img src="assets/images/spicy-dan-dan-noodles-bowl.webp" alt="Spicy Dan Dan Noodles" loading="lazy">
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">Spicy Dan Dan Noodles</h3>
+              <p class="dish-desc">Hand-pulled spring noodles in aromatic chili sesame broth, topped with minced seasoned pork, crispy bok choy and crushed peanuts.</p>
+              <div class="dish-footer">
+                <span class="dish-price">$18.00</span>
+                <button class="dish-add-btn" aria-label="Add Spicy Dan Dan Noodles to order">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish 3 -->
+          <article class="dish-card">
+            <div class="dish-img-wrap">
+              <span class="dish-tag">Prime Grade</span>
+              <img src="assets/images/artisan-wagyu-ramen-special.webp" alt="Artisan Wagyu Ramen Bowl" loading="lazy">
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">Artisan Wagyu Ramen</h3>
+              <p class="dish-desc">24-hour slow-simmered rich bone broth, torched A5 Wagyu beef slices, soft-boiled marinated egg, nori and bamboo shoots.</p>
+              <div class="dish-footer">
+                <span class="dish-price">$26.50</span>
+                <button class="dish-add-btn" aria-label="Add Artisan Wagyu Ramen to order">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish 4 -->
+          <article class="dish-card">
+            <div class="dish-img-wrap">
+              <span class="dish-tag">Handcrafted</span>
+              <img src="assets/images/steamed-dim-sum-platter.webp" alt="Steamed Dim Sum Platter" loading="lazy">
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">Imperial Dim Sum Basket</h3>
+              <p class="dish-desc">Delicate translucent dumplings filled with tiger shrimp, scallop, tender chives and wild forest mushrooms served with black vinegar.</p>
+              <div class="dish-footer">
+                <span class="dish-price">$24.00</span>
+                <button class="dish-add-btn" aria-label="Add Imperial Dim Sum Basket to order">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Menu Action CTA Row (Matching Demo "Print Menus") -->
+        <div style="text-align: center; margin-top: 45px;">
+          <a href="dinner-menu.html" class="btn btn-primary btn-lg">Full Menu <span class="btn-arrow">→</span></a>
+          <a href="catering.html" class="btn btn-secondary btn-lg" style="margin-left: 12px;">Catering Menu <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ABOUT OUR CULINARY HERITAGE -->
+    <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
+      <div class="container about-grid">
+        <div class="about-text-content">
+          <span class="section-tag">Our Heritage & Craft</span>
+          <h2 class="section-title">Rooted in Tradition, Elevated for Modern Palates</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">
+            Founded with an unwavering commitment to authenticity, Stackly Restaurant celebrates the rich diversity of Pan-Asian culinary traditions. From hand-pulled noodles and slow-steeped broth to fragrant wok aromas, each recipe is treated as an art form.
+          </p>
+          <div class="about-features">
+            <div class="about-feature-item">
+              <div class="feature-check">✓</div>
+              <div>
+                <strong>100% Organic Sourcing</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Directly partnered with verified local sustainable growers.</p>
+              </div>
+            </div>
+            <div class="about-feature-item">
+              <div class="feature-check">✓</div>
+              <div>
+                <strong>Wood-Fired Wok Technique</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">True 'Wok Hei' essence created at intense high heat.</p>
+              </div>
+            </div>
+            <div class="about-feature-item">
+              <div class="feature-check">✓</div>
+              <div>
+                <strong>Zero Additives or MSG</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Pure natural umami derived from dried shiitake and kombu.</p>
+              </div>
+            </div>
+            <div class="about-feature-item">
+              <div class="feature-check">✓</div>
+              <div>
+                <strong>Artisan Master Chefs</strong>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Led by veteran culinary masters with 16+ years experience.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 30px;">
+            <a href="about.html" class="btn btn-primary">Discover Our Story <span class="btn-arrow">→</span></a>
+          </div>
+        </div>
+
+        <div class="about-img-grid">
+          <div class="about-img-wrap">
+            <img src="assets/images/chef-qun-lin-executive-master-chef.webp" alt="Executive Chef Qun Lin in kitchen" loading="lazy">
+          </div>
+          <div class="about-img-wrap" style="margin-top: 25px;">
+            <img src="assets/images/restaurant-ambiance-interior-dining.webp" alt="Warm interior fine dining room" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SERVICES & EXPERIENCES -->
+    <section class="section-spacer" data-aos>
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Hospitality Services</span>
+          <h2 class="section-title">Experiences Tailored to Every Occasion</h2>
+          <p class="section-desc">From cozy family dinners to grand corporate celebrations, we provide unmatched dining standards.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🍷</div>
+            <h3 class="service-title">Artisan Fine Dining</h3>
+            <p class="service-desc">Immerse your senses in our refined dining lounge, designed with ambient lighting, soothing acoustics, and bespoke tableside service.</p>
+            <a href="404.html" class="btn btn-secondary btn-sm">Reserve Table <span class="btn-arrow">→</span></a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🍱</div>
+            <h3 class="service-title">Express Curated Delivery</h3>
+            <p class="service-desc">Specially designed insulated packaging guarantees piping hot noodles, crispy textures, and intact presentation right to your doorstep.</p>
+            <a href="404.html" class="btn btn-secondary btn-sm">Order Online <span class="btn-arrow">→</span></a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🎉</div>
+            <h3 class="service-title">Executive Event Catering</h3>
+            <p class="service-desc">Customizable banquet platters, live chef noodle bars, and private sushi stations tailored for weddings and corporate gatherings.</p>
+            <a href="catering.html" class="btn btn-secondary btn-sm">Explore Catering <span class="btn-arrow">→</span></a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🥂</div>
+            <h3 class="service-title">Private VIP Tasting Lounge</h3>
+            <p class="service-desc">Host confidential board dinners or celebratory milestones in our soundproof private suites with dedicated sommelier pairings.</p>
+            <a href="pricing.html" class="btn btn-secondary btn-sm">View Tasting Passes <span class="btn-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: LOCATIONS & DELIVERY SECTION (Exact Match to Demo Reference) -->
+    <section class="section-spacer locations-section" data-aos>
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Our Reach</span>
+          <h2 class="section-title">Locations & Global Delivery</h2>
+          <p class="section-desc">Visit our flagship dining lounge or track seamless doorstep delivery across the metropolitan area.</p>
+        </div>
+
+        <div class="locations-grid">
+          <div class="location-info-card">
+            <h3 class="location-branch-name">Stackly Asian Cuisine</h3>
+            <div class="location-divider"></div>
+            <div class="location-detail">
+              <p>MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+              <p class="location-phone">(+91) 98765 43210</p>
+            </div>
+            <div class="location-hours">
+              <p><strong>Operating Hours:</strong></p>
+              <p>Mon - Thu: <strong>11:30 AM - 10:00 PM</strong></p>
+              <p>Fri - Sun: <strong>11:30 AM - 11:30 PM</strong></p>
+            </div>
+            <div style="margin-top: 24px;">
+              <a href="contact.html" class="btn btn-primary" style="width: 100%;">Get Directions & Map <span class="btn-arrow">→</span></a>
+            </div>
+          </div>
+
+          <div class="map-visual-wrap">
+            <!-- Stylized Global Delivery Map Graphic with Customer Pins -->
+            <svg class="map-svg" viewBox="0 0 700 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 150 C120 120, 200 130, 280 160 C360 190, 480 140, 650 170" stroke="#E8DED1" stroke-width="2" stroke-dasharray="6 6" />
+              <path d="M120 220 C220 180, 320 230, 420 190 C520 150, 600 210, 670 180" stroke="#E8DED1" stroke-width="2" stroke-dasharray="6 6" />
+              <!-- Hub Pin -->
+              <circle cx="350" cy="175" r="18" fill="#EA4E18" fill-opacity="0.2"/>
+              <circle cx="350" cy="175" r="9" fill="#EA4E18"/>
+              <!-- Customer Pin 1 -->
+              <circle cx="210" cy="140" r="6" fill="#241323"/>
+              <!-- Customer Pin 2 -->
+              <circle cx="480" cy="155" r="6" fill="#241323"/>
+              <!-- Customer Pin 3 -->
+              <circle cx="560" cy="205" r="6" fill="#241323"/>
+              <text x="350" y="215" text-anchor="middle" fill="#241323" font-size="13" font-weight="700">Flagship Hub: Salem & New York</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: TESTIMONIALS (Customer Faces from OpenSource Stock) -->
+    <section class="section-spacer" data-aos>
+      <div class="container">
+        <div class="text-center">
+          <span class="section-tag">Guest Experiences</span>
+          <h2 class="section-title">What Our Patrons Say</h2>
+          <p class="section-desc">Read honest words from food connoisseurs and regulars who frequent Stackly Restaurant.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-rating">★★★★★</div>
+              <p class="testimonial-text">"The Crispy Corn Chicken and Wagyu Ramen are purely addictive! Chef Qun Lin has mastered the subtle balance of crunch, spice, and authentic wok aromas."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/images/customer-sarah-jenkins-review.webp" alt="Sarah Jenkins portrait" class="author-avatar" loading="lazy">
+              <div>
+                <h4 class="author-name">Sarah Jenkins</h4>
+                <p class="author-role">Culinary Columnist, Salem Life</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-rating">★★★★★</div>
+              <p class="testimonial-text">"We reserved Stackly's catering service for our 120-person corporate event. Every single guest complimented the freshness and impeccable hot delivery."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/images/customer-david-kim-review.webp" alt="David Kim portrait" class="author-avatar" loading="lazy">
+              <div>
+                <h4 class="author-name">David Kim</h4>
+                <p class="author-role">VP Operations, TechBridge</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="testimonial-rating">★★★★★</div>
+              <p class="testimonial-text">"Exceptional ambiance, courteous staff, and the Dan Dan noodles took me right back to authentic street night markets in Chengdu. A five-star gem!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="assets/images/customer-priya-sharma-review.webp" alt="Priya Sharma portrait" class="author-avatar" loading="lazy">
+              <div>
+                <h4 class="author-name">Priya Sharma</h4>
+                <p class="author-role">Frequent Diner & Food Blogger</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: CONVERSION CALL TO ACTION BANNER -->
+    <section class="container cta-banner-section" data-aos>
+      <div class="cta-banner-box">
+        <h2 class="cta-title">Experience Culinary Perfection Tonight</h2>
+        <p class="cta-desc">
+          Reserve your intimate dining table or order piping-hot chef specialties delivered fresh in under 30 minutes.
+        </p>
+        <div class="cta-actions">
+          <a href="sign-up.html" class="btn btn-primary btn-lg">Reserve A Table <span class="btn-arrow">→</span></a>
+          <a href="lunch-specials.html" class="btn btn-secondary btn-lg">Order Online Now <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CART DRAWER OVERLAY -->
+  <div id="cart-overlay" class="cart-drawer-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Order Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 1.25rem; font-weight: 800;">Your Order Cart</h3>
+      <button id="close-cart-btn" aria-label="Close Cart" style="font-size: 1.5rem; color: var(--text-muted);">&times;</button>
+    </div>
+    <div id="cart-items-list" class="cart-drawer-body">
+      <!-- Items dynamically populated via main.js -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Estimated Total</span>
+        <span id="cart-subtotal-val" style="color: var(--color-primary);">$22.50</span>
+      </div>
+      <a href="404.html" class="btn btn-primary" style="width: 100%;">Proceed to Checkout <span class="btn-arrow">→</span></a>
+    </div>
+  </aside>
+
+  <!-- GLOBAL FOOTER (Consistent across the website) -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <!-- Logo click redirects to index.html -->
+        <a href="index.html" aria-label="Stackly Home">
+          <img src="assets/images/logoStackly.webp" alt="Stackly Asian Cuisine Restaurant Logo" class="footer-logo">
+        </a>
+        <p>
+          Stackly Asian Cuisine is committed to authentic artisanal gastronomy, 100% farm-fresh organic sourcing, and unforgettable hospitality.
+        </p>
+      </div>
+
+      <!-- Quick links (redirects to actual subpages) -->
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home Page</a></li>
+          <li><a href="about.html" class="footer-link">About Our Chefs</a></li>
+          <li><a href="lunch-specials.html" class="footer-link">Lunch Specials</a></li>
+          <li><a href="dinner-menu.html" class="footer-link">Dinner & Tasting</a></li>
+          <li><a href="catering.html" class="footer-link">Corporate Catering</a></li>
+          <li><a href="pricing.html" class="footer-link">Tasting Passes</a></li>
+          <li><a href="contact.html" class="footer-link">Contact & Directions</a></li>
+        </ul>
+      </div>
+
+      <!-- Services & Specialty (Redirects to 404.html as per prompt requirements) -->
+      <div>
+        <h4 class="footer-heading">Services & Dining</h4>
+        <ul class="footer-links">
+          <li><a href="404.html" class="footer-link">Private Wine Lounge</a></li>
+          <li><a href="404.html" class="footer-link">Chef's Table Booking</a></li>
+          <li><a href="404.html" class="footer-link">Wedding Banquets</a></li>
+          <li><a href="404.html" class="footer-link">Express Takeout Hub</a></li>
+          <li><a href="404.html" class="footer-link">Gift Card Certificates</a></li>
+          <li><a href="404.html" class="footer-link">Nutritional Sourcing</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social Media with Icon + Label (Redirects to 404.html) -->
+      <div>
+        <h4 class="footer-heading">Connect With Us</h4>
+        <div class="footer-contact-info" style="margin-bottom: 20px;">
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="404.html" class="footer-link">+91 9876543210</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="404.html" class="footer-link">hello@thestackly.com</a>
+          </div>
+        </div>
+
+        <div class="footer-social-list">
+          <a href="404.html" class="social-btn-link" aria-label="Follow Stackly on Twitter">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            <span>Twitter / X</span>
+          </a>
+          <a href="404.html" class="social-btn-link" aria-label="Follow Stackly on Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="404.html" class="social-btn-link" aria-label="Follow Stackly on LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Legal -->
+    <div class="container footer-bottom">
+      <p>© 2026 Stackly Asian Cuisine. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

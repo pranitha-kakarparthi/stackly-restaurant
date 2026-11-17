@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Recipe Under Creation | Stackly Asian Cuisine</title>
+  <meta name="description" content="The page or dish you are looking for has been moved or is currently simmering in our test kitchen. Explore our menu or return home.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="page-loader" aria-live="polite" role="status">
+    <div class="loader-content">
+      <img src="assets/images/logoStackly.webp" alt="Stackly Restaurant Logo" class="loader-logo">
+      <div class="loader-spinner" aria-hidden="true"></div>
+      <p class="loader-text">Loading...</p>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="nav-brand" aria-label="Stackly Restaurant Home">
+        <img src="assets/images/logoStackly.webp" alt="Stackly Asian Cuisine Restaurant Logo" class="brand-logo">
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">Home</a>
+        </div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link">About Us</a>
+        </div>
+        <div class="nav-item">
+          <a href="lunch-specials.html" class="nav-link">
+            Menu 
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="lunch-specials.html" class="dropdown-link">Lunch Specials & Bento</a>
+            <a href="dinner-menu.html" class="dropdown-link">Dinner & Tasting Menu</a>
+            <a href="catering.html" class="dropdown-link">Event Catering Packages</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="catering.html" class="nav-link">Catering</a>
+        </div>
+        <div class="nav-item">
+          <a href="pricing.html" class="nav-link">Tasting Passes</a>
+        </div>
+        <div class="nav-item">
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+        <div class="mobile-nav-ctas">
+          <a href="sign-in.html" class="btn btn-secondary">Sign In</a>
+          <a href="sign-up.html" class="btn btn-primary">Reserve Table <span class="btn-arrow">→</span></a>
+        </div>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" aria-label="Open Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge">1</span>
+        </button>
+        <a href="sign-in.html" class="btn btn-secondary btn-sm">Sign In</a>
+        <a href="sign-up.html" class="btn btn-primary btn-sm">Reserve Table <span class="btn-arrow">→</span></a>
+        <button class="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="error-page-section">
+    <div class="container">
+      <div class="error-hero-card" data-aos>
+        <div class="error-code">404</div>
+        <span class="section-tag" style="background: rgba(234, 78, 24, 0.15); color: var(--color-primary);">Recipe Under Creation</span>
+        <h1 class="error-title">Oops! This Dish Isn't on the Menu Yet</h1>
+        <p class="error-desc">
+          The link or page you requested may have been relocated, or our chefs are still perfecting the seasonings in our development kitchen. Let's guide you back to delicious favorites.
+        </p>
+        <div class="error-btn-group">
+          <a href="index.html" class="btn btn-primary btn-lg">Back to Homepage <span class="btn-arrow">→</span></a>
+          <button onclick="window.history.back()" class="btn btn-secondary btn-lg">← Go Back One Step</button>
+          <a href="lunch-specials.html" class="btn btn-dark btn-lg">Explore Menu</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CART DRAWER -->
+  <div id="cart-overlay" class="cart-drawer-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Order Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-size: 1.25rem; font-weight: 800;">Your Order Cart</h3>
+      <button id="close-cart-btn" aria-label="Close Cart" style="font-size: 1.5rem; color: var(--text-muted);">&times;</button>
+    </div>
+    <div id="cart-items-list" class="cart-drawer-body"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Estimated Total</span>
+        <span id="cart-subtotal-val" style="color: var(--color-primary);">$22.50</span>
+      </div>
+      <a href="404.html" class="btn btn-primary" style="width: 100%;">Proceed to Checkout <span class="btn-arrow">→</span></a>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Stackly Home">
+          <img src="assets/images/logoStackly.webp" alt="Stackly Asian Cuisine Restaurant Logo" class="footer-logo">
+        </a>
+        <p>Stackly Asian Cuisine is committed to authentic artisanal gastronomy, 100% farm-fresh organic sourcing, and unforgettable hospitality.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-link">Home Page</a></li>
+          <li><a href="about.html" class="footer-link">About Our Chefs</a></li>
+          <li><a href="lunch-specials.html" class="footer-link">Lunch Specials</a></li>
+          <li><a href="dinner-menu.html" class="footer-link">Dinner & Tasting</a></li>
+          <li><a href="catering.html" class="footer-link">Corporate Catering</a></li>
+          <li><a href="pricing.html" class="footer-link">Tasting Passes</a></li>
+          <li><a href="contact.html" class="footer-link">Contact & Directions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Services & Dining</h4>
+        <ul class="footer-links">
+          <li><a href="404.html" class="footer-link">Private Wine Lounge</a></li>
+          <li><a href="404.html" class="footer-link">Chef's Table Booking</a></li>
+          <li><a href="404.html" class="footer-link">Wedding Banquets</a></li>
+          <li><a href="404.html" class="footer-link">Express Takeout Hub</a></li>
+          <li><a href="404.html" class="footer-link">Gift Card Certificates</a></li>
+          <li><a href="404.html" class="footer-link">Nutritional Sourcing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Connect With Us</h4>
+        <div class="footer-contact-info" style="margin-bottom: 20px;">
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="404.html" class="footer-link">+91 9876543210</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="404.html" class="footer-link">hello@thestackly.com</a>
+          </div>
+        </div>
+
+        <div class="footer-social-list">
+          <a href="404.html" class="social-btn-link" aria-label="Follow Stackly on Twitter">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            <span>Twitter / X</span>
+          </a>
+          <a href="404.html" class="social-btn-link" aria-label="Follow Stackly on Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="404.html" class="social-btn-link" aria-label="Follow Stackly on LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Stackly Asian Cuisine. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms & Conditions</a>
+        <a href="404.html">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
