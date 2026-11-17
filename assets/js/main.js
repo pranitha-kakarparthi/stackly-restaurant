@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   initLoader();
   initHeroAnimations();
+  initHeroInteractive();
   initStickyNavbar();
   initBackToTop();
   initActiveNav();
@@ -103,6 +104,107 @@ function initHeroAnimations() {
     // No loader present or already dismissed, trigger immediately with micro-tick
     requestAnimationFrame(() => {
       setTimeout(activateHeroes, 60);
+    });
+  }
+}
+
+/* ==========================================================================
+   1.2 INTERACTIVE HERO 3D PARALLAX & TASTING SWITCHER
+   ========================================================================== */
+function initHeroInteractive() {
+  const heroVisual = document.getElementById('hero-interactive-visual');
+  const plateCard = document.getElementById('hero-plate-card');
+  const dishBadge = document.getElementById('hero-dish-badge');
+  const activeDishImg = document.getElementById('hero-active-dish-img');
+  const badgeTitle = document.getElementById('hero-badge-title');
+  const badgeDesc = document.getElementById('hero-badge-desc');
+  const orderCta = document.getElementById('hero-order-cta');
+  const dishChips = document.querySelectorAll('.dish-chip');
+
+  // 1. Interactive 3D Mouse Parallax Depth
+  if (heroVisual && plateCard && window.matchMedia('(pointer: fine)').matches) {
+    let ticking = false;
+
+    heroVisual.addEventListener('mousemove', (e) => {
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        const rect = heroVisual.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateY = ((x - centerX) / centerX) * 8; // Max 8 degree tilt
+        const rotateX = -((y - centerY) / centerY) * 8;
+
+        plateCard.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+
+        if (dishBadge) {
+          const badgeX = ((x - centerX) / centerX) * 12;
+          const badgeY = ((y - centerY) / centerY) * 12;
+          dishBadge.style.transform = `translate3d(${badgeX.toFixed(1)}px, ${badgeY.toFixed(1)}px, 30px)`;
+        }
+
+        ticking = false;
+      });
+    });
+
+    heroVisual.addEventListener('mouseleave', () => {
+      plateCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      if (dishBadge) {
+        dishBadge.style.transform = 'translate3d(0, 0, 0)';
+      }
+    });
+  }
+
+  // 2. Interactive Signature Dish Tasting Switcher
+  if (dishChips.length && activeDishImg) {
+    dishChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        if (chip.classList.contains('active')) return;
+
+        dishChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+
+        const newImg = chip.getAttribute('data-img');
+        const newBadge = chip.getAttribute('data-badge');
+        const newPrice = chip.getAttribute('data-price');
+        const newLink = chip.getAttribute('data-link');
+
+        // Smooth appetizing crossfade zoom transition
+        activeDishImg.style.opacity = '0';
+        activeDishImg.style.transform = 'scale(0.96)';
+
+        if (badgeTitle && badgeDesc) {
+          badgeTitle.style.opacity = '0';
+          badgeDesc.style.opacity = '0';
+          badgeTitle.style.transform = 'translateY(6px)';
+          badgeDesc.style.transform = 'translateY(6px)';
+        }
+
+        setTimeout(() => {
+          activeDishImg.src = newImg;
+          activeDishImg.alt = `Stackly ${chip.getAttribute('data-name')} Dish`;
+
+          if (badgeTitle && badgeDesc) {
+            badgeTitle.textContent = newBadge;
+            badgeDesc.textContent = newPrice;
+            badgeTitle.style.opacity = '1';
+            badgeDesc.style.opacity = '1';
+            badgeTitle.style.transform = 'translateY(0)';
+            badgeDesc.style.transform = 'translateY(0)';
+          }
+
+          if (orderCta && newLink) {
+            orderCta.href = newLink;
+          }
+
+          activeDishImg.style.opacity = '1';
+          activeDishImg.style.transform = 'scale(1)';
+        }, 200);
+      });
     });
   }
 }

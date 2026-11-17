@@ -796,163 +796,333 @@ h4 { font-size: 1.25rem; font-weight: 700; }
 }
 
 /* ==========================================================================
-   HERO ENTRANCE ANIMATIONS & TRANSITIONS (Phase 1 & Phase 2)
-   GPU-Composited, Zero Layout Shift (CLS = 0), Accessible, High-End
+   APPETIZING, HIGH-END HERO EXPERIENCE & TRANSITIONS (Phase 1 & Phase 2)
+   Editorial Masked Reveal, Liquid-Gold Shimmer Typography, 3D Depth,
+   Wok Fire Ambient Glow, Drifting Culinary Steam & Interactive Tasting Switcher
    ========================================================================== */
 
-@media (prefers-reduced-motion: no-preference) {
-  /* Initial hidden / prepared state for elements in animating heroes */
-  .hero-animate-init .hero-badge,
-  .hero-animate-init .hero-breadcrumb,
-  .hero-animate-init .hero-title,
-  .hero-animate-init .page-hero-title,
-  .hero-animate-init .error-title,
-  .hero-animate-init .hero-description,
-  .hero-animate-init .page-hero-desc,
-  .hero-animate-init .error-desc,
-  .hero-animate-init .hero-btn-group,
-  .hero-animate-init .page-hero-actions,
-  .hero-animate-init .error-btn-group,
-  .hero-animate-init .error-hero-card .btn,
-  .hero-animate-init .hero-patrons,
-  .hero-animate-init .hero-floating-card,
-  .hero-animate-init .hero-img-card,
-  .hero-animate-init .error-code,
-  .hero-animate-init .error-tag {
-    opacity: 0;
-    will-change: transform, opacity;
-  }
+/* 1. MASKED TYPOGRAPHY & SHIMMER HIGHLIGHT */
+.hero-title .title-line,
+.page-hero-title .title-line,
+.error-title .title-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 4px;
+}
 
-  /* 1. Background / Hero Visual Ken Burns Slow Zoom-Out (scale 1.08 -> 1) & Smooth Fade */
-  .hero-animate-active .hero-img-card {
-    animation: heroVisualCardEntrance 1.4s var(--ease-culinary) 0.08s forwards;
-  }
+.hero-title .title-word,
+.page-hero-title .title-word,
+.error-title .title-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
 
-  .hero-animate-active .hero-img-card img {
-    animation: heroKenBurnsZoom 1.6s var(--ease-culinary) 0.08s forwards;
-    transform-origin: center center;
-    will-change: transform, opacity;
-  }
+/* Liquid-Gold / Terracotta Shimmer Effect on Featured Culinary Keywords */
+.title-highlight {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(110deg, #EA4E18 0%, #EA4E18 35%, #FFB68D 50%, #EA4E18 65%, #EA4E18 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerSweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
 
-  /* 2. Eyebrow Tagline & Page Breadcrumbs */
-  .hero-animate-active .hero-badge,
-  .hero-animate-active .hero-breadcrumb,
-  .hero-animate-active .error-tag {
-    animation: heroSlideUp 0.85s var(--ease-culinary) 0.15s forwards;
+@keyframes shimmerSweep {
+  0% {
+    background-position: 150% 0;
   }
-
-  /* 3. Main Headlines (Landing page, inner pages, 404) */
-  .hero-animate-active .hero-title,
-  .hero-animate-active .page-hero-title,
-  .hero-animate-active .error-title {
-    animation: heroSlideUp 0.95s var(--ease-culinary) 0.25s forwards;
-  }
-
-  /* 4. Subheadline / Description (Staggered 130ms after headline) */
-  .hero-animate-active .hero-description,
-  .hero-animate-active .page-hero-desc,
-  .hero-animate-active .error-desc {
-    animation: heroSlideUp 0.9s var(--ease-culinary) 0.38s forwards;
-  }
-
-  /* 5. Primary & Secondary CTAs (Staggered 250ms after headline) */
-  .hero-animate-active .hero-btn-group,
-  .hero-animate-active .page-hero-actions,
-  .hero-animate-active .error-btn-group,
-  .hero-animate-active .error-hero-card .btn {
-    animation: heroSlideUp 0.85s var(--ease-culinary) 0.50s forwards;
-  }
-
-  /* 6. Social Proof Patron Avatars Cluster */
-  .hero-animate-active .hero-patrons {
-    animation: heroSlideUp 0.85s var(--ease-culinary) 0.65s forwards;
-  }
-
-  /* 7. Featured Dish Floating Card Entrance (Staggered, then continues idle floating) */
-  .hero-animate-active .hero-floating-card {
-    animation: heroFloatEntrance 0.9s var(--ease-culinary) 0.75s forwards,
-               floatAnim 4.5s ease-in-out 1.65s infinite alternate;
-  }
-
-  /* 8. 404 Error Code entrance */
-  .hero-animate-active .error-code {
-    animation: heroKenBurnsZoom 1.2s var(--ease-culinary) 0.05s forwards;
-  }
-
-  /* Ambient radial backdrop glow entrance */
-  .hero-section::before {
-    content: '';
-    position: absolute;
-    top: -60px;
-    right: 8%;
-    width: 480px;
-    height: 480px;
-    background: radial-gradient(circle, rgba(234, 78, 24, 0.12) 0%, rgba(234, 78, 24, 0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 1.8s ease 0.1s, transform 1.8s var(--ease-culinary) 0.1s;
-  }
-
-  .hero-animate-active.hero-section::before {
-    opacity: 1;
-    transform: scale(1);
+  50%, 100% {
+    background-position: -100% 0;
   }
 }
 
-/* KEYFRAMES */
-@keyframes heroKenBurnsZoom {
+/* 2. EYEBROW BADGE WITH GLOWING FIREFLY DOT */
+.badge-fire-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFA07A 0%, #EA4E18 100%);
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(234, 78, 24, 0.9);
+  animation: firePulse 2.2s ease-in-out infinite;
+  margin-right: 4px;
+}
+
+@keyframes firePulse {
+  0%, 100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 4px rgba(234, 78, 24, 0.5);
+  }
+  50% {
+    transform: scale(1.35);
+    box-shadow: 0 0 16px rgba(234, 78, 24, 1);
+  }
+}
+
+/* 3. WOK FIRE AMBIENT GLOW & RISING CULINARY STEAM */
+.wok-glow-ambient {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: 540px;
+  height: 540px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(234, 78, 24, 0.16) 0%, rgba(229, 138, 19, 0.08) 45%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 1;
+  animation: wokBreathe 6s ease-in-out infinite alternate;
+}
+
+@keyframes wokBreathe {
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+/* Drifting Steam Wisps Rising Behind the Dish */
+.culinary-steam {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 240px;
+  height: 220px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+}
+
+.culinary-steam span {
+  position: absolute;
+  bottom: 0;
+  width: 44px;
+  height: 120px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  filter: blur(14px);
+  animation: steamRise 4.2s infinite ease-out;
+}
+
+.culinary-steam span:nth-child(1) {
+  left: 15%;
+  animation-duration: 3.8s;
+  animation-delay: 0s;
+}
+
+.culinary-steam span:nth-child(2) {
+  left: 48%;
+  animation-duration: 4.4s;
+  animation-delay: 1.3s;
+}
+
+.culinary-steam span:nth-child(3) {
+  left: 78%;
+  animation-duration: 3.6s;
+  animation-delay: 2.4s;
+}
+
+@keyframes steamRise {
   0% {
     opacity: 0;
-    transform: scale(1.08);
+    transform: translateY(0) scaleX(0.7) scaleY(0.5);
   }
   30% {
-    opacity: 0.8;
+    opacity: 0.7;
+    transform: translateY(-40px) scaleX(1.2) scaleY(1);
   }
   100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes heroVisualCardEntrance {
-  0% {
     opacity: 0;
-    transform: translateY(24px) scale(0.98);
-    box-shadow: 0 4px 12px rgba(36, 19, 35, 0.04);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-140px) scaleX(1.8) scaleY(1.4);
   }
 }
 
-@keyframes heroSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(24px);
+/* 4. 3D INTERACTIVE TILT CONTAINER & LUXURY DISH CARD */
+.hero-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.hero-img-card {
+  position: relative;
+  border-radius: 26px;
+  background: #FFFFFF;
+  padding: 12px;
+  box-shadow: 0 20px 48px rgba(33, 18, 32, 0.12),
+              0 8px 16px rgba(234, 78, 24, 0.08);
+  border: 1px solid rgba(234, 78, 24, 0.15);
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1),
+              box-shadow 0.3s ease;
+  z-index: 3;
+  will-change: transform;
+}
+
+.hero-img-card:hover {
+  box-shadow: 0 28px 60px rgba(33, 18, 32, 0.18),
+              0 10px 24px rgba(234, 78, 24, 0.16);
+}
+
+.hero-img-card img {
+  border-radius: 18px;
+  object-fit: cover;
+  width: 100%;
+  max-height: 460px;
+  display: block;
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Floating Card with Twinkling Gold Star & Live Order Count */
+.hero-floating-card {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 34px rgba(33, 18, 32, 0.14),
+              0 4px 10px rgba(234, 78, 24, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid rgba(234, 78, 24, 0.2);
+  z-index: 5;
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease;
+  animation: floatAnim 4.5s ease-in-out infinite alternate;
+}
+
+.floating-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #EA4E18 0%, #FFA875 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px rgba(234, 78, 24, 0.35);
+  animation: starTwinkle 3s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(10deg); }
+}
+
+.floating-text h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+  transition: all 0.25s ease;
+}
+
+.floating-text p {
+  font-size: 0.82rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+/* 5. INTERACTIVE SIGNATURE DISH TASTING SWITCHER */
+.hero-dish-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 6px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  z-index: 4;
+}
+
+.dish-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.dish-chip:hover {
+  color: var(--color-primary);
+  background: rgba(234, 78, 24, 0.08);
+}
+
+.dish-chip.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(234, 78, 24, 0.38);
+}
+
+.dish-chip.active .chip-emoji {
+  transform: scale(1.15);
+}
+
+.chip-emoji {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* 6. PRIMARY CTA LUXURY GLINT SWEEP */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+  animation: buttonGlint 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes buttonGlint {
+  0%, 65% {
+    left: -60%;
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    left: 140%;
   }
 }
 
-@keyframes heroFloatEntrance {
-  0% {
-    opacity: 0;
-    transform: translateY(26px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* CTA HOVER MICRO-INTERACTIONS & TACTILE ACTIVE PRESS */
+/* CTA HOVER MICRO-INTERACTIONS & TACTILE PRESS */
 .hero-btn-group .btn,
 .page-hero-actions .btn,
 .error-hero-card .btn {
@@ -1001,6 +1171,170 @@ h4 { font-size: 1.25rem; font-weight: 700; }
   transform: translateX(4px);
 }
 
+/* 7. STAGGERED ENTRANCE SEQUENCES (GPU-COMPOSITED) */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-animate-init .hero-badge,
+  .hero-animate-init .hero-breadcrumb,
+  .hero-animate-init .title-line,
+  .hero-animate-init .hero-description,
+  .hero-animate-init .page-hero-desc,
+  .hero-animate-init .error-desc,
+  .hero-animate-init .hero-btn-group,
+  .hero-animate-init .page-hero-actions,
+  .hero-animate-init .error-btn-group,
+  .hero-animate-init .hero-patrons,
+  .hero-animate-init .hero-dish-switcher,
+  .hero-animate-init .hero-floating-card,
+  .hero-animate-init .hero-img-card,
+  .hero-animate-init .wok-glow-ambient,
+  .hero-animate-init .culinary-steam,
+  .hero-animate-init .error-code,
+  .hero-animate-init .error-tag {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  /* Wok Fire Aura entrance */
+  .hero-animate-active .wok-glow-ambient {
+    animation: wokEntrance 1.6s var(--ease-culinary) 0.05s forwards;
+  }
+
+  .hero-animate-active .culinary-steam {
+    animation: heroFadeIn 1.2s ease 0.35s forwards;
+  }
+
+  /* Hero Plate 3D Reveal */
+  .hero-animate-active .hero-img-card {
+    animation: heroPlateReveal 1.3s var(--ease-culinary) 0.1s forwards;
+  }
+
+  /* Eyebrow Tagline & Breadcrumbs */
+  .hero-animate-active .hero-badge,
+  .hero-animate-active .hero-breadcrumb,
+  .hero-animate-active .error-tag {
+    animation: heroSlideUp 0.85s var(--ease-culinary) 0.15s forwards;
+  }
+
+  /* Headlines (Masked Reveal) */
+  .hero-animate-active .hero-title .title-line:nth-child(1),
+  .hero-animate-active .page-hero-title .title-line:nth-child(1),
+  .hero-animate-active .error-title .title-line:nth-child(1) {
+    animation: heroSlideUp 0.9s var(--ease-culinary) 0.25s forwards;
+  }
+
+  .hero-animate-active .hero-title .title-line:nth-child(2),
+  .hero-animate-active .page-hero-title .title-line:nth-child(2),
+  .hero-animate-active .error-title .title-line:nth-child(2) {
+    animation: heroSlideUp 0.9s var(--ease-culinary) 0.35s forwards;
+  }
+
+  /* Single-line fallback headlines */
+  .hero-animate-active .page-hero-title:not(:has(.title-line)),
+  .hero-animate-active .error-title:not(:has(.title-line)) {
+    animation: heroSlideUp 0.9s var(--ease-culinary) 0.25s forwards;
+  }
+
+  /* Description */
+  .hero-animate-active .hero-description,
+  .hero-animate-active .page-hero-desc,
+  .hero-animate-active .error-desc {
+    animation: heroSlideUp 0.85s var(--ease-culinary) 0.44s forwards;
+  }
+
+  /* Action Buttons */
+  .hero-animate-active .hero-btn-group,
+  .hero-animate-active .page-hero-actions,
+  .hero-animate-active .error-btn-group {
+    animation: heroSlideUp 0.85s var(--ease-culinary) 0.56s forwards;
+  }
+
+  /* Social Proof Patrons */
+  .hero-animate-active .hero-patrons {
+    animation: heroSlideUp 0.85s var(--ease-culinary) 0.68s forwards;
+  }
+
+  /* Floating Card Entrance */
+  .hero-animate-active .hero-floating-card {
+    animation: heroFloatEntrance 0.9s var(--ease-culinary) 0.78s forwards;
+  }
+
+  /* Tasting Switcher Chips */
+  .hero-animate-active .hero-dish-switcher {
+    animation: heroSlideUp 0.85s var(--ease-culinary) 0.88s forwards;
+  }
+
+  /* 404 Error Code */
+  .hero-animate-active .error-code {
+    animation: heroKenBurnsZoom 1.2s var(--ease-culinary) 0.05s forwards;
+  }
+}
+
+/* KEYFRAMES */
+@keyframes heroPlateReveal {
+  0% {
+    opacity: 0;
+    transform: perspective(1200px) rotateY(-8deg) rotateX(6deg) translateY(32px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1200px) rotateY(0) rotateX(0) translateY(0) scale(1);
+  }
+}
+
+@keyframes wokEntrance {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes heroFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes heroSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloatEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(26px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroKenBurnsZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 /* RESPONSIVE TUNING FOR TABLET & MOBILE (< 768px) */
 @media (max-width: 768px) {
   @media (prefers-reduced-motion: no-preference) {
@@ -1015,21 +1349,10 @@ h4 { font-size: 1.25rem; font-weight: 700; }
       }
     }
 
-    @keyframes heroKenBurnsZoom {
+    @keyframes heroPlateReveal {
       0% {
         opacity: 0;
-        transform: scale(1.04);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes heroVisualCardEntrance {
-      0% {
-        opacity: 0;
-        transform: translateY(12px) scale(0.99);
+        transform: translateY(16px) scale(0.98);
       }
       100% {
         opacity: 1;
@@ -1048,26 +1371,48 @@ h4 { font-size: 1.25rem; font-weight: 700; }
       }
     }
   }
+
+  .wok-glow-ambient {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero-dish-switcher {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-floating-card {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    animation: none;
+  }
 }
 
 /* ACCESSIBILITY: PREFERS-REDUCED-MOTION OVERRIDE */
 @media (prefers-reduced-motion: reduce) {
   .hero-animate-init .hero-badge,
   .hero-animate-init .hero-breadcrumb,
-  .hero-animate-init .hero-title,
-  .hero-animate-init .page-hero-title,
-  .hero-animate-init .error-title,
+  .hero-animate-init .title-line,
   .hero-animate-init .hero-description,
   .hero-animate-init .page-hero-desc,
   .hero-animate-init .error-desc,
   .hero-animate-init .hero-btn-group,
   .hero-animate-init .page-hero-actions,
   .hero-animate-init .error-btn-group,
-  .hero-animate-init .error-hero-card .btn,
   .hero-animate-init .hero-patrons,
+  .hero-animate-init .hero-dish-switcher,
   .hero-animate-init .hero-floating-card,
   .hero-animate-init .hero-img-card,
   .hero-animate-init .hero-img-card img,
+  .hero-animate-init .wok-glow-ambient,
+  .hero-animate-init .culinary-steam,
   .hero-animate-init .error-code,
   .hero-animate-init .error-tag {
     opacity: 1 !important;
@@ -1112,10 +1457,6 @@ h4 { font-size: 1.25rem; font-weight: 700; }
 
 .hero-title {
   margin-bottom: 20px;
-}
-
-.hero-title span {
-  color: var(--color-primary);
 }
 
 .hero-description {

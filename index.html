@@ -87,13 +87,16 @@
     <section class="hero-section" data-aos>
       <div class="container hero-grid">
         <div class="hero-text-content">
-          <span class="hero-badge">Authentic Culinary Heritage</span>
-          <h1 class="hero-title">Asian <span>Cuisine</span> & Artisan Dining</h1>
+          <span class="hero-badge"><span class="badge-fire-dot"></span> Authentic Culinary Heritage • Wok-Fired</span>
+          <h1 class="hero-title">
+            <span class="title-line"><span class="title-word">Asian</span> <span class="title-word title-highlight">Cuisine</span></span>
+            <span class="title-line"><span class="title-word">&amp; Artisan Dining</span></span>
+          </h1>
           <p class="hero-description">
             At Stackly Asian Cuisine, we strive to bring people together over unforgettable culinary experiences, using the freshest hand-picked produce, authentic wood-fired woks, and 100% pure organic oils.
           </p>
           <div class="hero-btn-group">
-            <a href="lunch-specials.html" class="btn btn-primary btn-lg">Order Now <span class="btn-arrow">→</span></a>
+            <a href="lunch-specials.html" id="hero-order-cta" class="btn btn-primary btn-lg">Order Now <span class="btn-arrow">→</span></a>
             <a href="dinner-menu.html" class="btn btn-secondary btn-lg">Explore Menu <span class="btn-arrow">→</span></a>
           </div>
           <div class="hero-patrons" style="display: flex; align-items: center; gap: 14px; margin-top: 20px;">
@@ -106,16 +109,36 @@
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-img-card">
-            <img src="assets/images/asian-crispy-corn-chicken-dish.webp" alt="Stackly Signature Crispy Corn Chicken Dish" loading="eager" width="600" height="450">
-            <div class="hero-floating-card">
+        <div class="hero-visual" id="hero-interactive-visual">
+          <div class="wok-glow-ambient" aria-hidden="true"></div>
+          <div class="culinary-steam" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="hero-img-card" id="hero-plate-card">
+            <img src="assets/images/asian-crispy-corn-chicken-dish.webp" id="hero-active-dish-img" alt="Stackly Signature Crispy Corn Chicken Dish" loading="eager" width="600" height="450">
+            <div class="hero-floating-card" id="hero-dish-badge">
               <div class="floating-icon">⭐</div>
               <div class="floating-text">
-                <h5>Chef's Choice 2026</h5>
-                <p>Crispy Corn Chicken ($22.50)</p>
+                <h5 id="hero-badge-title">Chef's Choice 2026</h5>
+                <p id="hero-badge-desc">Crispy Corn Chicken ($22.50)</p>
               </div>
             </div>
+          </div>
+
+          <!-- Interactive Signature Tasting Preview Switcher -->
+          <div class="hero-dish-switcher" aria-label="Explore Featured Signature Dishes">
+            <button type="button" class="dish-chip active" data-dish="chicken" data-name="Crispy Corn Chicken" data-badge="Chef's Choice 2026" data-price="Crispy Corn Chicken ($22.50)" data-link="lunch-specials.html" data-img="assets/images/asian-crispy-corn-chicken-dish.webp">
+              <span class="chip-emoji">🍗</span> Crispy Chicken
+            </button>
+            <button type="button" class="dish-chip" data-dish="ramen" data-name="Artisan Wagyu Ramen" data-badge="Master Chef Special" data-price="Artisan Wagyu Ramen ($26.50)" data-link="dinner-menu.html" data-img="assets/images/artisan-wagyu-ramen-special.webp">
+              <span class="chip-emoji">🍜</span> Wagyu Ramen
+            </button>
+            <button type="button" class="dish-chip" data-dish="bento" data-name="Artisan Bento Box" data-badge="Midday Bento Feature" data-price="Artisan Bento Special ($19.50)" data-link="lunch-specials.html" data-img="assets/images/bento-lunch-special-box.webp">
+              <span class="chip-emoji">🍱</span> Tiered Bento
+            </button>
           </div>
         </div>
       </div>
