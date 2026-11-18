@@ -30,11 +30,11 @@ function initializeAuthStorage() {
       },
       {
         id: 'usr_002',
-        firstName: 'Pranesh',
-        lastName: 'Admin',
-        username: 'admin',
-        email: 'admin@thestackly.com',
-        role: 'Admin',
+        firstName: 'Marcus',
+        lastName: 'Vance',
+        username: 'marcus_farm',
+        email: 'vendor@thestackly.com',
+        role: 'Vendor',
         mobile: '9876543211',
         countryCode: '+91',
         joinedAt: new Date().toISOString()
