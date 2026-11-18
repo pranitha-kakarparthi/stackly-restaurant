@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lunch Specials & Artisan Bento | Stackly Asian Cuisine</title>
-  <meta name="description" content="Explore Stackly's express weekday lunch specials, handcrafted artisan bento boxes, ramen bowls, and midday dim sum pairings in Salem.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Dinner & Chef Tasting Menu | Stackly Asian Cuisine</title>
+  <meta name="description" content="Discover Stackly's evening dining menu: authentic wood-fired woks, A5 Wagyu ramen bowls, imperial seafood, and sommelier-curated sake pairings.">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
   <!-- LOADER -->
   <div id="page-loader" aria-live="polite" role="status">
     <div class="loader-content">
-      <img src="assets/images/logoStackly.webp" alt="Stackly Restaurant Logo" class="loader-logo">
+      <img src="../assets/images/logoStackly.webp" alt="Stackly Restaurant Logo" class="loader-logo">
       <div class="loader-spinner" aria-hidden="true"></div>
-      <p class="loader-text">Loading Lunch Specials...</p>
+      <p class="loader-text">Loading Dinner Menu...</p>
     </div>
   </div>
 
   <!-- NAVBAR -->
   <header class="site-header">
     <div class="container navbar">
-      <a href="index.html" class="nav-brand" aria-label="Stackly Restaurant Home">
-        <img src="assets/images/logoStackly.webp" alt="Stackly Asian Cuisine Restaurant Logo" class="brand-logo">
+      <a href="../index.html" class="nav-brand" aria-label="Stackly Restaurant Home">
+        <img src="../assets/images/logoStackly.webp" alt="Stackly Asian Cuisine Restaurant Logo" class="brand-logo">
       </a>
 
       <nav class="nav-menu" aria-label="Main Navigation">
         <div class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
+          <a href="../index.html" class="nav-link">Home</a>
         </div>
         <div class="nav-item">
           <a href="about.html" class="nav-link">About Us</a>
@@ -38,8 +38,8 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="nav-dropdown">
-            <a href="lunch-specials.html" class="dropdown-link active">Lunch Specials & Bento</a>
-            <a href="dinner-menu.html" class="dropdown-link">Dinner & Tasting Menu</a>
+            <a href="lunch-specials.html" class="dropdown-link">Lunch Specials & Bento</a>
+            <a href="dinner-menu.html" class="dropdown-link active">Dinner & Tasting Menu</a>
             <a href="catering.html" class="dropdown-link">Event Catering Packages</a>
           </div>
         </div>
@@ -78,75 +78,93 @@
     <section class="page-hero-banner section-spacer" style="background: radial-gradient(circle at 90% 10%, rgba(234, 78, 24, 0.08) 0%, transparent 60%); padding-bottom: 40px;" data-aos>
       <div class="container text-center">
         <div class="hero-breadcrumb" style="display: inline-flex; gap: 8px; font-size: 0.88rem; font-weight: 600; color: var(--text-muted); margin-bottom: 14px;">
-          <a href="index.html">Home</a> <span>/</span> <span>Menu</span> <span>/</span> <span style="color: var(--color-primary);">Lunch Specials</span>
+          <a href="../index.html">Home</a> <span>/</span> <span>Menu</span> <span>/</span> <span style="color: var(--color-primary);">Dinner Menu</span>
         </div>
         <h1 class="page-hero-title section-title">
-          <span class="title-line"><span class="title-word">Artisan Midday</span> <span class="title-word title-highlight">Lunch Specials</span></span>
+          <span class="title-line"><span class="title-word">Evening Gastronomy &amp;</span> <span class="title-word title-highlight">Chef Tasting</span></span>
         </h1>
         <p class="page-hero-desc section-desc">
-          Served Monday through Friday from 11:30 AM to 3:30 PM. Each lunch feature includes choice of house broth or organic garden ginger salad.
+          Served daily from 5:00 PM onwards. Immerse yourself in an exquisite sensory experience where intense wok artistry meets gentle steaming traditions.
         </p>
       </div>
     </section>
 
-    <!-- SECTION 2: BENTO BOX COMBOS -->
+    <!-- SECTION 2: SIGNATURE CHEF ENTREES -->
     <section class="section-spacer" data-aos>
       <div class="container">
         <div class="text-center">
-          <span class="section-tag">Express Favorites</span>
-          <h2 class="section-title">Signature Bento Boxes</h2>
-          <p class="section-desc">Complete balanced meals packed in traditional tiered wooden bento boxes.</p>
+          <span class="section-tag">Wok Masterpieces</span>
+          <h2 class="section-title">Signature Main Courses</h2>
+          <p class="section-desc">Seared over intense high-flame woks to capture deep caramelization and authentic aroma.</p>
         </div>
 
         <div class="dishes-grid">
-          <!-- Bento 1 -->
+          <!-- Dish 1 -->
           <article class="dish-card">
             <div class="dish-img-wrap">
-              <span class="dish-tag">Chef Choice</span>
-              <img src="assets/images/bento-lunch-special-box.webp" alt="Artisan Teriyaki Chicken Bento Box" loading="lazy">
+              <span class="dish-tag">Flagship</span>
+              <img src="../assets/images/asian-crispy-corn-chicken-dish.webp" alt="Crispy Corn Chicken" loading="lazy">
             </div>
             <div class="dish-content">
-              <h3 class="dish-title">Teriyaki Chicken Bento</h3>
-              <p class="dish-desc">Grilled glaze chicken thighs, jasmine rice, seasoned edamame, two pork potstickers, and house pickled daikon radish.</p>
+              <h3 class="dish-title">Crispy Corn Chicken</h3>
+              <p class="dish-desc">Fried slices of white meat chicken, golden crisp sweet corn kernels tossed with diced sweet red pepper and wok scallions.</p>
               <div class="dish-footer">
-                <span class="dish-price">$16.50</span>
-                <button class="dish-add-btn" aria-label="Add Teriyaki Chicken Bento to order">
+                <span class="dish-price">$22.50</span>
+                <button class="dish-add-btn" aria-label="Add Crispy Corn Chicken to order">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </button>
               </div>
             </div>
           </article>
 
-          <!-- Bento 2 -->
+          <!-- Dish 2 -->
           <article class="dish-card">
             <div class="dish-img-wrap">
-              <span class="dish-tag">Bestseller</span>
-              <img src="assets/images/asian-crispy-corn-chicken-dish.webp" alt="Crispy Corn Chicken Lunch Platter" loading="lazy">
+              <span class="dish-tag">Wild Catch</span>
+              <img src="../assets/images/fresh-steamed-sea-bass.webp" alt="Steamed Wild Sea Bass" loading="lazy">
             </div>
             <div class="dish-content">
-              <h3 class="dish-title">Crispy Corn Chicken Lunch</h3>
-              <p class="dish-desc">Lunch portion of our famous crispy white meat chicken, golden corn, wok vegetables, and fragrant scallion rice.</p>
+              <h3 class="dish-title">Steamed Chilean Sea Bass</h3>
+              <p class="dish-desc">Whole delicate fillet gently steamed with fragrant young ginger, scallion ribbons, and aged light soy elixir.</p>
               <div class="dish-footer">
-                <span class="dish-price">$17.50</span>
-                <button class="dish-add-btn" aria-label="Add Crispy Corn Chicken Lunch to order">
+                <span class="dish-price">$32.00</span>
+                <button class="dish-add-btn" aria-label="Add Steamed Chilean Sea Bass to order">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </button>
               </div>
             </div>
           </article>
 
-          <!-- Bento 3 -->
+          <!-- Dish 3 -->
           <article class="dish-card">
             <div class="dish-img-wrap">
-              <span class="dish-tag">Seafood Catch</span>
-              <img src="assets/images/fresh-steamed-sea-bass.webp" alt="Steamed Sea Bass Bento" loading="lazy">
+              <span class="dish-tag">A5 Wagyu</span>
+              <img src="../assets/images/artisan-wagyu-ramen-special.webp" alt="Wagyu Artisan Ramen Bowl" loading="lazy">
             </div>
             <div class="dish-content">
-              <h3 class="dish-title">Steamed Ginger Sea Bass</h3>
-              <p class="dish-desc">Wild-caught filet steamed with scallion threads, ginger coins, light premium soy drizzle, served with brown grain rice.</p>
+              <h3 class="dish-title">Wagyu Beef Ribeye Ramen</h3>
+              <p class="dish-desc">Slow-simmered rich tonkotsu broth, seared Japanese A5 Wagyu slices, menma shoots, charred corn, and seasoned ramen egg.</p>
               <div class="dish-footer">
-                <span class="dish-price">$19.50</span>
-                <button class="dish-add-btn" aria-label="Add Steamed Ginger Sea Bass to order">
+                <span class="dish-price">$26.50</span>
+                <button class="dish-add-btn" aria-label="Add Wagyu Beef Ribeye Ramen to order">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dish 4 -->
+          <article class="dish-card">
+            <div class="dish-img-wrap">
+              <span class="dish-tag">Aromatic Heat</span>
+              <img src="../assets/images/spicy-dan-dan-noodles-bowl.webp" alt="Spicy Dan Dan Noodles" loading="lazy">
+            </div>
+            <div class="dish-content">
+              <h3 class="dish-title">Sichuan Dan Dan Noodles</h3>
+              <p class="dish-desc">Springy wheat noodles bathed in roasted sesame chili oil broth with seasoned Berkshire minced pork and wild greens.</p>
+              <div class="dish-footer">
+                <span class="dish-price">$18.00</span>
+                <button class="dish-add-btn" aria-label="Add Sichuan Dan Dan Noodles to order">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                 </button>
               </div>
@@ -156,122 +174,95 @@
       </div>
     </section>
 
-    <!-- SECTION 3: QUICK NOODLE & RAMEN SPECIALS -->
+    <!-- SECTION 3: IMPERIAL DIM SUM & APPETIZERS -->
     <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
-      <div class="container">
-        <div class="text-center">
-          <span class="section-tag">Warm & Comforting</span>
-          <h2 class="section-title">Midday Noodle Bowls</h2>
-          <p class="section-desc">Piping hot artisanal noodles hand-pulled every morning by Chef Kenji Sato.</p>
-        </div>
-
-        <div class="dishes-grid">
-          <article class="dish-card">
-            <div class="dish-img-wrap">
-              <img src="assets/images/spicy-dan-dan-noodles-bowl.webp" alt="Spicy Dan Dan Lunch Noodle" loading="lazy">
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">Sichuan Dan Dan Lunch</h3>
-              <p class="dish-desc">Rich sesame chili broth with minced Berkshire pork, shredded cucumber, and crunchy preserved greens.</p>
-              <div class="dish-footer">
-                <span class="dish-price">$14.50</span>
-                <button class="dish-add-btn" aria-label="Add Sichuan Dan Dan to order">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <article class="dish-card">
-            <div class="dish-img-wrap">
-              <img src="assets/images/artisan-wagyu-ramen-special.webp" alt="Classic Shoyu Ramen Bowl" loading="lazy">
-            </div>
-            <div class="dish-content">
-              <h3 class="dish-title">Tokyo Shoyu Chashu Ramen</h3>
-              <p class="dish-desc">Classic soy-based dashi broth, braised pork belly roll, bamboo menma shoots, soft egg, and roasted nori.</p>
-              <div class="dish-footer">
-                <span class="dish-price">$15.50</span>
-                <button class="dish-add-btn" aria-label="Add Tokyo Shoyu Chashu to order">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: MIDDAY DIM SUM DUETS -->
-    <section class="section-spacer" data-aos>
       <div class="container about-grid">
-        <div class="about-img-wrap">
-          <img src="assets/images/steamed-dim-sum-platter.webp" alt="Freshly steamed dim sum basket" loading="lazy">
-        </div>
         <div>
-          <span class="section-tag">Handmade Fresh</span>
-          <h2 class="section-title">Chef Mei Chen's Dim Sum Duets</h2>
-          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">
-            Crafted continuously throughout lunch hour, our dim sum baskets arrive steaming at your table in under 8 minutes. Perfect for sharing or pairing with a light tea service.
+          <span class="section-tag">Delicate Artistry</span>
+          <h2 class="section-title">Imperial Dim Sum & Starters</h2>
+          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px;">
+            Handmade fresh every dusk by Chef Mei Chen. Each dumpling skin is hand-rolled paper-thin to ensure a silky texture that encases vibrant, succulent fillings.
           </p>
-          <ul style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
-            <li style="display: flex; justify-content: space-between; font-weight: 700; border-bottom: 1px dashed var(--border-light); padding-bottom: 8px;">
-              <span>Crystal Har Gow (Shrimp) - 4 pcs</span>
-              <span style="color: var(--color-primary);">$9.00</span>
-            </li>
-            <li style="display: flex; justify-content: space-between; font-weight: 700; border-bottom: 1px dashed var(--border-light); padding-bottom: 8px;">
-              <span>Truffle Kurobuta Pork Siu Mai - 4 pcs</span>
-              <span style="color: var(--color-primary);">$10.50</span>
-            </li>
-            <li style="display: flex; justify-content: space-between; font-weight: 700; border-bottom: 1px dashed var(--border-light); padding-bottom: 8px;">
-              <span>Wild Mushroom Vegetable Bao - 3 pcs</span>
-              <span style="color: var(--color-primary);">$8.50</span>
-            </li>
-          </ul>
-          <a href="404.html" class="btn btn-secondary">Order Dim Sum Duet <span class="btn-arrow">→</span></a>
+          <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+            <div style="padding: 12px; background: var(--bg-page); border-radius: 8px; display: flex; justify-content: space-between;">
+              <div><strong>Black Truffle Xiao Long Bao (4 pcs)</strong><p style="font-size: 0.8rem; color: var(--text-muted);">Pork soup dumpling with shaved black Italian summer truffles.</p></div>
+              <span style="font-weight: 800; color: var(--color-primary);">$14.00</span>
+            </div>
+            <div style="padding: 12px; background: var(--bg-page); border-radius: 8px; display: flex; justify-content: space-between;">
+              <div><strong>Crispy Duck Spring Rolls (3 pcs)</strong><p style="font-size: 0.8rem; color: var(--text-muted);">Shredded roasted duck, taro root, served with sweet plum dipping sauce.</p></div>
+              <span style="font-weight: 800; color: var(--color-primary);">$11.50</span>
+            </div>
+            <div style="padding: 12px; background: var(--bg-page); border-radius: 8px; display: flex; justify-content: space-between;">
+              <div><strong>Steamed Imperial Har Gow (4 pcs)</strong><p style="font-size: 0.8rem; color: var(--text-muted);">Wild tiger prawns, bamboo shoots in translucent crystal wrapper.</p></div>
+              <span style="font-weight: 800; color: var(--color-primary);">$12.00</span>
+            </div>
+          </div>
+          <a href="404.html" class="btn btn-primary">Add Appetizer Flight <span class="btn-arrow">→</span></a>
+        </div>
+        <div class="about-img-wrap">
+          <img src="../assets/images/steamed-dim-sum-platter.webp" alt="Steamed Imperial Dim Sum Basket" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: ARTISANAL DRINK PAIRINGS -->
+    <!-- SECTION 4: 7-COURSE CHEF'S TASTING OMAKASE -->
+    <section class="section-spacer" data-aos>
+      <div class="container">
+        <div class="cta-banner-box" style="background: linear-gradient(135deg, #1C0C1B 0%, #291227 100%); text-align: left; padding: 50px;">
+          <div style="max-width: 650px;">
+            <span class="section-tag" style="background: rgba(234, 78, 24, 0.25); color: #FFA07A;">Exclusive Experience</span>
+            <h2 style="color: #FFFFFF; font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 16px;">The Stackly Grand Tasting Experience</h2>
+            <p style="color: var(--text-light-muted); line-height: 1.7; margin-bottom: 24px;">
+              An intimate seven-course journey curated personally by Executive Chef Qun Lin. Featuring seasonal delicacies: wild king crab, A5 Miyazaki beef, slow-steeped bird's nest essence, and matcha gold-leaf tart.
+            </p>
+            <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 24px;">
+              <span style="font-size: 2.2rem; font-weight: 900; color: #FFFFFF;">$115</span>
+              <span style="color: var(--text-light-muted);">per person (optional $45 reserve sake pairing)</span>
+            </div>
+            <a href="pricing.html" class="btn btn-primary btn-lg">Reserve Tasting Experience <span class="btn-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SOMMELIER SAKE & NATURAL WINES -->
     <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
       <div class="container text-center">
-        <span class="section-tag">Beverages & Infusions</span>
-        <h2 class="section-title">Refreshing Midday Refreshments</h2>
-        <p class="section-desc">Brewed with whole leaf organic tea imports from Yunnan and Taiwan.</p>
+        <span class="section-tag">Liquid Harmony</span>
+        <h2 class="section-title">Sommelier Sake & Cellar Reserves</h2>
+        <p class="section-desc">Hand-selected bottles from artisan micro-breweries across Niigata, Kyoto, and Nagano.</p>
 
         <div class="services-grid" style="margin-top: 35px;">
           <div class="service-card text-center">
+            <div class="service-icon" style="margin: 0 auto 16px;">🍶</div>
+            <h3 class="service-title">Dassai 23 Junmai Daiginjo</h3>
+            <p class="service-desc">Milled to an astonishing 23% of the rice grain. Incomparable delicate aromas of white peach and honeydew.</p>
+            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary);">$38 / glass</span>
+          </div>
+          <div class="service-card text-center">
+            <div class="service-icon" style="margin: 0 auto 16px;">🍷</div>
+            <h3 class="service-title">Domaine Dujac Morey-Saint-Denis</h3>
+            <p class="service-desc">A complex Pinot Noir bursting with earthy wild cherries and subtle spice that elevates our Peking duck dishes.</p>
+            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary);">$32 / glass</span>
+          </div>
+          <div class="service-card text-center">
             <div class="service-icon" style="margin: 0 auto 16px;">🍵</div>
-            <h3 class="service-title">Iced Lychee Jasmine</h3>
-            <p class="service-desc">Cold-brewed dragon pearl jasmine tea infused with fresh lychee nectar.</p>
-            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary);">$5.50</span>
-          </div>
-          <div class="service-card text-center">
-            <div class="service-icon" style="margin: 0 auto 16px;">🧋</div>
-            <h3 class="service-title">Roasted Brown Sugar Oolong</h3>
-            <p class="service-desc">Slow-roasted Tieguanyin oolong with organic oat milk and honey boba.</p>
-            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary);">$6.50</span>
-          </div>
-          <div class="service-card text-center">
-            <div class="service-icon" style="margin: 0 auto 16px;">🍋</div>
-            <h3 class="service-title">Sparkling Yuzu Calamansi</h3>
-            <p class="service-desc">Effervescent soda infused with Japanese yuzu juice, mint, and raw cane sugar.</p>
-            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary);">$6.00</span>
+            <h3 class="service-title">Vintage Aged Pu-erh (2012)</h3>
+            <p class="service-desc">Naturally fermented whole cake tea with deep woody chocolate undertones to soothe after a rich meal.</p>
+            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary);">$12 / pot</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 6: 15-MINUTE EXPRESS CORPORATE LUNCH GUARANTEE -->
+    <!-- SECTION 6: CONVERSION CTA -->
     <section class="container cta-banner-section" data-aos>
       <div class="cta-banner-box">
-        <h2 class="cta-title">Need a Quick Business Lunch?</h2>
-        <p class="cta-desc">
-          We guarantee your lunch is on your table in under 15 minutes of ordering, or your drink is on the house!
-        </p>
+        <h2 class="cta-title">Reserve Your Evening Table Tonight</h2>
+        <p class="cta-desc">Walk-ins are welcomed subject to availability, but reservations are highly recommended for dinner service.</p>
         <div class="cta-actions">
-          <a href="sign-up.html" class="btn btn-primary btn-lg">Reserve Lunch Table <span class="btn-arrow">→</span></a>
-          <a href="catering.html" class="btn btn-secondary btn-lg">Order Team Catering <span class="btn-arrow">→</span></a>
+          <a href="sign-up.html" class="btn btn-primary btn-lg">Book Dinner Reservation <span class="btn-arrow">→</span></a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Private Dining Inquiry <span class="btn-arrow">→</span></a>
         </div>
       </div>
     </section>
@@ -298,8 +289,8 @@
   <footer class="site-footer">
     <div class="container footer-top">
       <div class="footer-brand">
-        <a href="index.html" aria-label="Stackly Home">
-          <img src="assets/images/logoStackly.webp" alt="Stackly Asian Cuisine Restaurant Logo" class="footer-logo">
+        <a href="../index.html" aria-label="Stackly Home">
+          <img src="../assets/images/logoStackly.webp" alt="Stackly Asian Cuisine Restaurant Logo" class="footer-logo">
         </a>
         <p>Stackly Asian Cuisine is committed to authentic artisanal gastronomy, 100% farm-fresh organic sourcing, and unforgettable hospitality.</p>
       </div>
@@ -307,7 +298,7 @@
       <div>
         <h4 class="footer-heading">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="index.html" class="footer-link">Home Page</a></li>
+          <li><a href="../index.html" class="footer-link">Home Page</a></li>
           <li><a href="about.html" class="footer-link">About Our Chefs</a></li>
           <li><a href="lunch-specials.html" class="footer-link">Lunch Specials</a></li>
           <li><a href="dinner-menu.html" class="footer-link">Dinner & Tasting</a></li>
@@ -380,6 +371,6 @@
     </svg>
   </button>
 
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>

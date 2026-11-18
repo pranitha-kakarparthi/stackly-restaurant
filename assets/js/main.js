@@ -289,8 +289,9 @@ function initActiveNav() {
     const href = link.getAttribute('href');
     if (!href) return;
     const targetFile = href.split('?')[0].split('#')[0];
+    const targetFilename = targetFile.substring(targetFile.lastIndexOf('/') + 1);
     
-    if (targetFile === filename) {
+    if (targetFilename === filename) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
       // If inside dropdown, also highlight parent menu item
