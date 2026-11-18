@@ -243,14 +243,31 @@
 
             <div class="hero-img-card" id="hero-plate-card">
               <div class="hero-img-frame">
-                <img
-                  src="assets/images/asian-crispy-corn-chicken-dish.webp"
-                  id="hero-active-dish-img"
-                  alt="Stackly Signature Crispy Corn Chicken Dish"
-                  loading="eager"
+                <video
+                  id="hero-active-dish-video"
+                  class="hero-dish-video"
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  poster="assets/images/asian-crispy-corn-chicken-dish.webp"
                   width="600"
                   height="450"
-                />
+                  aria-label="Stackly Signature Crispy Corn Chicken Animated Food Video"
+                >
+                  <source
+                    src="assets/videos/asian-crispy-chicken-animated.mp4"
+                    type="video/mp4"
+                  />
+                  <img
+                    src="assets/images/asian-crispy-corn-chicken-dish.webp"
+                    id="hero-active-dish-img"
+                    alt="Stackly Signature Crispy Corn Chicken Dish"
+                    loading="eager"
+                    width="600"
+                    height="450"
+                  />
+                </video>
               </div>
               <div class="hero-floating-card" id="hero-dish-badge">
                 <div class="floating-icon">⭐</div>
@@ -275,6 +292,7 @@
                 data-price="Crispy Corn Chicken ($22.50)"
                 data-link="pages/lunch-specials.html"
                 data-img="assets/images/asian-crispy-corn-chicken-dish.webp"
+                data-video="assets/videos/asian-crispy-chicken-animated.mp4"
               >
                 <span class="chip-emoji">🍗</span> Crispy Chicken
               </button>
@@ -287,6 +305,7 @@
                 data-price="Artisan Wagyu Ramen ($26.50)"
                 data-link="pages/dinner-menu.html"
                 data-img="assets/images/artisan-wagyu-ramen-special.webp"
+                data-video="assets/videos/artisan-wagyu-ramen-animated.mp4"
               >
                 <span class="chip-emoji">🍜</span> Wagyu Ramen
               </button>
@@ -299,8 +318,22 @@
                 data-price="Artisan Bento Special ($19.50)"
                 data-link="pages/lunch-specials.html"
                 data-img="assets/images/bento-lunch-special-box.webp"
+                data-video="assets/videos/bento-lunch-special-animated.mp4"
               >
                 <span class="chip-emoji">🍱</span> Tiered Bento
+              </button>
+              <button
+                type="button"
+                class="dish-chip"
+                data-dish="artisan"
+                data-name="Artisan Kitchen Craft"
+                data-badge="Live Craft Experience"
+                data-price="Artisan Signature Craft ($28.00)"
+                data-link="pages/tasting-menu.html"
+                data-img="assets/images/asian-crispy-corn-chicken-dish.webp"
+                data-video="assets/videos/asian-cuisine-hero-animation.mp4"
+              >
+                <span class="chip-emoji">🥢</span> Artisan Craft
               </button>
             </div>
           </div>

@@ -1057,7 +1057,8 @@ h4 {
 }
 
 .hero-img-card img,
-.hero-img-frame img {
+.hero-img-frame img,
+.hero-dish-video {
   border-radius: 20px;
   object-fit: cover;
   object-position: center;
@@ -1542,6 +1543,7 @@ h4 {
   .hero-animate-init .hero-floating-card,
   .hero-animate-init .hero-img-card,
   .hero-animate-init .hero-img-card img,
+  .hero-animate-init .hero-dish-video,
   .hero-animate-init .wok-glow-ambient,
   .hero-animate-init .culinary-steam,
   .hero-animate-init .error-code,

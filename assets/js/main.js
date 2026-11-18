@@ -116,10 +116,21 @@ function initHeroInteractive() {
   const plateCard = document.getElementById('hero-plate-card');
   const dishBadge = document.getElementById('hero-dish-badge');
   const activeDishImg = document.getElementById('hero-active-dish-img');
+  const activeDishVideo = document.getElementById('hero-active-dish-video');
   const badgeTitle = document.getElementById('hero-badge-title');
   const badgeDesc = document.getElementById('hero-badge-desc');
   const orderCta = document.getElementById('hero-order-cta');
   const dishChips = document.querySelectorAll('.dish-chip');
+
+  // Ensure hero video auto-starts smoothly
+  if (activeDishVideo) {
+    const playPromise = activeDishVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Handled silently for strict mobile power policies
+      });
+    }
+  }
 
   // 1. Interactive 3D Mouse Parallax Depth
   if (heroVisual && plateCard && window.matchMedia('(pointer: fine)').matches) {
@@ -159,8 +170,8 @@ function initHeroInteractive() {
     });
   }
 
-  // 2. Interactive Signature Dish Tasting Switcher
-  if (dishChips.length && activeDishImg) {
+  // 2. Interactive Signature Dish Tasting Switcher (Videos & Visuals)
+  if (dishChips.length && (activeDishVideo || activeDishImg)) {
     dishChips.forEach(chip => {
       chip.addEventListener('click', () => {
         if (chip.classList.contains('active')) return;
@@ -169,13 +180,19 @@ function initHeroInteractive() {
         chip.classList.add('active');
 
         const newImg = chip.getAttribute('data-img');
+        const newVideo = chip.getAttribute('data-video');
         const newBadge = chip.getAttribute('data-badge');
         const newPrice = chip.getAttribute('data-price');
         const newLink = chip.getAttribute('data-link');
+        const dishName = chip.getAttribute('data-name') || 'Dish';
+
+        const visualEl = activeDishVideo || activeDishImg;
 
         // Smooth appetizing crossfade zoom transition
-        activeDishImg.style.opacity = '0';
-        activeDishImg.style.transform = 'scale(0.96)';
+        if (visualEl) {
+          visualEl.style.opacity = '0';
+          visualEl.style.transform = 'scale(0.96)';
+        }
 
         if (badgeTitle && badgeDesc) {
           badgeTitle.style.opacity = '0';
@@ -185,8 +202,20 @@ function initHeroInteractive() {
         }
 
         setTimeout(() => {
-          activeDishImg.src = newImg;
-          activeDishImg.alt = `Stackly ${chip.getAttribute('data-name')} Dish`;
+          if (activeDishVideo && newVideo) {
+            if (newImg) activeDishVideo.poster = newImg;
+            activeDishVideo.setAttribute('aria-label', `Stackly ${dishName} Animated Food Video`);
+            activeDishVideo.src = newVideo;
+            const playPromise = activeDishVideo.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          }
+
+          if (activeDishImg && newImg) {
+            activeDishImg.src = newImg;
+            activeDishImg.alt = `Stackly ${dishName} Dish`;
+          }
 
           if (badgeTitle && badgeDesc) {
             badgeTitle.textContent = newBadge;
@@ -201,9 +230,11 @@ function initHeroInteractive() {
             orderCta.href = newLink;
           }
 
-          activeDishImg.style.opacity = '1';
-          activeDishImg.style.transform = 'scale(1)';
-        }, 200);
+          if (visualEl) {
+            visualEl.style.opacity = '1';
+            visualEl.style.transform = 'scale(1)';
+          }
+        }, 180);
       });
     });
   }
