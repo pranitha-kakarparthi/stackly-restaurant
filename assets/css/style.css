@@ -2639,17 +2639,28 @@ h4 {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   min-height: calc(100vh - 70px);
+  align-items: start;
 }
 
 .auth-sidebar-hero {
   background: linear-gradient(135deg, #241323 0%, #170916 100%);
   color: #ffffff;
-  padding: 60px;
+  padding: 50px 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  max-height: calc(100vh - 70px);
+  align-self: start;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.auth-sidebar-hero::-webkit-scrollbar {
+  display: none;
 }
 
 .auth-sidebar-hero::after {
@@ -2716,7 +2727,7 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-y: auto;
+  min-height: calc(100vh - 70px);
 }
 
 .auth-form-card {
