@@ -74,12 +74,31 @@
   </header>
 
   <main id="main-content">
-    <!-- SECTION 1: 404 HERO BANNER -->
+    <!-- SECTION 1: 404 HERO BANNER WITH BACKGROUND ANIMATED FOOD VIDEO -->
     <section class="error-page-section">
+      <!-- Background Animated Food Video Loop -->
+      <div class="error-bg-video-wrap" aria-hidden="true">
+        <video
+          class="error-bg-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          poster="../assets/images/organic-farm-ingredients-kitchen.webp"
+          aria-label="Background Artisanal Culinary Video"
+        >
+          <source
+            src="../assets/videos/404-food-ambience-animated.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="error-video-overlay"></div>
+      </div>
+
       <div class="container">
         <div class="error-hero-card" data-aos>
           <div class="error-code">404</div>
-          <span class="error-tag section-tag" style="background: rgba(234, 78, 24, 0.15); color: var(--color-primary);">Recipe Under Creation</span>
+          <span class="error-tag section-tag" style="background: rgba(234, 78, 24, 0.25); color: #FFA07A;">Recipe Under Creation</span>
           <h1 class="error-title">
             <span class="title-line"><span class="title-word">Oops! This Dish Isn't on the</span> <span class="title-word title-highlight">Menu Yet</span></span>
           </h1>

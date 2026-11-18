@@ -24,6 +24,7 @@ window.addEventListener('load', () => {
 document.addEventListener('DOMContentLoaded', () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   initLoader();
+  initBackgroundVideos();
   initHeroAnimations();
   initHeroInteractive();
   initStickyNavbar();
@@ -61,6 +62,19 @@ function initLoader() {
     // Hard fallback timeout to ensure accessibility
     setTimeout(hideLoader, 1200);
   }
+}
+
+/* ==========================================================================
+   1.05 BACKGROUND & AUTOPLAY VIDEOS
+   ========================================================================== */
+function initBackgroundVideos() {
+  document.querySelectorAll('video[autoplay]').forEach(video => {
+    video.muted = true;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {});
+    }
+  });
 }
 
 /* ==========================================================================
