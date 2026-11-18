@@ -73,24 +73,237 @@
     </div>
   </header>
 
-  <main id="main-content" class="error-page-section">
-    <div class="container">
-      <div class="error-hero-card" data-aos>
-        <div class="error-code">404</div>
-        <span class="error-tag section-tag" style="background: rgba(234, 78, 24, 0.15); color: var(--color-primary);">Recipe Under Creation</span>
-        <h1 class="error-title">
-          <span class="title-line"><span class="title-word">Oops! This Dish Isn't on the</span> <span class="title-word title-highlight">Menu Yet</span></span>
-        </h1>
-        <p class="error-desc">
-          The link or page you requested may have been relocated, or our chefs are still perfecting the seasonings in our development kitchen. Let's guide you back to delicious favorites.
-        </p>
-        <div class="error-btn-group">
-          <a href="../index.html" class="btn btn-primary btn-lg">Back to Homepage <span class="btn-arrow">→</span></a>
-          <button onclick="window.history.back()" class="btn btn-secondary btn-lg">← Go Back One Step</button>
-          <a href="lunch-specials.html" class="btn btn-dark btn-lg">Explore Menu</a>
+  <main id="main-content">
+    <!-- SECTION 1: 404 HERO BANNER -->
+    <section class="error-page-section">
+      <div class="container">
+        <div class="error-hero-card" data-aos>
+          <div class="error-code">404</div>
+          <span class="error-tag section-tag" style="background: rgba(234, 78, 24, 0.15); color: var(--color-primary);">Recipe Under Creation</span>
+          <h1 class="error-title">
+            <span class="title-line"><span class="title-word">Oops! This Dish Isn't on the</span> <span class="title-word title-highlight">Menu Yet</span></span>
+          </h1>
+          <p class="error-desc">
+            The link or page you requested may have been relocated, or our chefs are still perfecting the seasonings in our development kitchen. Let's guide you back to delicious favorites.
+          </p>
+          <div class="error-btn-group">
+            <a href="../index.html" class="btn btn-primary btn-lg">Back to Homepage <span class="btn-arrow">→</span></a>
+            <button onclick="window.history.back()" class="btn btn-secondary btn-lg">← Go Back One Step</button>
+            <a href="lunch-specials.html" class="btn btn-dark btn-lg">Explore Menu</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- SECTION 2: QUICK NAVIGATION PORTAL -->
+    <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
+      <div class="container">
+        <div class="text-center" style="max-width: 680px; margin: 0 auto 40px;">
+          <span class="section-tag">Quick Navigation</span>
+          <h2 class="section-title">Where Would You Like to Go?</h2>
+          <p style="color: var(--text-secondary);">Direct shortcuts to our most popular dining sections and services.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🍱</div>
+            <h3 class="service-title">Lunch Specials</h3>
+            <p class="service-desc">Tiered cedar bento boxes, express ramen bowls, and 15-minute business dining combos.</p>
+            <a href="lunch-specials.html" class="btn btn-secondary btn-sm" style="margin-top: 10px;">View Lunch Menu <span class="btn-arrow">→</span></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🍜</div>
+            <h3 class="service-title">Dinner & Tasting</h3>
+            <p class="service-desc">10-course Chef Omakase, Peking Duck, Wagyu cuts, and rare sake cellar pairings.</p>
+            <a href="dinner-menu.html" class="btn btn-secondary btn-sm" style="margin-top: 10px;">View Dinner Menu <span class="btn-arrow">→</span></a>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🥡</div>
+            <h3 class="service-title">Catering Packages</h3>
+            <p class="service-desc">Artisanal live wok bars, dim sum carts, and banquet service for corporate and private events.</p>
+            <a href="catering.html" class="btn btn-secondary btn-sm" style="margin-top: 10px;">Explore Catering <span class="btn-arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CHEF'S RECOMMENDED SIGNATURE DISHES -->
+    <section class="section-spacer" data-aos>
+      <div class="container">
+        <div class="text-center" style="max-width: 680px; margin: 0 auto 40px;">
+          <span class="section-tag">Handpicked Cravings</span>
+          <h2 class="section-title">Chef's Recommended Favorites</h2>
+          <p style="color: var(--text-secondary);">Instead of an empty page, enjoy three of our most highly-acclaimed signature dishes.</p>
+        </div>
+
+        <div class="menu-grid">
+          <!-- Dish 1 -->
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="../assets/images/asian-crispy-corn-chicken-dish.webp" alt="Stackly Signature Crispy Corn Chicken" loading="lazy">
+              <span class="dish-badge">Chef's Choice</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-header">
+                <h4 class="dish-title">Crispy Corn Chicken</h4>
+                <span class="dish-price">$22.50</span>
+              </div>
+              <p class="dish-desc">Golden crisp free-range chicken tossed with charred corn kernels and sweet chili glaze.</p>
+              <div class="dish-footer">
+                <span class="dish-dietary">Gluten-Free Option</span>
+                <button class="btn btn-primary btn-sm add-to-cart-btn" data-name="Crispy Corn Chicken" data-price="22.50" data-img="../assets/images/asian-crispy-corn-chicken-dish.webp">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dish 2 -->
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="../assets/images/artisan-wagyu-ramen-special.webp" alt="Artisan Wagyu Ramen Bowl" loading="lazy">
+              <span class="dish-badge" style="background: #2E7D32;">Top Rated</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-header">
+                <h4 class="dish-title">Artisan Wagyu Ramen</h4>
+                <span class="dish-price">$26.50</span>
+              </div>
+              <p class="dish-desc">48-hour bone broth, hand-pulled noodles, seared Wagyu A5 beef, and seasoned nitamago egg.</p>
+              <div class="dish-footer">
+                <span class="dish-dietary">House Specialty</span>
+                <button class="btn btn-primary btn-sm add-to-cart-btn" data-name="Artisan Wagyu Ramen" data-price="26.50" data-img="../assets/images/artisan-wagyu-ramen-special.webp">Add to Order</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dish 3 -->
+          <div class="dish-card">
+            <div class="dish-img-wrap">
+              <img src="../assets/images/bento-lunch-special-box.webp" alt="Tiered Bento Lunch Special" loading="lazy">
+              <span class="dish-badge" style="background: #D4AF37;">Patron Favorite</span>
+            </div>
+            <div class="dish-body">
+              <div class="dish-header">
+                <h4 class="dish-title">Tiered Artisan Bento</h4>
+                <span class="dish-price">$19.50</span>
+              </div>
+              <p class="dish-desc">Crisp organic tofu, seasoned edamame, purple cabbage salad, and steamed Jasmine rice.</p>
+              <div class="dish-footer">
+                <span class="dish-dietary">Vegetarian / Vegan</span>
+                <button class="btn btn-primary btn-sm add-to-cart-btn" data-name="Tiered Artisan Bento" data-price="19.50" data-img="../assets/images/bento-lunch-special-box.webp">Add to Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: INTERACTIVE DISH FINDER & SEARCH -->
+    <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
+      <div class="container" style="max-width: 760px; text-align: center;">
+        <span class="section-tag">Search Our Pantry</span>
+        <h2 class="section-title">Looking for Something Specific?</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">Explore our culinary pantry by diet, flavor profile, or ingredient.</p>
+        
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+          <a href="dinner-menu.html" class="btn btn-secondary btn-sm">🍜 Ramen & Broths</a>
+          <a href="lunch-specials.html" class="btn btn-secondary btn-sm">🍱 Midday Bentos</a>
+          <a href="dinner-menu.html" class="btn btn-secondary btn-sm">🥩 Wagyu Cuts</a>
+          <a href="lunch-specials.html" class="btn btn-secondary btn-sm">🌱 Vegan Specialties</a>
+          <a href="pricing.html" class="btn btn-secondary btn-sm">🎟️ Tasting Passes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: RESERVE A TABLE SHORTCUT -->
+    <section class="section-spacer" data-aos>
+      <div class="container about-grid">
+        <div>
+          <span class="section-tag">Dining Rooms</span>
+          <h2 class="section-title">Join Us Tonight at Our Dining Counter</h2>
+          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">
+            Don't let a misplaced URL stop you from enjoying exceptional dining. We hold select counter seats and dining room tables for evening seatings.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+              <span>Complimentary valet parking at MMR Complex forecourt</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <span style="color: var(--color-primary); font-weight: bold;">✓</span>
+              <span>Full sommelier sake flight and tea pairings available</span>
+            </div>
+          </div>
+          <a href="sign-up.html" class="btn btn-primary">Reserve Your Table Online <span class="btn-arrow">→</span></a>
+        </div>
+        <div class="about-img-wrap">
+          <img src="../assets/images/organic-farm-ingredients-kitchen.webp" alt="Stackly Warm Dining Counter Experience" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PATRON PRAISE & REVIEWS -->
+    <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
+      <div class="container">
+        <div class="text-center" style="max-width: 680px; margin: 0 auto 40px;">
+          <span class="section-tag">Guest Experiences</span>
+          <h2 class="section-title">What Discerning Patrons Say</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div style="color: #D4AF37; margin-bottom: 12px; font-size: 1.1rem;">★★★★★</div>
+            <p style="font-style: italic; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+              "The Wagyu Truffle Ramen is transformative. The depth of the 48-hour broth is unlike anything else in the region."
+            </p>
+            <h4 style="font-size: 1rem;">Marcus Vance</h4>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Food & Wine Critic</span>
+          </div>
+          <div class="service-card">
+            <div style="color: #D4AF37; margin-bottom: 12px; font-size: 1.1rem;">★★★★★</div>
+            <p style="font-style: italic; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+              "Flawless corporate catering for our 80-person leadership summit. Hot, beautifully boxed, and rave reviews from every partner."
+            </p>
+            <h4 style="font-size: 1rem;">Dr. Ananya Rao</h4>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Executive Director, BioMed</span>
+          </div>
+          <div class="service-card">
+            <div style="color: #D4AF37; margin-bottom: 12px; font-size: 1.1rem;">★★★★★</div>
+            <p style="font-style: italic; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+              "Chef Qun Lin's Omakase dinner was the highlight of our anniversary. Attentive sommelier pairing and unforgettable hospitality."
+            </p>
+            <h4 style="font-size: 1rem;">David & Elena Chen</h4>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Gold Patron Members</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CONCIERGE HELP & DIRECT ASSISTANCE -->
+    <section class="section-spacer" data-aos>
+      <div class="container text-center" style="max-width: 680px;">
+        <span class="section-tag">Need Assistance?</span>
+        <h2 class="section-title">Our Concierge Is Just a Call Away</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">
+          If you believe this link should exist or need help placing an urgent reservation or catering order, speak directly with our maître d'.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:+919876543210" class="btn btn-secondary btn-lg">📞 Call +91 9876543210</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Send Concierge Message <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: RECOVERY OFFER CTA BANNER -->
+    <section class="container cta-banner-section" data-aos>
+      <div class="cta-banner-box">
+        <h2 class="cta-title">Enjoy 10% Off Your Next Dine-In Order</h2>
+        <p class="cta-desc">Use promotional code <strong>RECIPE10</strong> when reserving online or showing this to your dining host.</p>
+        <div class="cta-actions">
+          <a href="sign-up.html" class="btn btn-primary btn-lg">Claim Offer & Reserve Table <span class="btn-arrow">→</span></a>
+          <a href="../index.html" class="btn btn-secondary btn-lg">Return to Homepage <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- CART DRAWER -->

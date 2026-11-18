@@ -29,110 +29,296 @@
     </div>
   </header>
 
-  <main class="auth-container">
-    <!-- LEFT: BRAND MESSAGING & HERO VISUAL -->
-    <div class="auth-sidebar-hero">
-      <div class="auth-hero-content">
-        <span class="section-tag" style="background: rgba(234, 78, 24, 0.25); color: #FFA07A; margin-bottom: 20px;">Patron & Management Portal</span>
-        <h1 class="auth-hero-title">Experience Gastronomy Reimagined</h1>
-        <p class="auth-hero-desc">
-          Sign in to track real-time kitchen orders, manage dining table reservations, unlock sommelier cellar reserves, or administer floor operations.
-        </p>
+  <main id="main-content">
+    <!-- SECTION 1: AUTHENTICATION HERO & SIGN-IN FORM -->
+    <section class="auth-container">
+      <!-- LEFT: BRAND MESSAGING & HERO VISUAL -->
+      <div class="auth-sidebar-hero">
+        <div class="auth-hero-content">
+          <span class="section-tag" style="background: rgba(234, 78, 24, 0.25); color: #FFA07A; margin-bottom: 20px;">Patron & Management Portal</span>
+          <h1 class="auth-hero-title">Experience Gastronomy Reimagined</h1>
+          <p class="auth-hero-desc">
+            Sign in to track real-time kitchen orders, manage dining table reservations, unlock sommelier cellar reserves, or administer floor operations.
+          </p>
 
-        <div class="auth-benefit-list">
-          <div class="auth-benefit-item">
-            <span class="auth-benefit-icon">✓</span>
-            <span>Priority booking for peak evening dinner slots</span>
-          </div>
-          <div class="auth-benefit-item">
-            <span class="auth-benefit-icon">✓</span>
-            <span>Exclusive invitations to Chef Qun Lin's Omakase tastings</span>
-          </div>
-          <div class="auth-benefit-item">
-            <span class="auth-benefit-icon">✓</span>
-            <span>Role-tailored operations for managers, chefs, and patrons</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="position: relative; z-index: 2; border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 20px;">
-        <p style="font-size: 0.85rem; color: var(--text-light-muted);">
-          "The most intuitive restaurant experience. Booking our private board dinners has never been smoother."
-        </p>
-        <span style="font-size: 0.8rem; font-weight: 700; color: #FFFFFF; display: block; margin-top: 6px;">— Sarah Jenkins, Gold Patron Member</span>
-      </div>
-    </div>
-
-    <!-- RIGHT: STRICTLY VALIDATED LOGIN FORM -->
-    <div class="auth-form-wrapper">
-      <div class="auth-form-card" data-aos>
-        <div class="auth-form-header">
-          <h2>Welcome Back</h2>
-          <p>Sign in with your registered email and role to access your dashboard.</p>
-        </div>
-
-        <!-- Social Login Grid (All redirect to 404 page) -->
-        <div class="social-login-grid">
-          <a href="404.html" class="social-login-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#EA4335"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z"/></svg>
-            <span>Google</span>
-          </a>
-          <a href="404.html" class="social-login-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#0078D4"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg>
-            <span>Microsoft</span>
-          </a>
-        </div>
-
-        <div class="auth-divider">
-          <span>Or sign in with email</span>
-        </div>
-
-        <form id="signin-form" novalidate>
-          <!-- Email Address -->
-          <div class="form-group">
-            <label for="signin-email" class="form-label">Email Address <span class="req">*</span></label>
-            <input type="email" id="signin-email" class="form-control" placeholder="name@domain.com" required autocomplete="email">
-            <div class="invalid-feedback form-feedback">Please enter a valid registered email address.</div>
-          </div>
-
-          <!-- Password with show/hide toggle -->
-          <div class="form-group">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px;">
-              <label for="signin-password" class="form-label" style="margin-bottom: 0;">Password <span class="req">*</span></label>
-              <!-- Forgot Password link intentionally redirects to 404.html -->
-              <a href="404.html" style="font-size: 0.82rem; color: var(--color-primary); font-weight: 600;">Forgot Password?</a>
+          <div class="auth-benefit-list">
+            <div class="auth-benefit-item">
+              <span class="auth-benefit-icon">✓</span>
+              <span>Priority booking for peak evening dinner slots</span>
             </div>
-            <div class="password-field-wrap">
-              <input type="password" id="signin-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
-              <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="10" r="3"/></svg>
-              </button>
+            <div class="auth-benefit-item">
+              <span class="auth-benefit-icon">✓</span>
+              <span>Exclusive invitations to Chef Qun Lin's Omakase tastings</span>
             </div>
-            <div class="invalid-feedback form-feedback">Password must be at least 6 characters.</div>
+            <div class="auth-benefit-item">
+              <span class="auth-benefit-icon">✓</span>
+              <span>Role-tailored operations for managers, chefs, and patrons</span>
+            </div>
           </div>
+        </div>
 
-          <!-- Login As / Role Selector -->
-          <div class="form-group">
-            <label for="signin-role" class="form-label">Login As / Portal Role <span class="req">*</span></label>
-            <select id="signin-role" class="form-control" required>
-              <option value="" disabled selected>Select your portal role</option>
-              <option value="Customer">Customer / Patron</option>
-              <option value="Manager">Restaurant Manager</option>
-              <option value="Vendor">Supply & Farm Vendor</option>
-            </select>
-            <div class="invalid-feedback form-feedback">Please select a valid role.</div>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;">
-            Sign In to Dashboard <span class="btn-arrow">→</span>
-          </button>
-        </form>
-
-        <p style="text-align: center; font-size: 0.9rem; color: var(--text-secondary); margin-top: 24px;">
-          Don't have an account yet? <a href="sign-up.html" style="color: var(--color-primary); font-weight: 700; text-decoration: underline;">Create Account</a>
-        </p>
+        <div style="position: relative; z-index: 2; border-top: 1px solid rgba(255, 255, 255, 0.12); padding-top: 20px;">
+          <p style="font-size: 0.85rem; color: var(--text-light-muted);">
+            "The most intuitive restaurant experience. Booking our private board dinners has never been smoother."
+          </p>
+          <span style="font-size: 0.8rem; font-weight: 700; color: #FFFFFF; display: block; margin-top: 6px;">— Sarah Jenkins, Gold Patron Member</span>
+        </div>
       </div>
-    </div>
+
+      <!-- RIGHT: STRICTLY VALIDATED LOGIN FORM -->
+      <div class="auth-form-wrapper">
+        <div class="auth-form-card" data-aos>
+          <div class="auth-form-header">
+            <h2>Welcome Back</h2>
+            <p>Sign in with your registered email and role to access your dashboard.</p>
+          </div>
+
+          <!-- Social Login Grid (All redirect to 404 page) -->
+          <div class="social-login-grid">
+            <a href="404.html" class="social-login-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#EA4335"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.52 0 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l7 4.5-7 4.5z"/></svg>
+              <span>Google</span>
+            </a>
+            <a href="404.html" class="social-login-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#0078D4"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg>
+              <span>Microsoft</span>
+            </a>
+          </div>
+
+          <div class="auth-divider">
+            <span>Or sign in with email</span>
+          </div>
+
+          <form id="signin-form" novalidate>
+            <!-- Email Address -->
+            <div class="form-group">
+              <label for="signin-email" class="form-label">Email Address <span class="req">*</span></label>
+              <input type="email" id="signin-email" class="form-control" placeholder="name@domain.com" required autocomplete="email">
+              <div class="invalid-feedback form-feedback">Please enter a valid registered email address.</div>
+            </div>
+
+            <!-- Password with show/hide toggle -->
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px;">
+                <label for="signin-password" class="form-label" style="margin-bottom: 0;">Password <span class="req">*</span></label>
+                <!-- Forgot Password link intentionally redirects to 404.html -->
+                <a href="404.html" style="font-size: 0.82rem; color: var(--color-primary); font-weight: 600;">Forgot Password?</a>
+              </div>
+              <div class="password-field-wrap">
+                <input type="password" id="signin-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+                <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                </button>
+              </div>
+              <div class="invalid-feedback form-feedback">Password must be at least 6 characters.</div>
+            </div>
+
+            <!-- Login As / Role Selector -->
+            <div class="form-group">
+              <label for="signin-role" class="form-label">Login As / Portal Role <span class="req">*</span></label>
+              <select id="signin-role" class="form-control" required>
+                <option value="" disabled selected>Select your portal role</option>
+                <option value="Customer">Customer / Patron</option>
+                <option value="Manager">Restaurant Manager</option>
+                <option value="Vendor">Supply & Farm Vendor</option>
+              </select>
+              <div class="invalid-feedback form-feedback">Please select a valid role.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px;">
+              Sign In to Dashboard <span class="btn-arrow">→</span>
+            </button>
+          </form>
+
+          <p style="text-align: center; font-size: 0.9rem; color: var(--text-secondary); margin-top: 24px;">
+            Don't have an account yet? <a href="sign-up.html" style="color: var(--color-primary); font-weight: 700; text-decoration: underline;">Create Account</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: THREE SPECIALIZED PORTAL ROLES -->
+    <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
+      <div class="container">
+        <div class="text-center" style="max-width: 680px; margin: 0 auto 40px;">
+          <span class="section-tag">Role Architecture</span>
+          <h2 class="section-title">Designed for Patrons, Management & Suppliers</h2>
+          <p style="color: var(--text-secondary);">Your login automatically loads dedicated portal features tailored strictly to your account tier.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">👤</div>
+            <h3 class="service-title">Customer / Patron</h3>
+            <p class="service-desc">Instant table reservations, real-time kitchen tracking, digital dining receipts, and loyalty reward redemptions.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🍽️</div>
+            <h3 class="service-title">Restaurant Manager</h3>
+            <p class="service-desc">Floor seating grid, live dining room capacity, server shift telemetry, and real-time culinary order pacing.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🚚</div>
+            <h3 class="service-title">Supply & Farm Vendor</h3>
+            <p class="service-desc">Produce purchase orders, cold-chain delivery manifests, quality inspection notes, and automated invoice settlements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: BANK-GRADE DATA SECURITY -->
+    <section class="section-spacer" data-aos>
+      <div class="container about-grid">
+        <div class="about-img-wrap">
+          <img src="../assets/images/organic-farm-ingredients-kitchen.webp" alt="Stackly Secure Kitchen Operations" loading="lazy">
+        </div>
+        <div>
+          <span class="section-tag">Security & Privacy</span>
+          <h2 class="section-title">End-to-End Encrypted Dining Portals</h2>
+          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px;">
+            We safeguard your reservations, billing records, and personal preferences with modern cryptographic standards.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <span style="color: var(--color-primary); font-weight: bold;">🔒</span>
+              <span>256-bit TLS/SSL encryption across all reservation and authentication requests.</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <span style="color: var(--color-primary); font-weight: bold;">🛡️</span>
+              <span>Strict tokenized payment vaults ensuring zero raw credit card data is ever stored.</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <span style="color: var(--color-primary); font-weight: bold;">⏱️</span>
+              <span>Automated session expiration preventing unauthorized terminal access.</span>
+            </div>
+          </div>
+          <a href="404.html" class="btn btn-secondary">Review Security Compliance <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: GOURMET CIRCLE DINING PRIVILEGES -->
+    <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
+      <div class="container">
+        <div class="text-center" style="max-width: 680px; margin: 0 auto 40px;">
+          <span class="section-tag">Member Privileges</span>
+          <h2 class="section-title">The Benefits of Signing In</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🎟️</div>
+            <h3 class="service-title">Priority Table Holds</h3>
+            <p class="service-desc">Signed-in members receive priority table release 14 days in advance for peak weekend seatings.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🍾</div>
+            <h3 class="service-title">Sommelier Pairing Notes</h3>
+            <p class="service-desc">Save tasting preferences, view past vintage pairings, and bookmark seasonal cellar bottles.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3 class="service-title">Contactless Express Reorder</h3>
+            <p class="service-desc">Re-order your favorite takeout bentos and signature dishes in a single tap without entering billing info.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SIGN-IN HELP & FAQS -->
+    <section class="section-spacer" data-aos>
+      <div class="container" style="max-width: 800px;">
+        <div class="text-center" style="margin-bottom: 35px;">
+          <span class="section-tag">Account FAQs</span>
+          <h2 class="section-title">Frequently Asked Sign-In Questions</h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div style="background: var(--bg-surface); padding: 20px; border-radius: var(--radius-md);">
+            <h4 style="margin-bottom: 6px;">How do I reset my account password?</h4>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">
+              Click the "Forgot Password?" link above to receive an encrypted password reset link sent to your registered email address within seconds.
+            </p>
+          </div>
+          <div style="background: var(--bg-surface); padding: 20px; border-radius: var(--radius-md);">
+            <h4 style="margin-bottom: 6px;">Can I switch roles after signing in?</h4>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">
+              Yes! Your top header on the dashboard includes a role selector allowing authorized team members to toggle between Customer, Manager, and Vendor views.
+            </p>
+          </div>
+          <div style="background: var(--bg-surface); padding: 20px; border-radius: var(--radius-md);">
+            <h4 style="margin-bottom: 6px;">Can multiple staff members log in simultaneously?</h4>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6;">
+              Yes, our system supports concurrent sessions across POS terminals, kitchen display tablets, and manager mobile devices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: VERIFIED PATRON & STAFF TESTIMONIALS -->
+    <section class="section-spacer" style="background-color: var(--bg-surface);" data-aos>
+      <div class="container">
+        <div class="text-center" style="max-width: 680px; margin: 0 auto 40px;">
+          <span class="section-tag">Voices of Stackly</span>
+          <h2 class="section-title">Trusted by Diners & Culinary Leaders</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div style="color: #D4AF37; margin-bottom: 10px; font-size: 1.1rem;">★★★★★</div>
+            <p style="font-style: italic; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 14px;">
+              "Logging in lets us pre-select wine pairings before we even arrive. The table is always prepared to perfection."
+            </p>
+            <h4 style="font-size: 0.95rem;">Jonathan Reynolds</h4>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Patron Member</span>
+          </div>
+          <div class="service-card">
+            <div style="color: #D4AF37; margin-bottom: 10px; font-size: 1.1rem;">★★★★★</div>
+            <p style="font-style: italic; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 14px;">
+              "The Manager dashboard gives our floor team total visibility over table turns and kitchen ticket pacing at peak dinner rush."
+            </p>
+            <h4 style="font-size: 0.95rem;">Chef Kenji Sato</h4>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Master of Ramen & Service</span>
+          </div>
+          <div class="service-card">
+            <div style="color: #D4AF37; margin-bottom: 10px; font-size: 1.1rem;">★★★★★</div>
+            <p style="font-style: italic; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 14px;">
+              "As an organic farm supplier, uploading produce certificates and delivery confirmations takes under 30 seconds."
+            </p>
+            <h4 style="font-size: 0.95rem;">R. Sundaram</h4>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Salem Greens Vendor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: EMERGENCY CONCIERGE & HOTLINE -->
+    <section class="section-spacer" data-aos>
+      <div class="container text-center" style="max-width: 680px;">
+        <span class="section-tag">Need Assistance?</span>
+        <h2 class="section-title">Emergency Dining & Account Support</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">
+          Facing login trouble or need an immediate reservation adjustment? Our guest concierge team is standing by to assist you.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="tel:+919876543210" class="btn btn-secondary btn-lg">📞 Direct Call: +91 9876543210</a>
+          <a href="contact.html" class="btn btn-outline btn-lg">Contact Concierge <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: NEW PATRON WELCOME CTA -->
+    <section class="container cta-banner-section" data-aos>
+      <div class="cta-banner-box">
+        <h2 class="cta-title">Don't Have a Stackly Account Yet?</h2>
+        <p class="cta-desc">Create your account in under 60 seconds to unlock table reservation holds and 500 bonus welcome points.</p>
+        <div class="cta-actions">
+          <a href="sign-up.html" class="btn btn-primary btn-lg">Create Free Account <span class="btn-arrow">→</span></a>
+          <a href="../index.html" class="btn btn-secondary btn-lg">Explore as Guest <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="../assets/js/main.js"></script>
