@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 - Sorry We're Fried! | Stackly Asian Cuisine</title>
-  <meta name="description" content="Sorry, we're fried! We can't find the page you're looking for. Return to Stackly Asian Cuisine homepage or explore our chef-crafted menu.">
+  <meta name="description" content="Sorry, we're fried! We can't find the page you're looking for. Return to Stackly Asian Cuisine homepage.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="error-page-body">
 
-  <!-- LOADER -->
+  <!-- PAGE LOADER -->
   <div id="page-loader" aria-live="polite" role="status">
     <div class="loader-content">
       <img src="../assets/images/logoStackly.webp" alt="Stackly Restaurant Logo" class="loader-logo">
@@ -18,115 +18,86 @@
     </div>
   </div>
 
-  <main id="main-content">
-    <!-- STANDALONE 404 HERO BANNER WITH BACKGROUND ANIMATED FOOD VIDEO & INSPIRATION COMPOSITION -->
-    <section class="error-page-section">
-      <!-- Background Animated Food Video Loop -->
-      <div class="error-bg-video-wrap" aria-hidden="true">
-        <video
-          class="error-bg-video"
-          autoplay
-          loop
-          muted
-          playsinline
-          poster="../assets/images/organic-farm-ingredients-kitchen.webp"
-          aria-label="Background Artisanal Culinary Video"
-        >
-          <source
-            src="../assets/videos/404-food-ambience-animated.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="error-video-overlay"></div>
-      </div>
+  <main id="main-content" class="error-main-wrapper">
+    <div class="error-composition-container">
+      
+      <!-- 4 Surrounding Floating Corner Eggs (Positioned behind the card) -->
+      <img
+        src="../assets/images/404-egg-top-left.webp"
+        alt="Fried egg corner decoration"
+        class="corner-egg egg-tl"
+        aria-hidden="true"
+      >
+      <img
+        src="../assets/images/404-egg-top-right.webp"
+        alt="Fried egg corner decoration"
+        class="corner-egg egg-tr"
+        aria-hidden="true"
+      >
+      <img
+        src="../assets/images/404-egg-bottom-left.webp"
+        alt="Fried egg corner decoration"
+        class="corner-egg egg-bl"
+        aria-hidden="true"
+      >
+      <img
+        src="../assets/images/404-egg-bottom-right.webp"
+        alt="Fried egg corner decoration"
+        class="corner-egg egg-br"
+        aria-hidden="true"
+      >
 
-      <div class="container error-scene-container">
-        <!-- Surrounding Floating Corner Eggs from inspiration composition -->
-        <img
-          src="../assets/images/fried-egg-404.webp"
-          alt="Sunny side up fried egg"
-          class="floating-corner-egg egg-top-left"
-          aria-hidden="true"
-        />
-        <img
-          src="../assets/images/fried-egg-404.webp"
-          alt="Sunny side up fried egg"
-          class="floating-corner-egg egg-top-right"
-          aria-hidden="true"
-        />
-        <img
-          src="../assets/images/fried-egg-404.webp"
-          alt="Sunny side up fried egg"
-          class="floating-corner-egg egg-bottom-left"
-          aria-hidden="true"
-        />
-        <img
-          src="../assets/images/fried-egg-404.webp"
-          alt="Sunny side up fried egg"
-          class="floating-corner-egg egg-bottom-right"
-          aria-hidden="true"
-        />
+      <!-- Main Rounded 404 Card matching reference image 100% -->
+      <div class="error-fried-card" role="region" aria-label="404 Error: Sorry We're Fried">
+        
+        <!-- Top Right BACK Button -->
+        <a
+          href="../index.html"
+          onclick="if(window.history.length>1){window.history.back();return false;}"
+          class="error-pill-back-btn"
+          aria-label="Go back to previous page"
+        >BACK</a>
 
-        <!-- Main Inspiration Fried Card -->
-        <div class="error-fried-card" data-aos>
-          <!-- Top Right Pill Button -->
-          <div class="error-card-top-bar">
-            <button
-              type="button"
-              onclick="window.history.back()"
-              class="error-pill-back-btn"
-              aria-label="Go back to previous page"
+        <!-- 4 [EGG] 4 Graphic -->
+        <div class="fried-egg-composition" aria-label="404 Error code">
+          <img
+            src="../assets/images/404-digit-4-left.svg"
+            alt="4"
+            class="digit-4-img digit-4-left"
+          >
+          <div class="center-egg-wrapper">
+            <img
+              src="../assets/images/fried-egg-404.webp"
+              alt="Sunny side up fried egg representing number 0"
+              class="fried-egg-center-img"
             >
-              BACK
-            </button>
-          </div>
-
-          <!-- Central "4 [EGG] 4" Typography -->
-          <div class="fried-egg-digits-wrap" aria-label="404 error code">
-            <span class="fried-digit">4</span>
-            <div class="fried-egg-center-wrap">
-              <img
-                src="../assets/images/fried-egg-404.webp"
-                alt="Sunny-side-up fried egg representing number 0"
-                class="fried-egg-center-img"
-              />
-              <!-- Gentle Sizzling Culinary Steam -->
-              <div class="culinary-steam egg-steam" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+            <!-- Gentle Rising Culinary Steam -->
+            <div class="culinary-steam egg-steam" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <span class="fried-digit">4</span>
           </div>
-
-          <!-- Headings Matching Inspiration with Brand Palette -->
-          <h1 class="fried-headline">Sorry we're fried!</h1>
-          <p class="fried-subheadline">
-            WE CAN'T FIND THE PAGE YOU'RE LOOKING FOR
-          </p>
-
-          <p class="error-desc" style="max-width: 520px; margin: 0 auto 28px;">
-            Our chefs may have flipped this recipe off the wok, or it's still simmering in our development kitchen. Let's guide you back to delicious favorites.
-          </p>
-
-          <div class="error-btn-group">
-            <a href="../index.html" class="btn btn-primary btn-lg"
-              >Back to Homepage <span class="btn-arrow">→</span></a
-            >
-            <a href="lunch-specials.html" class="btn btn-secondary btn-lg"
-              >Explore Menu</a
-            >
-            <a
-              href="contact.html"
-              class="btn btn-outline btn-lg"
-              style="border-color: #211220; color: #211220;"
-              >Contact Concierge</a
-            >
-          </div>
+          <img
+            src="../assets/images/404-digit-4-right.svg"
+            alt="4"
+            class="digit-4-img digit-4-right"
+          >
         </div>
+
+        <!-- Script Text & Subheadline -->
+        <div class="error-text-block">
+          <h1 class="visually-hidden">Sorry we're fried!</h1>
+          <img
+            src="../assets/images/404-sorry-were-fried.svg"
+            alt="Sorry we're fried!"
+            class="sorry-script-svg"
+          >
+          <p class="gold-subheadline">WE CAN'T FIND THE PAGE YOU'RE LOOKING FOR</p>
+        </div>
+
       </div>
-    </section>
+    </div>
   </main>
 
   <script src="../assets/js/main.js"></script>
