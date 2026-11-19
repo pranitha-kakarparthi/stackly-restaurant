@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Sorry We're Fried! | Stackly Asian Cuisine</title>
-  <meta name="description" content="Sorry, we're fried! We can't find the page you're looking for. Return to Stackly Asian Cuisine homepage.">
+  <title>404 - Whoops! Our Oven's Too Hot to Handle! | Stackly Asian Cuisine</title>
+  <meta name="description" content="Whoops! Our servers got a bit overheated, like a cake left in the oven just a tad too long. Return to Stackly Asian Cuisine homepage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="error-page-body">
@@ -19,85 +22,101 @@
   </div>
 
   <main id="main-content" class="error-main-wrapper">
-    <div class="error-composition-container">
+    <!-- INSPIRATION 404 CARD -->
+    <article class="error-inspiration-card" aria-label="Page Not Found Error Notice">
       
-      <!-- 4 Surrounding Floating Corner Eggs (Positioned behind the card) -->
-      <img
-        src="../assets/images/404-egg-top-left.webp"
-        alt="Fried egg corner decoration"
-        class="corner-egg egg-tl"
-        aria-hidden="true"
-      >
-      <img
-        src="../assets/images/404-egg-top-right.webp"
-        alt="Fried egg corner decoration"
-        class="corner-egg egg-tr"
-        aria-hidden="true"
-      >
-      <img
-        src="../assets/images/404-egg-bottom-left.webp"
-        alt="Fried egg corner decoration"
-        class="corner-egg egg-bl"
-        aria-hidden="true"
-      >
-      <img
-        src="../assets/images/404-egg-bottom-right.webp"
-        alt="Fried egg corner decoration"
-        class="corner-egg egg-br"
-        aria-hidden="true"
-      >
+      <!-- TOP CARD NAVIGATION BAR -->
+      <header class="error-card-nav" role="banner">
+        <a href="../index.html" class="card-brand" aria-label="Stackly Asian Cuisine Home">
+          <svg class="card-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+          <span>Stackly Asian Cuisine</span>
+        </a>
 
-      <!-- Main Rounded 404 Card matching reference image 100% -->
-      <div class="error-fried-card" role="region" aria-label="404 Error: Sorry We're Fried">
+        <nav class="card-nav-links" aria-label="Quick Navigation">
+          <a href="dinner-menu.html" class="card-nav-link">Cuisines</a>
+          <a href="lunch-specials.html" class="card-nav-link">Recipes</a>
+          <a href="catering.html" class="card-nav-link">Courses</a>
+          <a href="pricing.html" class="card-nav-link">For Kids</a>
+          <a href="about.html" class="card-nav-link">Blog</a>
+          <a href="contact.html" class="card-nav-link">Contact</a>
+        </nav>
+
+        <div class="card-nav-actions">
+          <button type="button" class="btn-bookmark" aria-label="Save or bookmark this restaurant" title="Bookmark">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </button>
+          <a href="sign-in.html" class="btn-login-pill">Log in</a>
+        </div>
+      </header>
+
+      <!-- HERO 404 CONTENT & ILLUSTRATION -->
+      <section class="error-card-hero">
+        <!-- Worried Chef at Overheated Smoking Oven (4 0 4) -->
+        <div class="error-illustration-wrap" aria-hidden="true">
+          <img
+            src="../assets/images/404-chef-oven-illustration@2x.webp"
+            alt="Worried chef standing behind a smoking overheated oven between the numbers 4 and 4"
+            class="error-chef-illustration"
+            width="640"
+            height="480"
+          >
+          <!-- Animated Fire Glow in Oven Chamber -->
+          <div class="oven-fire-glow"></div>
+        </div>
+
+        <h1 class="error-title">Whoops! Our Oven's Too Hot to Handle! 🔥</h1>
         
-        <!-- Top Right BACK Button -->
-        <a
-          href="../index.html"
-          onclick="if(window.history.length>1){window.history.back();return false;}"
-          class="error-pill-back-btn"
-          aria-label="Go back to previous page"
-        >BACK</a>
+        <p class="error-subtitle">
+          Our servers got a bit overheated, like a cake left in the oven just a tad too long.
+          The page you're looking for isn't quite baked to perfection yet.
+        </p>
 
-        <!-- 4 [EGG] 4 Graphic -->
-        <div class="fried-egg-composition" aria-label="404 Error code">
-          <img
-            src="../assets/images/404-digit-4-left.svg"
-            alt="4"
-            class="digit-4-img digit-4-left"
-          >
-          <div class="center-egg-wrapper">
-            <img
-              src="../assets/images/fried-egg-404.webp"
-              alt="Sunny side up fried egg representing number 0"
-              class="fried-egg-center-img"
-            >
-            <!-- Gentle Rising Culinary Steam -->
-            <div class="culinary-steam egg-steam" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <img
-            src="../assets/images/404-digit-4-right.svg"
-            alt="4"
-            class="digit-4-img digit-4-right"
-          >
+        <div>
+          <a href="../index.html" class="btn-back-home">Back Home</a>
+        </div>
+      </section>
+
+      <!-- WARM TAN BOTTOM FOOTER -->
+      <footer class="error-card-footer" role="contentinfo">
+        <!-- Social Media Icons Row -->
+        <div class="footer-social-row" aria-label="Social links">
+          <a href="contact.html" class="social-circle-btn" aria-label="Twitter">
+            <svg viewBox="0 0 24 24"><path d="M22 5.8a8.49 8.49 0 0 1-2.36.64 4.13 4.13 0 0 0 1.81-2.27 8.21 8.21 0 0 1-2.61 1 4.1 4.1 0 0 0-7 3.74A11.64 11.64 0 0 1 3.39 4.9a4.1 4.1 0 0 0 1.27 5.48 4.07 4.07 0 0 1-1.86-.51v.05a4.1 4.1 0 0 0 3.29 4.02 4.1 4.1 0 0 1-1.85.07 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 2 18.57 11.61 11.61 0 0 0 8.29 20.4c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.36 8.36 0 0 0 22 5.8z"/></svg>
+          </a>
+          <a href="contact.html" class="social-circle-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="contact.html" class="social-circle-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/></svg>
+          </a>
+          <a href="contact.html" class="social-circle-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
         </div>
 
-        <!-- Script Text & Subheadline -->
-        <div class="error-text-block">
-          <h1 class="visually-hidden">Sorry we're fried!</h1>
-          <img
-            src="../assets/images/404-sorry-were-fried.svg"
-            alt="Sorry we're fried!"
-            class="sorry-script-svg"
-          >
-          <p class="gold-subheadline">WE CAN'T FIND THE PAGE YOU'RE LOOKING FOR</p>
+        <!-- Footer Policy & Navigation Links -->
+        <div class="footer-links-row">
+          <a href="contact.html" class="footer-nav-link">Terms of use</a>
+          <a href="contact.html" class="footer-nav-link">Privacy policy</a>
+          <a href="about.html" class="footer-nav-link">FAQS</a>
+          <a href="contact.html" class="footer-nav-link">Contact us</a>
         </div>
 
-      </div>
-    </div>
+        <!-- Cookies & Adchoices Button -->
+        <div>
+          <a href="contact.html" class="btn-cookies">Cookies & Adchoices</a>
+        </div>
+      </footer>
+
+    </article>
   </main>
 
   <script src="../assets/js/main.js"></script>
