@@ -123,28 +123,22 @@
 
   <script src="../assets/js/main.js"></script>
   <script>
-    // Handle "Go back" redirection to exact previous location and scroll position
+    // Handle "Go back" keeping hold of browser history navigation
     function handleGoBack(e) {
       if (e && e.preventDefault) e.preventDefault();
       try {
-        sessionStorage.setItem('stackly_from_404', 'true');
-        var prevUrl = sessionStorage.getItem('stackly_last_page');
-        if (prevUrl && prevUrl !== window.location.href && !prevUrl.includes('404.html')) {
-          window.location.href = prevUrl;
-          return;
-        }
-        if (document.referrer && document.referrer !== window.location.href && !document.referrer.includes('404.html')) {
-          window.location.href = document.referrer;
-          return;
-        }
         if (window.history.length > 1) {
           window.history.back();
+          return;
+        }
+        if (document.referrer && !document.referrer.includes('404.html')) {
+          window.location.replace(document.referrer);
           return;
         }
       } catch (err) {
         console.warn('Navigation fallback:', err);
       }
-      window.location.href = '../index.html';
+      window.location.replace('../index.html');
     }
 
     // Replay hatching wobble on egg click

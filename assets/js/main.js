@@ -3,81 +3,52 @@
  * High Performance, Zero Bloat, Accessibility Focused
  */
 
-// Navigation Tracking & Scroll Position Restoration
-// Allows 404 "Go back" to return directly to the exact previous position and page
-(function initScrollAndHistoryTracking() {
-  const is404 = window.location.pathname.endsWith('404.html') || window.location.pathname.endsWith('404');
+// Native Browser History & Scroll Position Management
+// Keeps hold of page navigation in browser history so moving back and forth works properly
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'auto';
+}
 
-  if (!is404) {
-    // Continuously save current page and scroll position for 404 "Go back" return
-    const recordCurrentLocation = () => {
-      try {
-        sessionStorage.setItem('stackly_last_page', window.location.href);
-        sessionStorage.setItem('stackly_last_scroll_y', window.scrollY.toString());
-      } catch (err) {}
-    };
-
-    window.addEventListener('scroll', recordCurrentLocation, { passive: true });
-    window.addEventListener('beforeunload', recordCurrentLocation);
-
-    // Save location immediately on any link click (especially 404 links)
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
-      if (link && link.href) {
-        recordCurrentLocation();
-      }
-    }, { capture: true });
-
-    // Check if user is returning from the 404 page
-    let returningFrom404 = false;
-    let savedScrollY = 0;
-    try {
-      if (sessionStorage.getItem('stackly_from_404') === 'true') {
-        returningFrom404 = true;
-        sessionStorage.removeItem('stackly_from_404');
-        const saved = sessionStorage.getItem('stackly_last_scroll_y');
-        if (saved !== null) {
-          savedScrollY = parseInt(saved, 10) || 0;
-        }
-      }
-    } catch (err) {}
-
-    if (returningFrom404 && savedScrollY > 0) {
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-      const restoreScroll = () => {
-        window.scrollTo({ top: savedScrollY, left: 0, behavior: 'instant' });
-      };
-      restoreScroll();
-      window.addEventListener('pageshow', restoreScroll);
-      document.addEventListener('DOMContentLoaded', restoreScroll);
-      window.addEventListener('load', () => {
-        restoreScroll();
-        setTimeout(restoreScroll, 50);
-        setTimeout(restoreScroll, 180);
-      });
-    } else {
-      // Standard initial fresh page visit: start at top
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      window.addEventListener('beforeunload', () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      });
-      window.addEventListener('pageshow', () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      });
-      window.addEventListener('load', () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      });
-      document.addEventListener('DOMContentLoaded', () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      });
+function getNavigationType() {
+  if (window.performance && performance.getEntriesByType) {
+    const navEntries = performance.getEntriesByType('navigation');
+    if (navEntries && navEntries.length > 0) {
+      return navEntries[0].type;
     }
   }
-})();
+  if (window.performance && performance.navigation) {
+    if (performance.navigation.type === 2) return 'back_forward';
+    if (performance.navigation.type === 1) return 'reload';
+  }
+  return 'navigate';
+}
+
+// Track scroll position per page pathname as a reliable fallback
+const is404Page = window.location.pathname.endsWith('404.html') || window.location.pathname.endsWith('404');
+if (!is404Page) {
+  const scrollStorageKey = 'stackly_pos_' + window.location.pathname;
+
+  window.addEventListener('scroll', () => {
+    try {
+      sessionStorage.setItem(scrollStorageKey, window.scrollY.toString());
+    } catch (err) {}
+  }, { passive: true });
+
+  // Handle back/forward navigation in browser window
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted || getNavigationType() === 'back_forward') {
+      try {
+        const saved = sessionStorage.getItem(scrollStorageKey);
+        if (saved !== null) {
+          const targetY = parseInt(saved, 10);
+          if (!isNaN(targetY) && targetY > 0) {
+            window.scrollTo({ top: targetY, left: 0, behavior: 'instant' });
+          }
+        }
+      } catch (err) {}
+    }
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   initLoader();
