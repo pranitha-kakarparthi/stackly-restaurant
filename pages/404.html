@@ -29,66 +29,102 @@
   <!-- MAIN ERROR STAGE (FIT TO SCREEN SIZE) -->
   <main id="main-content" class="error-screen-container">
     
-    <!-- ANIMATED HATCHING EGG & DUCK ASSEMBLY -->
-    <div class="hatch-stage" id="hatch-stage" role="img" aria-label="Egg breaking open and cute duck hatching out of it" title="Click me to chirp!">
+    <!-- ANIMATED BASKET WITH MULTIPLE EGGS & HATCHING DUCK -->
+    <div class="hatch-stage basket-stage" id="hatch-stage" role="img" aria-label="Multiple farm eggs in a woven rustic basket with a cute duck hatching out of the center egg" title="Click to chirp!">
       
-      <!-- Multi-Layer Assembly (Aspect Ratio 614:688) -->
-      <div class="hatch-assembly">
+      <div class="basket-assembly">
         
-        <!-- 1. The Duck (Starts hidden, emerges and pops upward) -->
-        <div class="hatch-duck-wrap">
-          <img
-            src="../assets/images/404-duck.webp"
-            alt="Cute baby duck emerging from egg"
-            class="hatch-layer-img"
-            width="614"
-            height="688"
-          >
+        <!-- Layer 1: Basket Back Interior & Straw Bedding -->
+        <div class="basket-back-wrap" aria-hidden="true">
+          <img src="../assets/images/404-basket-back.svg" alt="" class="basket-svg-layer" width="540" height="160">
         </div>
 
-        <!-- 2. Bottom Eggshell Cup (Fixed in front of duck's lower body) -->
-        <div class="hatch-shell-bottom">
-          <img
-            src="../assets/images/404-egg-bottom.webp"
-            alt="Cracked bottom egg shell with 404 Error text"
-            class="hatch-layer-img"
-            width="614"
-            height="688"
-          >
+        <!-- Layer 2: Eggs Cluster inside the Basket -->
+        <div class="basket-eggs-wrap">
+          
+          <!-- Background Nestled Eggs -->
+          <div class="basket-egg egg-back-left" aria-hidden="true">
+            <img src="../assets/images/404-egg-closed.webp" alt="Nestled egg" class="egg-img" width="614" height="688">
+          </div>
+          <div class="basket-egg egg-back-right" aria-hidden="true">
+            <img src="../assets/images/404-egg-closed.webp" alt="Nestled egg" class="egg-img" width="614" height="688">
+          </div>
+
+          <!-- Foreground Side Eggs -->
+          <div class="basket-egg egg-side-left" aria-hidden="true">
+            <img src="../assets/images/404-egg-closed.webp" alt="Nestled egg" class="egg-img" width="614" height="688">
+          </div>
+          <div class="basket-egg egg-side-right" aria-hidden="true">
+            <img src="../assets/images/404-egg-closed.webp" alt="Nestled egg" class="egg-img" width="614" height="688">
+          </div>
+
+          <!-- Hero Center Egg: Animated Hatching Egg & Duck Assembly -->
+          <div class="hatch-assembly hero-center-egg">
+            
+            <!-- 1. The Duck (Starts hidden, emerges and pops upward) -->
+            <div class="hatch-duck-wrap">
+              <img
+                src="../assets/images/404-duck.webp"
+                alt="Cute baby duck emerging from egg"
+                class="hatch-layer-img"
+                width="614"
+                height="688"
+              >
+            </div>
+
+            <!-- 2. Bottom Eggshell Cup (Fixed in front of duck's lower body) -->
+            <div class="hatch-shell-bottom">
+              <img
+                src="../assets/images/404-egg-bottom.webp"
+                alt="Cracked bottom egg shell with 404 Error text"
+                class="hatch-layer-img"
+                width="614"
+                height="688"
+              >
+            </div>
+
+            <!-- 3. Top Eggshell Hat (Starts closed, wobbles, cracks, and pops up) -->
+            <div class="hatch-shell-top">
+              <img
+                src="../assets/images/404-egg-top.webp"
+                alt="Cracked top egg shell hat"
+                class="hatch-layer-img"
+                width="614"
+                height="688"
+              >
+            </div>
+
+            <!-- 4. Crack Line Flash Effect -->
+            <div class="hatch-crack-fx" aria-hidden="true">
+              <svg viewBox="0 0 400 120" class="crack-svg">
+                <path d="M 20 60 L 70 40 L 110 75 L 160 30 L 210 80 L 260 45 L 310 70 L 350 50 L 380 65" fill="none" stroke="#ffe28a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- 5. Eggshell Burst Particles -->
+            <div class="hatch-burst-particles" aria-hidden="true">
+              <span class="burst-shell b1"></span>
+              <span class="burst-shell b2"></span>
+              <span class="burst-shell b3"></span>
+              <span class="burst-shell b4"></span>
+              <span class="burst-shell b5"></span>
+              <span class="burst-shell b6"></span>
+            </div>
+
+          </div>
+
         </div>
 
-        <!-- 3. Top Eggshell Hat (Starts closed, wobbles, cracks, and pops up) -->
-        <div class="hatch-shell-top">
-          <img
-            src="../assets/images/404-egg-top.webp"
-            alt="Cracked top egg shell hat"
-            class="hatch-layer-img"
-            width="614"
-            height="688"
-          >
+        <!-- Layer 3: Basket Front Woven Body, Braided Rim, Handles & Front Straw Tufts -->
+        <div class="basket-front-wrap" aria-hidden="true">
+          <img src="../assets/images/404-basket-front.svg" alt="" class="basket-svg-layer" width="540" height="240">
         </div>
 
-        <!-- 4. Crack Line Flash Effect -->
-        <div class="hatch-crack-fx" aria-hidden="true">
-          <svg viewBox="0 0 400 120" class="crack-svg">
-            <path d="M 20 60 L 70 40 L 110 75 L 160 30 L 210 80 L 260 45 L 310 70 L 350 50 L 380 65" fill="none" stroke="#ffe28a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-
-        <!-- 5. Eggshell Burst Particles -->
-        <div class="hatch-burst-particles" aria-hidden="true">
-          <span class="burst-shell b1"></span>
-          <span class="burst-shell b2"></span>
-          <span class="burst-shell b3"></span>
-          <span class="burst-shell b4"></span>
-          <span class="burst-shell b5"></span>
-          <span class="burst-shell b6"></span>
-        </div>
+        <!-- Layer 4: Synchronized Ground Shadow -->
+        <div class="basket-ground-shadow" aria-hidden="true"></div>
 
       </div>
 
-      <!-- Synchronized Ground Shadow -->
-      <div class="chick-shadow" aria-hidden="true"></div>
     </div>
 
     <!-- ERROR HEADLINE & SUBTITLE -->
@@ -141,18 +177,27 @@
       window.location.replace('../index.html');
     }
 
-    // Replay hatching wobble on egg click
+    // Replay hatching bounce and chirp on basket/egg click
     document.addEventListener('DOMContentLoaded', function () {
       var stage = document.getElementById('hatch-stage');
       if (stage) {
         stage.addEventListener('click', function () {
-          var assembly = stage.querySelector('.hatch-assembly');
-          if (assembly) {
-            assembly.style.animation = 'none';
-            assembly.offsetHeight; // trigger reflow
-            assembly.style.animation = 'chickClickBounce 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+          var heroEgg = stage.querySelector('.hero-center-egg') || stage.querySelector('.hatch-assembly');
+          var basket = stage.querySelector('.basket-assembly');
+          if (heroEgg) {
+            heroEgg.style.animation = 'none';
+            heroEgg.offsetHeight; // trigger reflow
+            heroEgg.style.animation = 'chickClickBounce 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
             setTimeout(function () {
-              assembly.style.animation = '';
+              heroEgg.style.animation = '';
+            }, 650);
+          }
+          if (basket) {
+            basket.style.animation = 'none';
+            basket.offsetHeight;
+            basket.style.animation = 'basketClickWobble 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            setTimeout(function () {
+              basket.style.animation = '';
             }, 650);
           }
         });

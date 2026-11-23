@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 240" fill="none" class="basket-front-svg">
+  <defs>
+    <!-- Basket Body Gradient -->
+    <linearGradient id="basketBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#df9d54"/>
+      <stop offset="30%" stop-color="#c67d30"/>
+      <stop offset="70%" stop-color="#9a5719"/>
+      <stop offset="100%" stop-color="#64330a"/>
+    </linearGradient>
+
+    <!-- Braided Rim Gradient -->
+    <linearGradient id="basketRimGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8c4b12"/>
+      <stop offset="25%" stop-color="#e8a860"/>
+      <stop offset="50%" stop-color="#ffd599"/>
+      <stop offset="75%" stop-color="#e8a860"/>
+      <stop offset="100%" stop-color="#8c4b12"/>
+    </linearGradient>
+
+    <!-- Handle Gradient -->
+    <linearGradient id="handleGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8722a"/>
+      <stop offset="50%" stop-color="#e2a45e"/>
+      <stop offset="100%" stop-color="#7a4212"/>
+    </linearGradient>
+    <linearGradient id="handleGradRight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b8722a"/>
+      <stop offset="50%" stop-color="#e2a45e"/>
+      <stop offset="100%" stop-color="#7a4212"/>
+    </linearGradient>
+
+    <!-- Soft Filter for Depth -->
+    <filter id="basketDropShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#2a1405" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Left Wicker Handle -->
+  <g class="basket-handle-left">
+    <path d="M 52 82 C 18 55 12 118 48 134" stroke="url(#handleGradLeft)" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <path d="M 52 82 C 18 55 12 118 48 134" stroke="#5a2d07" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+    <path d="M 36 68 C 30 75 25 86 26 98" stroke="#ffe2b5" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Right Wicker Handle -->
+  <g class="basket-handle-right">
+    <path d="M 488 82 C 522 55 528 118 492 134" stroke="url(#handleGradRight)" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <path d="M 488 82 C 522 55 528 118 492 134" stroke="#5a2d07" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.3"/>
+    <path d="M 504 68 C 510 75 515 86 514 98" stroke="#ffe2b5" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Main Basket Body Bowl -->
+  <g filter="url(#basketDropShadow)">
+    <!-- Base bowl shape -->
+    <path d="M 46 80
+             Q 270 118 494 80
+             C 475 165 435 220 365 228
+             Q 270 234 175 228
+             C 105 220 65 165 46 80 Z"
+          fill="url(#basketBodyGrad)" />
+
+    <!-- Woven Texture Rows (Alternating Wicker Bands) -->
+    <!-- Row 1: Upper Band -->
+    <path d="M 58 106 Q 270 144 482 106" stroke="#f0b168" stroke-width="6" stroke-linecap="round" fill="none" stroke-dasharray="14 8" opacity="0.75"/>
+    <path d="M 58 109 Q 270 147 482 109" stroke="#552c08" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="14 8" stroke-dashoffset="11" opacity="0.45"/>
+
+    <!-- Row 2: Mid-Upper Band -->
+    <path d="M 72 134 Q 270 168 468 134" stroke="#ffd08a" stroke-width="7" stroke-linecap="round" fill="none" stroke-dasharray="16 9" stroke-dashoffset="7" opacity="0.7"/>
+    <path d="M 72 137 Q 270 171 468 137" stroke="#4a2405" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="16 9" stroke-dashoffset="18" opacity="0.5"/>
+
+    <!-- Row 3: Middle Band -->
+    <path d="M 92 162 Q 270 192 448 162" stroke="#f0b168" stroke-width="7" stroke-linecap="round" fill="none" stroke-dasharray="15 8" opacity="0.65"/>
+    <path d="M 92 165 Q 270 195 448 165" stroke="#4a2405" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="15 8" stroke-dashoffset="11" opacity="0.55"/>
+
+    <!-- Row 4: Lower Band -->
+    <path d="M 118 190 Q 270 214 422 190" stroke="#ffd08a" stroke-width="6" stroke-linecap="round" fill="none" stroke-dasharray="14 8" stroke-dashoffset="6" opacity="0.6"/>
+    <path d="M 118 192 Q 270 216 422 192" stroke="#3d1b02" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="14 8" stroke-dashoffset="17" opacity="0.6"/>
+
+    <!-- Vertical Wicker Ribs (Cross Ribbing) -->
+    <path d="M 130 96 Q 140 160 165 220" stroke="#7a3f0d" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <path d="M 195 106 Q 200 165 215 226" stroke="#7a3f0d" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <path d="M 270 110 Q 270 170 270 230" stroke="#7a3f0d" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.35"/>
+    <path d="M 345 106 Q 340 165 325 226" stroke="#7a3f0d" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <path d="M 410 96 Q 400 160 375 220" stroke="#7a3f0d" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+    <!-- Basket Base Ring (Stand) -->
+    <path d="M 175 227 Q 270 234 365 227 C 355 235 330 239 270 239 C 210 239 185 235 175 227 Z" fill="#4d2406"/>
+    <path d="M 190 231 Q 270 236 350 231" stroke="#874712" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
+
+    <!-- Braided Top Rim -->
+    <!-- Rim Shadow Underneath -->
+    <path d="M 42 85 Q 270 124 498 85" stroke="#3b1c04" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.4"/>
+    <!-- Rim Core -->
+    <path d="M 44 80 Q 270 118 496 80" stroke="url(#basketRimGrad)" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <!-- Rim Braid Highlights & Twist Texture -->
+    <path d="M 46 79 Q 270 117 494 79" stroke="#fff1d4" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="10 12" opacity="0.85"/>
+    <path d="M 48 82 Q 270 120 492 82" stroke="#683508" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="10 12" stroke-dashoffset="6" opacity="0.6"/>
+  </g>
+
+  <!-- Front Golden Straw & Hay Tufts (Nest Bedding overlapping rim) -->
+  <g class="basket-straw-tufts">
+    <!-- Left Straw Cluster -->
+    <path d="M 75 78 Q 60 62 45 66 Q 58 72 72 82" fill="#f8d67a" stroke="#cca138" stroke-width="1"/>
+    <path d="M 95 82 Q 80 58 70 64 Q 82 72 92 86" fill="#fadfa0" stroke="#cca138" stroke-width="1"/>
+    <path d="M 115 88 Q 100 68 88 74 Q 102 82 112 92" fill="#f4cc64" stroke="#bf9228" stroke-width="1"/>
+    <path d="M 135 93 Q 125 76 110 82 Q 124 88 132 97" fill="#ffe9b3" stroke="#cca138" stroke-width="1"/>
+
+    <!-- Center Straw Tufts -->
+    <path d="M 230 113 Q 220 98 208 104 Q 220 110 228 117" fill="#f8d67a" stroke="#cca138" stroke-width="1"/>
+    <path d="M 255 116 Q 250 96 238 102 Q 248 111 253 120" fill="#ffe4a0" stroke="#cca138" stroke-width="1"/>
+    <path d="M 285 116 Q 290 96 302 102 Q 292 111 287 120" fill="#f4cc64" stroke="#cca138" stroke-width="1"/>
+    <path d="M 310 113 Q 320 98 332 104 Q 320 110 312 117" fill="#fadfa0" stroke="#bf9228" stroke-width="1"/>
+
+    <!-- Right Straw Cluster -->
+    <path d="M 405 93 Q 415 76 430 82 Q 416 88 408 97" fill="#ffe9b3" stroke="#cca138" stroke-width="1"/>
+    <path d="M 425 88 Q 440 68 452 74 Q 438 82 428 92" fill="#f4cc64" stroke="#bf9228" stroke-width="1"/>
+    <path d="M 445 82 Q 460 58 470 64 Q 458 72 448 86" fill="#fadfa0" stroke="#cca138" stroke-width="1"/>
+    <path d="M 465 78 Q 480 62 495 66 Q 482 72 468 82" fill="#f8d67a" stroke="#cca138" stroke-width="1"/>
+
+    <!-- Delicate Loose Hay Strands -->
+    <path d="M 55 76 Q 30 70 20 85" stroke="#ecc26e" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 150 98 Q 135 115 125 125" stroke="#fadfa0" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 270 117 Q 272 135 265 142" stroke="#e8ba58" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 390 98 Q 405 115 415 125" stroke="#fadfa0" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M 485 76 Q 510 70 520 85" stroke="#ecc26e" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>
