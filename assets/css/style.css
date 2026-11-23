@@ -1565,9 +1565,16 @@ h4 {
   background-color: var(--bg-body);
 }
 
-.hero-section .container {
+.hero-section .container,
+.page-hero-banner .container {
   position: relative;
   z-index: 2;
+}
+
+.page-hero-banner {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /* Subtle Animated Ambiance Background Layer */
