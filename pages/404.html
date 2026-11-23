@@ -29,18 +29,68 @@
   <!-- MAIN ERROR STAGE (FIT TO SCREEN SIZE) -->
   <main id="main-content" class="error-screen-container">
     
-    <!-- ANIMATED HATCHING CHICK IN EGGSHELL -->
-    <div class="chick-stage" aria-label="Cute chick hatching from egg illustration">
-      <div class="chick-graphic-wrap">
-        <img
-          src="../assets/images/404-hatching-chick@2x.webp"
-          alt="404 Error: Cute baby chick hatching from cracked eggshell"
-          class="chick-graphic-img"
-          width="614"
-          height="688"
-        >
+    <!-- ANIMATED HATCHING EGG & DUCK ASSEMBLY -->
+    <div class="hatch-stage" id="hatch-stage" role="img" aria-label="Egg breaking open and cute duck hatching out of it" title="Click me to chirp!">
+      
+      <!-- Multi-Layer Assembly (Aspect Ratio 614:688) -->
+      <div class="hatch-assembly">
+        
+        <!-- 1. The Duck (Starts hidden, emerges and pops upward) -->
+        <div class="hatch-duck-wrap">
+          <img
+            src="../assets/images/404-duck.webp"
+            alt="Cute baby duck emerging from egg"
+            class="hatch-layer-img"
+            width="614"
+            height="688"
+          >
+          <!-- Blinking Eyes Overlay -->
+          <span class="duck-eye-blink eye-left" aria-hidden="true"></span>
+          <span class="duck-eye-blink eye-right" aria-hidden="true"></span>
+        </div>
+
+        <!-- 2. Bottom Eggshell Cup (Fixed in front of duck's lower body) -->
+        <div class="hatch-shell-bottom">
+          <img
+            src="../assets/images/404-egg-bottom.webp"
+            alt="Cracked bottom egg shell with 404 Error text"
+            class="hatch-layer-img"
+            width="614"
+            height="688"
+          >
+        </div>
+
+        <!-- 3. Top Eggshell Hat (Starts closed, wobbles, cracks, and pops up) -->
+        <div class="hatch-shell-top">
+          <img
+            src="../assets/images/404-egg-top.webp"
+            alt="Cracked top egg shell hat"
+            class="hatch-layer-img"
+            width="614"
+            height="688"
+          >
+        </div>
+
+        <!-- 4. Crack Line Flash Effect -->
+        <div class="hatch-crack-fx" aria-hidden="true">
+          <svg viewBox="0 0 400 120" class="crack-svg">
+            <path d="M 20 60 L 70 40 L 110 75 L 160 30 L 210 80 L 260 45 L 310 70 L 350 50 L 380 65" fill="none" stroke="#ffe28a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- 5. Eggshell Burst Particles -->
+        <div class="hatch-burst-particles" aria-hidden="true">
+          <span class="burst-shell b1"></span>
+          <span class="burst-shell b2"></span>
+          <span class="burst-shell b3"></span>
+          <span class="burst-shell b4"></span>
+          <span class="burst-shell b5"></span>
+          <span class="burst-shell b6"></span>
+        </div>
+
       </div>
-      <!-- Synchronized Pulse Shadow -->
+
+      <!-- Synchronized Ground Shadow -->
       <div class="chick-shadow" aria-hidden="true"></div>
     </div>
 
@@ -75,5 +125,24 @@
   </main>
 
   <script src="../assets/js/main.js"></script>
+  <script>
+    // Replay hatching wobble on egg click
+    document.addEventListener('DOMContentLoaded', function () {
+      var stage = document.getElementById('hatch-stage');
+      if (stage) {
+        stage.addEventListener('click', function () {
+          var assembly = stage.querySelector('.hatch-assembly');
+          if (assembly) {
+            assembly.style.animation = 'none';
+            assembly.offsetHeight; // trigger reflow
+            assembly.style.animation = 'chickHatchWobble 0.8s ease-in-out';
+            setTimeout(function () {
+              assembly.style.animation = '';
+            }, 850);
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
