@@ -44,9 +44,6 @@
             width="614"
             height="688"
           >
-          <!-- Blinking Eyes Overlay -->
-          <span class="duck-eye-blink eye-left" aria-hidden="true"></span>
-          <span class="duck-eye-blink eye-right" aria-hidden="true"></span>
         </div>
 
         <!-- 2. Bottom Eggshell Cup (Fixed in front of duck's lower body) -->
@@ -103,7 +100,7 @@
       <!-- Go back: refers to last location of website -->
       <button
         type="button"
-        onclick="if(window.history.length>1){window.history.back();}else{window.location.href='../index.html';}"
+        onclick="handleGoBack(event)"
         class="btn-404-action btn-go-back"
         aria-label="Go back to the previous page"
       >
@@ -126,6 +123,30 @@
 
   <script src="../assets/js/main.js"></script>
   <script>
+    // Handle "Go back" redirection to exact previous location and scroll position
+    function handleGoBack(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      try {
+        sessionStorage.setItem('stackly_from_404', 'true');
+        var prevUrl = sessionStorage.getItem('stackly_last_page');
+        if (prevUrl && prevUrl !== window.location.href && !prevUrl.includes('404.html')) {
+          window.location.href = prevUrl;
+          return;
+        }
+        if (document.referrer && document.referrer !== window.location.href && !document.referrer.includes('404.html')) {
+          window.location.href = document.referrer;
+          return;
+        }
+        if (window.history.length > 1) {
+          window.history.back();
+          return;
+        }
+      } catch (err) {
+        console.warn('Navigation fallback:', err);
+      }
+      window.location.href = '../index.html';
+    }
+
     // Replay hatching wobble on egg click
     document.addEventListener('DOMContentLoaded', function () {
       var stage = document.getElementById('hatch-stage');
