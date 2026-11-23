@@ -1,33 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 160" fill="none" class="basket-back-svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" fill="none" class="basket-back-svg">
   <defs>
-    <!-- Interior Depth Gradient -->
-    <radialGradient id="interiorDepth" cx="50%" cy="30%" r="55%">
-      <stop offset="0%" stop-color="#4d280c"/>
-      <stop offset="70%" stop-color="#2a1405"/>
-      <stop offset="100%" stop-color="#190a02"/>
+    <!-- Deep Warm Interior Cavity -->
+    <radialGradient id="basketInteriorDepth" cx="50%" cy="32%" r="60%">
+      <stop offset="0%" stop-color="#462208"/>
+      <stop offset="60%" stop-color="#261002"/>
+      <stop offset="100%" stop-color="#140601"/>
     </radialGradient>
   </defs>
 
-  <!-- Dark Interior Cavity -->
-  <path d="M 44 80 Q 270 118 496 80 Q 270 42 44 80 Z" fill="url(#interiorDepth)"/>
+  <!-- Dark Interior Cavity Behind Eggs -->
+  <path d="M 44 100 Q 300 144 556 100 Q 300 52 44 100 Z" fill="url(#basketInteriorDepth)"/>
 
-  <!-- Back Straw Bedding -->
-  <g class="basket-straw-back" opacity="0.9">
-    <path d="M 70 70 Q 55 45 40 50 Q 55 58 68 74" fill="#eed286"/>
-    <path d="M 120 62 Q 105 38 90 42 Q 106 50 118 66" fill="#f7e1a3"/>
-    <path d="M 180 56 Q 165 32 150 36 Q 166 45 178 60" fill="#e8c776"/>
-    <path d="M 240 54 Q 235 28 220 32 Q 232 44 238 58" fill="#f7e1a3"/>
-    <path d="M 300 54 Q 305 28 320 32 Q 308 44 302 58" fill="#e8c776"/>
-    <path d="M 360 56 Q 375 32 390 36 Q 374 45 362 60" fill="#f7e1a3"/>
-    <path d="M 420 62 Q 435 38 450 42 Q 434 50 422 66" fill="#eed286"/>
-    <path d="M 470 70 Q 485 45 500 50 Q 485 58 472 74" fill="#e8c776"/>
+  <!-- Back Golden Straw Bedding Behind Eggs -->
+  <g class="basket-straw-back" opacity="0.95">
+    <path d="M 75 90 Q 56 60 40 68 Q 56 78 72 96" fill="#f0d388"/>
+    <path d="M 130 80 Q 112 50 96 56 Q 114 66 128 86" fill="#fbe4a8"/>
+    <path d="M 195 72 Q 178 42 162 48 Q 180 58 194 78" fill="#e8c776"/>
+    <path d="M 265 68 Q 256 36 240 42 Q 254 56 262 74" fill="#fbe4a8"/>
+    <path d="M 335 68 Q 344 36 360 42 Q 346 56 338 74" fill="#e8c776"/>
+    <path d="M 405 72 Q 422 42 438 48 Q 420 58 406 78" fill="#fbe4a8"/>
+    <path d="M 470 80 Q 488 50 504 56 Q 486 66 472 86" fill="#f0d388"/>
+    <path d="M 525 90 Q 544 60 560 68 Q 544 78 528 96" fill="#e8c776"/>
 
-    <!-- Additional Long Hay Strands Poking Out -->
-    <path d="M 90 65 Q 75 35 60 25" stroke="#f6dc9b" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <path d="M 150 58 Q 140 28 128 18" stroke="#eed286" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <path d="M 210 55 Q 205 25 195 12" stroke="#fae7b5" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-    <path d="M 330 55 Q 335 25 345 12" stroke="#fae7b5" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-    <path d="M 390 58 Q 400 28 412 18" stroke="#eed286" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <path d="M 450 65 Q 465 35 480 25" stroke="#f6dc9b" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- Poking Straw Stems -->
+    <path d="M 95 84 Q 78 48 60 36" stroke="#f8e0a2" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 160 76 Q 148 40 134 26" stroke="#edd188" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 230 70 Q 224 34 212 18" stroke="#fae7b5" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M 370 70 Q 376 34 388 18" stroke="#fae7b5" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M 440 76 Q 452 40 466 26" stroke="#edd188" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    <path d="M 505 84 Q 522 48 540 36" stroke="#f8e0a2" stroke-width="2.2" stroke-linecap="round" fill="none"/>
   </g>
 </svg>
