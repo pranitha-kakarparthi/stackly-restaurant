@@ -150,10 +150,10 @@
           if (assembly) {
             assembly.style.animation = 'none';
             assembly.offsetHeight; // trigger reflow
-            assembly.style.animation = 'chickHatchWobble 0.8s ease-in-out';
+            assembly.style.animation = 'chickClickBounce 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
             setTimeout(function () {
               assembly.style.animation = '';
-            }, 850);
+            }, 650);
           }
         });
       }
