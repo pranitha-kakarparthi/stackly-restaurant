@@ -3290,87 +3290,296 @@ h4 {
 }
 
 /* ==========================================================================
-   404 ERROR PAGE - SEAMLESS OVEN OVERHEATED SCENE
-   Exact image presentation with matching #fbf8f1 background and
-   responsive interactive Back Home button.
+   404 ERROR PAGE - HATCHING CHICK INSPIRATION (FULL SCREEN & ANIMATED)
+   Pure warm ivory background (#fff9ed), animated hatching chick wobble,
+   pulsing egg shadow, friendly typography, and dual action buttons:
+   "Go back" (history back) and "Back to Home" (index page).
    ========================================================================== */
 body.error-page-body {
   min-height: 100vh;
+  min-height: 100dvh;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #fbf8f1;
-  color: #180711;
-  overflow-x: clip;
+  background-color: #fff9ed;
+  color: #1a1a1a;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-.error-single-scene-wrapper {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 20px;
-  background-color: #fbf8f1;
-}
-
-.error-scene-frame {
+.error-screen-container {
   position: relative;
-  display: inline-flex;
+  width: 100%;
+  max-width: 800px;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 945px;
-  width: 100%;
-  margin: 0 auto;
+  text-align: center;
+  padding: clamp(16px, 3vh, 36px) 20px;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
-.error-scene-img {
+/* Floating Ambient Particles */
+.ambient-egg-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.egg-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(248, 223, 101, 0.45);
+  filter: blur(1px);
+  animation: floatAmbient 8s ease-in-out infinite alternate;
+}
+
+.egg-particle.p1 {
+  width: 14px;
+  height: 14px;
+  top: 15%;
+  left: 18%;
+  animation-duration: 7s;
+  background: rgba(234, 78, 24, 0.2);
+}
+
+.egg-particle.p2 {
+  width: 22px;
+  height: 22px;
+  top: 25%;
+  right: 18%;
+  animation-duration: 9s;
+  animation-delay: -2s;
+  background: rgba(248, 223, 101, 0.5);
+}
+
+.egg-particle.p3 {
+  width: 10px;
+  height: 10px;
+  bottom: 25%;
+  left: 22%;
+  animation-duration: 6s;
+  animation-delay: -4s;
+  background: rgba(163, 137, 212, 0.35);
+}
+
+.egg-particle.p4 {
+  width: 18px;
+  height: 18px;
+  bottom: 20%;
+  right: 20%;
+  animation-duration: 8.5s;
+  animation-delay: -1s;
+  background: rgba(248, 223, 101, 0.4);
+}
+
+@keyframes floatAmbient {
+  0% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-16px) rotate(20deg) scale(1.08);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-30px) rotate(-15deg) scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+/* Hatching Chick Stage */
+.chick-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: clamp(12px, 2.5vh, 26px);
+}
+
+.chick-graphic-wrap {
+  position: relative;
+  width: clamp(170px, 26vw, 255px);
+  max-width: 100%;
+  transform-origin: bottom center;
+  animation: chickHatchWobble 4.5s ease-in-out infinite;
+  filter: drop-shadow(0 14px 28px rgba(33, 18, 32, 0.08));
+}
+
+.chick-graphic-img {
   width: 100%;
-  max-width: 945px;
   height: auto;
   display: block;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* Interactive Clickable Hotspot over the 'Back Home' button in the image */
-.btn-back-home-hotspot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 88.1%;
-  width: 15.5%;
-  height: 6.35%;
+/* Pulsing Egg Shell Shadow */
+.chick-shadow {
+  width: clamp(110px, 18vw, 175px);
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgba(74, 52, 28, 0.22) 0%, rgba(74, 52, 28, 0.08) 50%, transparent 75%);
+  border-radius: 50%;
+  margin-top: -6px;
+  animation: chickShadowPulse 4.5s ease-in-out infinite;
+}
+
+@keyframes chickHatchWobble {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-8px) rotate(-3deg);
+  }
+  40% {
+    transform: translateY(-3px) rotate(3deg);
+  }
+  60% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+  80% {
+    transform: translateY(-2px) rotate(1.5deg);
+  }
+}
+
+@keyframes chickShadowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  20%, 60% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  40%, 80% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+}
+
+/* Typography matching inspiration */
+.error-heading {
+  font-size: clamp(2.2rem, 5.2vw, 3.8rem);
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 clamp(6px, 1.2vh, 12px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.error-message {
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  font-weight: 500;
+  color: #1a1a1a;
+  max-width: 580px;
+  margin: 0 auto clamp(18px, 3vh, 32px);
+  line-height: 1.45;
+}
+
+/* Dual Actions Container */
+.error-actions-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-404-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  padding: 12px 30px;
   border-radius: 9999px;
-  cursor: pointer;
   text-decoration: none;
-  display: block;
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  background: transparent;
-  outline: none;
+  cursor: pointer;
+  transition: all 0.24s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: nowrap;
 }
 
-.btn-back-home-hotspot:hover {
-  transform: translateX(-50%) scale(1.05);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  background-color: rgba(255, 255, 255, 0.25);
+/* Go back button (refers to last location) */
+.btn-go-back {
+  background-color: #ffffff;
+  color: #1f141b;
+  border: 2px solid #211220;
+  box-shadow: 0 3px 10px rgba(33, 18, 32, 0.06);
 }
 
-.btn-back-home-hotspot:active {
-  transform: translateX(-50%) scale(0.97);
+.btn-go-back:hover {
+  background-color: #211220;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(33, 18, 32, 0.18);
 }
 
-.btn-back-home-hotspot:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
+.btn-go-back:active {
+  transform: translateY(0) scale(0.98);
 }
 
-@media (max-width: 600px) {
-  .error-single-scene-wrapper {
-    padding: 16px 12px;
+/* Back to Home button (refers to Home page) */
+.btn-back-home {
+  background-color: #f8df65;
+  color: #111111;
+  border: 2px solid #f8df65;
+  box-shadow: 0 4px 16px rgba(248, 223, 101, 0.5);
+}
+
+.btn-back-home:hover {
+  background-color: #f7d63e;
+  border-color: #f7d63e;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(248, 223, 101, 0.65);
+}
+
+.btn-back-home:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .chick-graphic-wrap,
+  .chick-shadow,
+  .egg-particle {
+    animation: none;
+  }
+}
+
+/* Small Viewport Optimization */
+@media (max-height: 600px) {
+  body.error-page-body {
+    overflow-y: auto;
+    height: auto;
+  }
+  .chick-graphic-wrap {
+    width: 140px;
+  }
+  .error-message {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-actions-group {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .btn-404-action {
+    width: 100%;
+    max-width: 280px;
+    padding: 11px 22px;
   }
 }
 

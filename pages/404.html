@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Whoops! Our Oven's Too Hot to Handle! | Stackly Asian Cuisine</title>
-  <meta name="description" content="Whoops! Our servers got a bit overheated, like a cake left in the oven just a tad too long. Return to Stackly Asian Cuisine homepage.">
+  <title>404 - This page isn't quite ready to hatch | Stackly Asian Cuisine</title>
+  <meta name="description" content="Oh no! This page isn't quite ready to hatch. Go back to your previous page or return to Stackly Asian Cuisine homepage.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="error-page-body">
@@ -18,25 +18,60 @@
     </div>
   </div>
 
-  <main id="main-content" class="error-single-scene-wrapper">
-    <div class="error-scene-frame">
-      <img
-        src="../assets/images/404-oven-scene.webp"
-        alt="404 Error: Whoops! Our Oven's Too Hot to Handle! Our servers got a bit overheated, like a cake left in the oven just a tad too long. The page you're looking for isn't quite baked to perfection yet."
-        class="error-scene-img"
-        width="945"
-        height="647"
+  <!-- FLOATING AMBIENT PARTICLES -->
+  <div class="ambient-egg-particles" aria-hidden="true">
+    <span class="egg-particle p1"></span>
+    <span class="egg-particle p2"></span>
+    <span class="egg-particle p3"></span>
+    <span class="egg-particle p4"></span>
+  </div>
+
+  <!-- MAIN ERROR STAGE (FIT TO SCREEN SIZE) -->
+  <main id="main-content" class="error-screen-container">
+    
+    <!-- ANIMATED HATCHING CHICK IN EGGSHELL -->
+    <div class="chick-stage" aria-label="Cute chick hatching from egg illustration">
+      <div class="chick-graphic-wrap">
+        <img
+          src="../assets/images/404-hatching-chick@2x.webp"
+          alt="404 Error: Cute baby chick hatching from cracked eggshell"
+          class="chick-graphic-img"
+          width="614"
+          height="688"
+        >
+      </div>
+      <!-- Synchronized Pulse Shadow -->
+      <div class="chick-shadow" aria-hidden="true"></div>
+    </div>
+
+    <!-- ERROR HEADLINE & SUBTITLE -->
+    <h1 class="error-heading">Oh no!</h1>
+    <p class="error-message">This page isn’t quite ready to hatch.</p>
+
+    <!-- DUAL ACTION BUTTONS (GO BACK & BACK TO HOME) -->
+    <div class="error-actions-group">
+      <!-- Go back: refers to last location of website -->
+      <button
+        type="button"
+        onclick="if(window.history.length>1){window.history.back();}else{window.location.href='../index.html';}"
+        class="btn-404-action btn-go-back"
+        aria-label="Go back to the previous page"
       >
-      <!-- Interactive Clickable Hotspot for the 'Back Home' button -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <span>Go back</span>
+      </button>
+
+      <!-- Back to Home: refers to the Home page -->
       <a
         href="../index.html"
-        class="btn-back-home-hotspot"
-        aria-label="Back Home"
-        title="Back to Homepage"
+        class="btn-404-action btn-back-home"
+        aria-label="Return to Stackly Home page"
       >
-        <span class="visually-hidden">Back Home</span>
+        <span>Back to Home</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
     </div>
+
   </main>
 
   <script src="../assets/js/main.js"></script>
