@@ -52,7 +52,6 @@ function initDashboard() {
   const userNameEl = document.getElementById('dash-header-username');
   const userRoleEl = document.getElementById('dash-header-role');
   const userAvatarEl = document.getElementById('dash-header-avatar');
-  const roleSelectEl = document.getElementById('dash-role-preview-selector');
 
   const fullName = `${user.firstName || 'Patron'} ${user.lastName || ''}`.trim();
   if (userNameEl) userNameEl.textContent = fullName;
@@ -60,20 +59,6 @@ function initDashboard() {
   if (userAvatarEl) {
     const initials = (user.firstName ? user.firstName[0] : 'U') + (user.lastName ? user.lastName[0] : '');
     userAvatarEl.textContent = initials.toUpperCase();
-  }
-
-  // Sync role switcher dropdown
-  if (roleSelectEl) {
-    roleSelectEl.value = currentRole;
-    roleSelectEl.addEventListener('change', (e) => {
-      const newRole = e.target.value;
-      localStorage.setItem('stackly_restaurant_role', newRole);
-      session.role = newRole;
-      localStorage.setItem('stackly_restaurant_currentUser', JSON.stringify(session));
-      if (userRoleEl) userRoleEl.textContent = newRole;
-      renderRoleDashboard(newRole, user);
-      if (window.showToast) window.showToast(`Switched view to ${newRole} Dashboard`);
-    });
   }
 
   // Dynamic time greeting
