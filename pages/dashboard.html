@@ -142,17 +142,48 @@
         </div>
       </section>
 
-      <!-- 2. ORDERS SUBPAGE VIEW (4-5 Sections) -->
+            <!-- 2. ORDERS SUBPAGE VIEW (8 Rich Sections) -->
       <section id="view-orders" class="dash-view-panel" style="display: none;">
+        <!-- Section 1: Kitchen Station KPI Ribbon -->
+        <div class="dash-section-header" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1.3rem; font-weight: 800;">Orders & Kitchen Dispatch Operations</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Real-time ticket streaming, preparation velocity, and station dispatch tracking.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Active Wok Orders</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-primary); margin: 6px 0 2px;">14 Tickets</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">● 3 in plating stage</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Takeaway / Curbside</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin: 6px 0 2px;">8 Orders</div>
+            <span style="font-size: 0.78rem; color: #e65100; font-weight: 600;">● 2 awaiting courier pickup</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Average Ticket Velocity</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #2e7d32; margin: 6px 0 2px;">7.4 mins</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">↓ 1.2m faster than target</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Kitchen Load Index</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #d32f2f; margin: 6px 0 2px;">86% Peak</div>
+            <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Dinner rush capacity active</span>
+          </div>
+        </div>
+
+        <!-- Section 2: Order Management & Kitchen Tickets Ledger -->
         <div class="dash-card" style="margin-bottom: 24px;">
           <div class="dash-card-header">
             <div>
-              <h3 style="font-size: 1.3rem; font-weight: 800;">Order Management & Kitchen Tickets</h3>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Live POS and takeaway ticket stream across stations.</p>
+              <h4 class="dash-card-title">Live Kitchen Station Tickets</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">Active tickets synchronized with kitchen display system (KDS).</p>
             </div>
-            <a href="404.html" class="btn btn-primary btn-sm">Create Manual Ticket <span class="btn-arrow">→</span></a>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Tickets refreshed from POS server.')">Refresh Feed</button>
+              <a href="404.html" class="btn btn-primary btn-sm">Create Manual Ticket <span class="btn-arrow">→</span></a>
+            </div>
           </div>
-
           <div class="table-responsive">
             <table class="custom-table">
               <thead>
@@ -161,6 +192,7 @@
                   <th>Customer / Table</th>
                   <th>Dish Items</th>
                   <th>Total Amount</th>
+                  <th>Station</th>
                   <th>Prep Status</th>
                   <th>Action</th>
                 </tr>
@@ -171,7 +203,8 @@
                   <td>Table 04 (Window)</td>
                   <td>Crispy Corn Chicken (x2), Jasmine Rice</td>
                   <td>$48.50</td>
-                  <td><span class="badge badge-success">Delivered</span></td>
+                  <td>Wok Station 1</td>
+                  <td><span class="badge badge-success">Plated & Ready</span></td>
                   <td><a href="404.html" class="btn btn-sm btn-outline">Receipt</a></td>
                 </tr>
                 <tr>
@@ -179,7 +212,8 @@
                   <td>Takeaway (Marcus V.)</td>
                   <td>Artisan Wagyu Ramen, Chili Dumplings</td>
                   <td>$38.50</td>
-                  <td><span class="badge badge-warning">Cooking</span></td>
+                  <td>Ramen & Steamer</td>
+                  <td><span class="badge badge-warning">Cooking (4m)</span></td>
                   <td><a href="404.html" class="btn btn-sm btn-outline">Notify</a></td>
                 </tr>
                 <tr>
@@ -187,50 +221,261 @@
                   <td>Booth 12 (Walk-in)</td>
                   <td>Spicy Dan Dan Noodles, Oolong Tea</td>
                   <td>$24.50</td>
+                  <td>Wok Station 2</td>
                   <td><span class="badge badge-primary">Queued</span></td>
                   <td><a href="404.html" class="btn btn-sm btn-outline">Prioritize</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#ORD-9044</strong></td>
+                  <td>Table 09 (Main Hall)</td>
+                  <td>Steamed Chilean Sea Bass, Garlic Bok Choy</td>
+                  <td>$54.00</td>
+                  <td>Steamer Station</td>
+                  <td><span class="badge badge-warning">Cooking (8m)</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-outline">Expedite</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#ORD-9045</strong></td>
+                  <td>Counter 03 (Chef Bar)</td>
+                  <td>Chef Omakase Flight (12-course tasting)</td>
+                  <td>$165.00</td>
+                  <td>Chef Cold Bar</td>
+                  <td><span class="badge badge-success">In Progress</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-outline">Details</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <div class="dash-section-grid">
-          <div class="dash-card">
-            <h4 class="dash-card-title">Average Preparation Metrics</h4>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 15px;">
-              <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
-                <span style="font-size: 0.8rem; color: var(--text-muted);">Wok & Sauté Average</span>
-                <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">8.2 mins</div>
+        <!-- Section 3: Live Station Dispatch & Load Distribution -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 14px;">Kitchen Workstation Load & Capacity</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px; border-left: 4px solid var(--color-primary);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <strong style="font-size: 0.95rem;">Wok Station 1 & 2</strong>
+                <span class="badge badge-warning">88% Load</span>
               </div>
-              <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
-                <span style="font-size: 0.8rem; color: var(--text-muted);">Steamed Dim Sum Average</span>
-                <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">6.5 mins</div>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 8px;">Lead Chef: Arjun Chen • 6 tickets in fire queue</p>
+              <div style="height: 6px; background: #e0e0e0; border-radius: 4px; overflow: hidden;">
+                <div style="width: 88%; height: 100%; background: var(--color-primary);"></div>
+              </div>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px; border-left: 4px solid #2e7d32;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <strong style="font-size: 0.95rem;">Dim Sum & Steamers</strong>
+                <span class="badge badge-success">45% Load</span>
+              </div>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 8px;">Lead Chef: Lin Wei • 2 baskets active steaming</p>
+              <div style="height: 6px; background: #e0e0e0; border-radius: 4px; overflow: hidden;">
+                <div style="width: 45%; height: 100%; background: #2e7d32;"></div>
+              </div>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px; border-left: 4px solid #1e88e5;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <strong style="font-size: 0.95rem;">Robata Charcoal Grill</strong>
+                <span class="badge badge-primary">60% Load</span>
+              </div>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 8px;">Lead Chef: Kenji Sato • 4 skewers on binchotan</p>
+              <div style="height: 6px; background: #e0e0e0; border-radius: 4px; overflow: hidden;">
+                <div style="width: 60%; height: 100%; background: #1e88e5;"></div>
+              </div>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px; border-left: 4px solid #7b1fa2;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <strong style="font-size: 0.95rem;">Cold Prep & Plating Bar</strong>
+                <span class="badge badge-secondary">30% Load</span>
+              </div>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0 0 8px;">Lead Chef: Priya Nair • Garnish & QC check</p>
+              <div style="height: 6px; background: #e0e0e0; border-radius: 4px; overflow: hidden;">
+                <div style="width: 30%; height: 100%; background: #7b1fa2;"></div>
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Section 4: Takeaway, Curbside & Delivery Logistics -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <div class="dash-card-header">
+            <div>
+              <h4 class="dash-card-title">Takeaway & Delivery Logistics Tracker</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">Packaging verification, rider pickup queue, and thermal bag dispatch.</p>
+            </div>
+            <span class="badge badge-success">8 Orders in Fulfillment</span>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Dispatch #</th>
+                  <th>Customer Name</th>
+                  <th>Channel</th>
+                  <th>Thermal Seal Check</th>
+                  <th>Estimated Pickup</th>
+                  <th>Courier Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#DLV-3101</td>
+                  <td>Marcus Vance</td>
+                  <td>Direct Web Order</td>
+                  <td><span class="badge badge-success">Verified Sealed</span></td>
+                  <td>In 6 mins</td>
+                  <td><span class="badge badge-warning">Rider Arriving</span></td>
+                </tr>
+                <tr>
+                  <td>#DLV-3102</td>
+                  <td>Ananya Sen</td>
+                  <td>Swiggy Priority</td>
+                  <td><span class="badge badge-success">Verified Sealed</span></td>
+                  <td>In 12 mins</td>
+                  <td><span class="badge badge-secondary">Assigned</span></td>
+                </tr>
+                <tr>
+                  <td>#DLV-3103</td>
+                  <td>Corporate Catering Box</td>
+                  <td>Private Van Delivery</td>
+                  <td><span class="badge badge-success">Multi-Box Insulated</span></td>
+                  <td>In 25 mins</td>
+                  <td><span class="badge badge-primary">Loading Dock</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 5: Average Preparation & Station Velocity Metrics -->
+        <div class="dash-section-grid" style="margin-bottom: 24px;">
           <div class="dash-card">
-            <h4 class="dash-card-title">Quick Kitchen Filters</h4>
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
-              <a href="404.html" class="btn btn-secondary btn-sm">Show Only Unfulfilled Orders</a>
-              <a href="404.html" class="btn btn-secondary btn-sm">View Takeaway Deliveries</a>
-              <a href="404.html" class="btn btn-outline btn-sm">Download Daily Ticket Log</a>
+            <h4 class="dash-card-title">Preparation Velocity by Category</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 15px;">
+              <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Wok & Sauté Dishes</span>
+                <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">8.2 mins</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Target: &lt; 10.0m</span>
+              </div>
+              <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Steamed Dim Sum</span>
+                <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">6.5 mins</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Target: &lt; 8.0m</span>
+              </div>
+              <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Artisan Ramen & Broth</span>
+                <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">5.1 mins</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Target: &lt; 6.0m</span>
+              </div>
+              <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Beverages & Desserts</span>
+                <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary);">3.2 mins</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Target: &lt; 4.0m</span>
+              </div>
+            </div>
+          </div>
+          <!-- Section 6: Allergen & Dietary Flagged Orders Monitor -->
+          <div class="dash-card">
+            <h4 class="dash-card-title">Allergen Safety Quarantine</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Active kitchen dietary isolation checks.</p>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+              <div style="padding: 10px 14px; background: #fff3e0; border-radius: 6px; border-left: 3px solid #e65100; font-size: 0.85rem;">
+                <strong>Table 04:</strong> Shellfish severe allergy — dedicated sterilized wok used.
+              </div>
+              <div style="padding: 10px 14px; background: #e8f5e9; border-radius: 6px; border-left: 3px solid #2e7d32; font-size: 0.85rem;">
+                <strong>Booth 08:</strong> Celiac gluten-free tamari and fresh noodle water batch.
+              </div>
+              <div style="padding: 10px 14px; background: #e3f2fd; border-radius: 6px; border-left: 3px solid #1e88e5; font-size: 0.85rem;">
+                <strong>Takeaway #9043:</strong> Nut-free packaging verified by Sous Chef.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 7: Kitchen Expediter Controls & Rapid Bulk Actions -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Kitchen Expediter Controls & Bulk Actions</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="404.html" class="btn btn-secondary btn-sm">Show Only Unfulfilled Orders</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Filter by Wok Stations</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Reprint Expediter Slips</a>
+            <a href="404.html" class="btn btn-outline btn-sm">Export Service Manifest</a>
+            <button class="btn btn-outline btn-sm" onclick="showToast('86 status toggled for low stock dishes.')">Quick 86 Dish Toggle</button>
+            <a href="404.html" class="btn btn-outline btn-sm" style="color: #d32f2f;">Pause Online Takeaway</a>
+          </div>
+        </div>
+
+        <!-- Section 8: Completed Tickets Audit & Shift Revenue Tally -->
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h4 class="dash-card-title">Completed Shift Audit & Financial Tally</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Summary of fulfilled orders for Salem kitchen during active service window.</p>
+            </div>
+            <a href="404.html" class="btn btn-sm btn-outline">Download Daily Ticket Log</a>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px;">
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Fulfilled Tickets</span>
+              <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-top: 4px;">184 Orders</div>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Total Order Gross</span>
+              <div style="font-size: 1.3rem; font-weight: 800; color: #2e7d32; margin-top: 4px;">$6,840.00</div>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Avg. Check Per Ticket</span>
+              <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-top: 4px;">$37.17</div>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Void / Comp Rate</span>
+              <div style="font-size: 1.3rem; font-weight: 800; color: #2e7d32; margin-top: 4px;">0.3% (Clean)</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 3. RESERVATIONS SUBPAGE VIEW (4-5 Sections) -->
+            <!-- 3. RESERVATIONS SUBPAGE VIEW (8 Rich Sections) -->
       <section id="view-reservations" class="dash-view-panel" style="display: none;">
+        <!-- Section 1: Real-Time Floor Occupancy & Seating KPIs -->
+        <div class="dash-section-header" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1.3rem; font-weight: 800;">Dining Room Seating & Table Reservations</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Live floor grid, confirmed guest seatings, waitlist queue, and banquet bookings.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Tables Occupied</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-primary); margin: 6px 0 2px;">22 / 28</div>
+            <span style="font-size: 0.78rem; color: #e65100; font-weight: 600;">78% Dining Room Capacity</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Tonight's Confirmed Covers</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin: 6px 0 2px;">142 Guests</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">↑ 18 more than last week</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Walk-In Waitlist</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #1e88e5; margin: 6px 0 2px;">4 Parties</div>
+            <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Est. wait: 15 mins</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Peak Service Window</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #7b1fa2; margin: 6px 0 2px;">7:00 – 9:00 PM</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">100% Fully Committed</span>
+          </div>
+        </div>
+
+        <!-- Section 2: Dining Room Seating & Reservation Ledger -->
         <div class="dash-card" style="margin-bottom: 24px;">
           <div class="dash-card-header">
             <div>
-              <h3 style="font-size: 1.3rem; font-weight: 800;">Dining Room Seating & Reservation Ledger</h3>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Real-time floor grid and confirmed guest seatings.</p>
+              <h4 class="dash-card-title">Confirmed Reservation Ledger</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Real-time floor grid and confirmed guest seatings for tonight's service.</p>
             </div>
-            <a href="404.html" class="btn btn-primary btn-sm">Book New Table <span class="btn-arrow">→</span></a>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Floor occupancy updated.')">Sync Floor</button>
+              <a href="404.html" class="btn btn-primary btn-sm">Book New Table <span class="btn-arrow">→</span></a>
+            </div>
           </div>
-
           <div class="table-responsive">
             <table class="custom-table">
               <thead>
@@ -241,54 +486,279 @@
                   <th>Time Slot</th>
                   <th>Assigned Table</th>
                   <th>Special Notes</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>#RSV-441</td>
+                  <td><strong>#RSV-441</strong></td>
                   <td>Sarah Jenkins</td>
                   <td>4 Guests</td>
                   <td>7:30 PM</td>
                   <td>Table 04 (Window)</td>
                   <td>Anniversary Celebration</td>
+                  <td><span class="badge badge-success">Seated</span></td>
                   <td><a href="404.html" class="btn btn-sm btn-secondary">Manage</a></td>
                 </tr>
                 <tr>
-                  <td>#RSV-442</td>
+                  <td><strong>#RSV-442</strong></td>
                   <td>David Kim</td>
                   <td>2 Guests</td>
                   <td>8:00 PM</td>
                   <td>Booth 08</td>
                   <td>Gluten-free preference</td>
+                  <td><span class="badge badge-warning">Arrived</span></td>
                   <td><a href="404.html" class="btn btn-sm btn-secondary">Manage</a></td>
                 </tr>
                 <tr>
-                  <td>#RSV-443</td>
+                  <td><strong>#RSV-443</strong></td>
                   <td>Priya Sharma</td>
                   <td>8 Guests</td>
                   <td>8:15 PM</td>
                   <td>VIP Lounge Suite A</td>
                   <td>Chef Tasting Omakase</td>
+                  <td><span class="badge badge-primary">Confirmed</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-secondary">Manage</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#RSV-444</strong></td>
+                  <td>Vikram Mehta</td>
+                  <td>6 Guests</td>
+                  <td>8:30 PM</td>
+                  <td>Table 11 (Center)</td>
+                  <td>Business Dining / Quiet Corner</td>
+                  <td><span class="badge badge-primary">Confirmed</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-secondary">Manage</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#RSV-445</strong></td>
+                  <td>Elena Rostova</td>
+                  <td>2 Guests</td>
+                  <td>9:00 PM</td>
+                  <td>Chef Counter 01</td>
+                  <td>Sommelier Wine Flight Pairing</td>
+                  <td><span class="badge badge-secondary">Pending Arrival</span></td>
                   <td><a href="404.html" class="btn btn-sm btn-secondary">Manage</a></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-      </section>
 
-      <!-- 4. MENU INVENTORY SUBPAGE VIEW -->
-      <section id="view-menu-inventory" class="dash-view-panel" style="display: none;">
+        <!-- Section 3: Interactive Floor Zone Visual Map -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 14px;">Dining Room Section Allocation</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong style="display: block; margin-bottom: 4px;">Main Dining Hall (Tables 1-12)</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Occupancy: 10 / 12 Tables</span>
+              <div style="font-size: 1.2rem; font-weight: 800; color: #2e7d32; margin-top: 6px;">83% Full</div>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong style="display: block; margin-bottom: 4px;">Window Garden Terrace (Tables 13-18)</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Occupancy: 6 / 6 Tables</span>
+              <div style="font-size: 1.2rem; font-weight: 800; color: #d32f2f; margin-top: 6px;">100% Full</div>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong style="display: block; margin-bottom: 4px;">Bamboo VIP Suites (Suites A-C)</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Occupancy: 2 / 3 Suites</span>
+              <div style="font-size: 1.2rem; font-weight: 800; color: #1e88e5; margin-top: 6px;">Suite B Available</div>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong style="display: block; margin-bottom: 4px;">Chef's Omakase Counter (Seats 1-8)</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Occupancy: 6 / 8 Seats</span>
+              <div style="font-size: 1.2rem; font-weight: 800; color: var(--color-primary); margin-top: 6px;">2 Seats Left</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: VIP Guest Profiles & Special Occasion Registry -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">VIP Society Patrons & Special Occasions Tonight</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px; border-left: 3px solid #ffb300;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <strong>Sarah Jenkins (Gold Society)</strong>
+                <span class="badge badge-warning">Anniversary</span>
+              </div>
+              <p style="font-size: 0.83rem; color: var(--text-secondary); margin: 0;">18th dining visit. Complimentary house Champagne toast prepared by sommelier.</p>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px; border-left: 3px solid #7b1fa2;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <strong>Priya Sharma (Corporate Partner)</strong>
+                <span class="badge badge-primary">Private Omakase</span>
+              </div>
+              <p style="font-size: 0.83rem; color: var(--text-secondary); margin: 0;">Executive Director, Apex Innovations. Tasting menu customized for dairy intolerance.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5: Live Waitlist & Walk-In Turnstile Queue -->
         <div class="dash-card" style="margin-bottom: 24px;">
           <div class="dash-card-header">
             <div>
-              <h3 style="font-size: 1.3rem; font-weight: 800;">Chef Menu Availability & Cold-Chain Stock</h3>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Live dish toggles and ingredient thresholds.</p>
+              <h4 class="dash-card-title">Live Walk-In Waitlist Queue</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Buzzer tracking and SMS table readiness notifications.</p>
             </div>
-            <a href="404.html" class="btn btn-secondary btn-sm">Update Stock Quantities</a>
+            <button class="btn btn-secondary btn-sm" onclick="showToast('New waitlist party added.')">Add Walk-In Party</button>
           </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Queue #</th>
+                  <th>Guest Name</th>
+                  <th>Party</th>
+                  <th>Quoted Wait</th>
+                  <th>Buzzer #</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#WL-01</td>
+                  <td>Rohit Verma</td>
+                  <td>2 Guests</td>
+                  <td>~10 mins</td>
+                  <td>Pager 04</td>
+                  <td><span class="badge badge-warning">Buzzer Alerted</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-primary">Seat Table</a></td>
+                </tr>
+                <tr>
+                  <td>#WL-02</td>
+                  <td>Clara Hughes</td>
+                  <td>4 Guests</td>
+                  <td>~18 mins</td>
+                  <td>Pager 09</td>
+                  <td><span class="badge badge-secondary">Waiting in Lounge</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-outline">Notify SMS</a></td>
+                </tr>
+                <tr>
+                  <td>#WL-03</td>
+                  <td>Karthik Sundaram</td>
+                  <td>3 Guests</td>
+                  <td>~25 mins</td>
+                  <td>Pager 12</td>
+                  <td><span class="badge badge-secondary">Waiting in Lounge</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-outline">Notify SMS</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
+        <!-- Section 6: Table Turnover Velocity & Sanitization Tracking -->
+        <div class="dash-section-grid" style="margin-bottom: 24px;">
+          <div class="dash-card">
+            <h4 class="dash-card-title">Table Dining Duration by Size</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 15px;">
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">2-Top Tables</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">52 mins</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Optimal turnover</span>
+              </div>
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">4-Top Tables</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">74 mins</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Within standard window</span>
+              </div>
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Banquet Parties (8+)</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">110 mins</div>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">3-course pacing</span>
+              </div>
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Bussing & Reset Speed</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: #2e7d32;">4.8 mins</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">High efficiency</span>
+              </div>
+            </div>
+          </div>
+          <!-- Section 7: Upcoming Shift Bookings & 7-Day Demand Forecast -->
+          <div class="dash-card">
+            <h4 class="dash-card-title">7-Day Forward Seating Outlook</h4>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.86rem; padding-bottom: 6px; border-bottom: 1px solid var(--border-subtle);">
+                <span>Tomorrow (Tuesday)</span>
+                <strong>112 Covers (80%)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.86rem; padding-bottom: 6px; border-bottom: 1px solid var(--border-subtle);">
+                <span>Wednesday Dinner</span>
+                <strong>128 Covers (91%)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.86rem; padding-bottom: 6px; border-bottom: 1px solid var(--border-subtle);">
+                <span>Thursday Dinner</span>
+                <strong>136 Covers (97%)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.86rem; padding-bottom: 6px; border-bottom: 1px solid var(--border-subtle);">
+                <span>Friday Dinner</span>
+                <strong style="color: #d32f2f;">180 Covers (Sold Out)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.86rem;">
+                <span>Saturday Tasting Event</span>
+                <strong style="color: #d32f2f;">195 Covers (Waitlist)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 8: Reservation Policies & Floor Management Settings -->
+        <div class="dash-card">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Reservation Protocol & Hold Controls</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="404.html" class="btn btn-secondary btn-sm">Configure Grace Period (15m)</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Set Large Group Minimum Spend</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Blackout Dates Manager</a>
+            <a href="404.html" class="btn btn-outline btn-sm">Print Nightly Floor Chart</a>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Auto-table assignment recomputed.')">Run Table Auto-Solver</button>
+          </div>
+        </div>
+      </section>
+
+            <!-- 4. MENU INVENTORY SUBPAGE VIEW (8 Rich Sections) -->
+      <section id="view-menu-inventory" class="dash-view-panel" style="display: none;">
+        <!-- Section 1: Inventory Health & Stock Summary Cards -->
+        <div class="dash-section-header" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1.3rem; font-weight: 800;">Chef Menu Availability & Cold-Chain Inventory</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Live dish availability toggles, IoT cold-chain temperature telemetry, and farm batch manifests.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Active Menu Dishes</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-primary); margin: 6px 0 2px;">64 Items</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">● Full menu active</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Low Stock Warning</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #e65100; margin: 6px 0 2px;">3 Ingredients</div>
+            <span style="font-size: 0.78rem; color: #e65100; font-weight: 600;">Chilean Bass, Truffle Oil, Wagyu</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">86'd / Unavailable</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #d32f2f; margin: 6px 0 2px;">1 Dish</div>
+            <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">Taro Ice Cream Float</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Cold-Chain Compliance</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #2e7d32; margin: 6px 0 2px;">100% Verified</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">HACCP sensor check passed</span>
+          </div>
+        </div>
+
+        <!-- Section 2: Live Dish Availability & Daily Portion Ledger -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <div class="dash-card-header">
+            <div>
+              <h4 class="dash-card-title">Live Menu Dish Portions & Availability</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Real-time remaining portions tracked by kitchen pass scanner.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Inventory synchronizing with POS.')">Sync Stock</button>
+              <a href="404.html" class="btn btn-secondary btn-sm">Update Stock Quantities</a>
+            </div>
+          </div>
           <div class="table-responsive">
             <table class="custom-table">
               <thead>
@@ -326,67 +796,503 @@
                   <td><span class="badge badge-success">In Stock</span></td>
                   <td><a href="404.html" class="btn btn-sm btn-outline">Edit Dish</a></td>
                 </tr>
+                <tr>
+                  <td><strong>Spicy Dan Dan Noodles</strong></td>
+                  <td>Wok Specials</td>
+                  <td>$19.50</td>
+                  <td>55 portions</td>
+                  <td><span class="badge badge-success">In Stock</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-outline">Edit Dish</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Smoked Taro Float</strong></td>
+                  <td>Dessert Bar</td>
+                  <td>$12.00</td>
+                  <td>0 portions</td>
+                  <td><span class="badge badge-secondary" style="color: #d32f2f;">86'd</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-primary">Enable</a></td>
+                </tr>
               </tbody>
             </table>
           </div>
         </div>
-      </section>
 
-      <!-- 5. ANALYTICS SUBPAGE VIEW -->
-      <section id="view-analytics" class="dash-view-panel" style="display: none;">
+        <!-- Section 3: Cold-Chain Walk-In Freezers & Temperature Telemetry -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 14px;">IoT Cold-Chain Storage Telemetry</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Meat & Poultry Walk-in</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #2e7d32; margin: 4px 0;">0.8 °C</div>
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Safe range: 0.0 – 2.0 °C</span>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Seafood Deep Cold Vault</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #2e7d32; margin: 4px 0;">-2.2 °C</div>
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Safe range: -4.0 – 0.0 °C</span>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Farm Produce Chiller</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #2e7d32; margin: 4px 0;">3.4 °C</div>
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Safe range: 2.0 – 5.0 °C</span>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Artisan Wine & Sake Cellar</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #1e88e5; margin: 4px 0;">16.5 °C</div>
+              <span style="font-size: 0.75rem; color: var(--text-secondary);">Controlled humidity 65%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Critical Ingredient Low-Stock Reorder Triggers -->
         <div class="dash-card" style="margin-bottom: 24px;">
           <div class="dash-card-header">
-            <h3 style="font-size: 1.3rem; font-weight: 800;">Executive Performance & Revenue Analytics</h3>
-            <a href="404.html" class="btn btn-secondary btn-sm">Download CSV Audit</a>
+            <div>
+              <h4 class="dash-card-title">Critical Raw Ingredient Par Thresholds</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Automated purchase order recommendations triggered by minimum par triggers.</p>
+            </div>
+            <a href="404.html" class="btn btn-secondary btn-sm">Draft All Vendor POs</a>
           </div>
-          <p style="color: var(--text-secondary); margin-bottom: 20px;">
-            Comprehensive telemetry on ticket turnaround times, patron retention rates, and daily gross profit margins.
-          </p>
-          <div style="height: 220px; background: var(--bg-surface-alt); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--text-secondary);">
-            Interactive Revenue Chart Rendered Active
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <div style="padding: 16px; background: #fff8e1; border-radius: 8px; border-left: 3px solid #ffb300;">
+              <strong>Chilean Sea Bass Fillets: 8 portions left</strong>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 6px 0 10px;">Purveyor: Ocean Catch Fresh Seafood. Minimum Par: 20 portions.</p>
+              <a href="404.html" class="btn btn-sm btn-primary">Dispatch PO #PO-8821</a>
+            </div>
+            <div style="padding: 16px; background: #fff8e1; border-radius: 8px; border-left: 3px solid #ffb300;">
+              <strong>Black Truffle Infused Sesame Oil: 2 bottles left</strong>
+              <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 6px 0 10px;">Purveyor: Tokyo Imports Pantry. Minimum Par: 6 bottles.</p>
+              <a href="404.html" class="btn btn-sm btn-primary">Dispatch PO #PO-8822</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5: Salem Organic Farm Sourcing Manifests & Batch Quality -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Farm-to-Kitchen Morning Receiving Log</h4>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Manifest #</th>
+                  <th>Farm Supplier</th>
+                  <th>Batch Description</th>
+                  <th>Quantity Received</th>
+                  <th>QC Inspection</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#MAN-881</td>
+                  <td>Salem Organic Farms</td>
+                  <td>Baby Bok Choy & Asian Greens</td>
+                  <td>25.0 kg</td>
+                  <td>Grade A (Zero chemical residue)</td>
+                  <td><span class="badge badge-success">Accepted & Chilled</span></td>
+                </tr>
+                <tr>
+                  <td>#MAN-882</td>
+                  <td>Yercaud Mushroom Cultivars</td>
+                  <td>King Oyster & Shimeji Mushrooms</td>
+                  <td>18.0 kg</td>
+                  <td>Grade A (Crisp & Dry)</td>
+                  <td><span class="badge badge-success">Accepted & Chilled</span></td>
+                </tr>
+                <tr>
+                  <td>#MAN-883</td>
+                  <td>Coimbatore Organic Mills</td>
+                  <td>Wood-Pressed Groundnut & Sesame Oils</td>
+                  <td>50 Liters</td>
+                  <td>100% Cold-Pressed Certificate</td>
+                  <td><span class="badge badge-success">Storage Placed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 6: Recipe Costing & Food Waste Analytics -->
+        <div class="dash-section-grid" style="margin-bottom: 24px;">
+          <div class="dash-card">
+            <h4 class="dash-card-title">Food Cost & Margin Breakdown</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 15px;">
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Overall Food Cost</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: #2e7d32;">28.4%</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Target: &lt; 30.0%</span>
+              </div>
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Contribution Margin</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">71.6%</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">High profitability</span>
+              </div>
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Daily Trim Scraps</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">3.2 kg</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Re-simmered into broths</span>
+              </div>
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Kitchen Yield Index</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: #2e7d32;">96.8%</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Zero food waste target</span>
+              </div>
+            </div>
+          </div>
+          <!-- Section 7: Seasonal Menu Specials Sandbox -->
+          <div class="dash-card">
+            <h4 class="dash-card-title">Chef Tasting Experimental Lab</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Dishes currently undergoing test trials.</p>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;">
+              <div style="padding: 12px; background: var(--bg-surface-alt); border-radius: 6px;">
+                <strong>Smoked Tea Duck Bao</strong>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 4px 0 0;">Food Cost: $4.20 • Proposed Price: $18.00 • Margin: 76.6%</p>
+              </div>
+              <div style="padding: 12px; background: var(--bg-surface-alt); border-radius: 6px;">
+                <strong>Charred Scallop Carpaccio</strong>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 4px 0 0;">Food Cost: $6.80 • Proposed Price: $24.00 • Margin: 71.6%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 8: Supplier Vendor Directory & Auto-Replenishment Rules -->
+        <div class="dash-card">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Accredited Purveyor Directory & Par Rules</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="404.html" class="btn btn-secondary btn-sm">Ocean Catch Fresh Seafood (Call Supplier)</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Salem Organic Farms (Delivery Status)</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Tokyo Imports Pantry (Order Inbound)</a>
+            <a href="404.html" class="btn btn-outline btn-sm">Export Full Stock CSV</a>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Auto-reorder rules evaluated.')">Run Par Rule Check</button>
           </div>
         </div>
       </section>
 
-      <!-- 6. ALERTS & KITCHEN NOTIFICATIONS SUBPAGE VIEW -->
-      <section id="view-notifications" class="dash-view-panel" style="display: none;">
+            <!-- 5. ANALYTICS SUBPAGE VIEW (8 Rich Sections) -->
+      <section id="view-analytics" class="dash-view-panel" style="display: none;">
+        <!-- Section 1: Topline Financial Performance & Revenue KPIs -->
+        <div class="dash-section-header" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1.3rem; font-weight: 800;">Executive Performance & Revenue Telemetry</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Gross earnings, average cover spend, category profit margins, and labor efficiency analytics.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Today's Gross Sales</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #2e7d32; margin: 6px 0 2px;">$8,420.50</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">↑ 14.2% vs. last Monday</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Monthly Projected Run-Rate</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-primary); margin: 6px 0 2px;">$214,800</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">Exceeding Q4 Target by 8%</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Average Spend Per Cover</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: var(--text-primary); margin: 6px 0 2px;">$58.40</div>
+            <span style="font-size: 0.78rem; color: #1e88e5; font-weight: 600;">Beverage attach: 38%</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Operating Margin</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #7b1fa2; margin: 6px 0 2px;">24.2%</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">High industry benchmark</span>
+          </div>
+        </div>
+
+        <!-- Section 2: Interactive Revenue Trend & Sales Velocity Chart -->
         <div class="dash-card" style="margin-bottom: 24px;">
           <div class="dash-card-header">
             <div>
-              <h3 style="font-size: 1.3rem; font-weight: 800;">Real-Time Operational Alerts & Activity Feed</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Live event log covering seating updates, kitchen stock thresholds, and supply vendor manifests.</p>
+              <h4 class="dash-card-title">Weekly Revenue Trajectory (Dinner vs. Lunch)</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Real-time aggregated sales across floor dining and takeaway channels.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <span class="badge badge-success">● Dinner Rush</span>
+              <span class="badge badge-primary">● Lunch Specials</span>
+            </div>
+          </div>
+          <!-- SVG Trend Chart -->
+          <div style="padding: 10px 0;">
+            <svg viewBox="0 0 700 180" style="width: 100%; height: auto; display: block;" aria-label="Weekly Revenue Chart">
+              <line x1="50" y1="30" x2="680" y2="30" stroke="#eee" stroke-width="1" />
+              <line x1="50" y1="80" x2="680" y2="80" stroke="#eee" stroke-width="1" />
+              <line x1="50" y1="130" x2="680" y2="130" stroke="#eee" stroke-width="1" />
+              <!-- Monday to Sunday Bars -->
+              <!-- Mon -->
+              <rect x="75" y="85" width="28" height="65" fill="#fecb38" rx="4"/>
+              <rect x="108" y="45" width="28" height="105" fill="#c0392b" rx="4"/>
+              <!-- Tue -->
+              <rect x="160" y="80" width="28" height="70" fill="#fecb38" rx="4"/>
+              <rect x="193" y="40" width="28" height="110" fill="#c0392b" rx="4"/>
+              <!-- Wed -->
+              <rect x="245" y="75" width="28" height="75" fill="#fecb38" rx="4"/>
+              <rect x="278" y="35" width="28" height="115" fill="#c0392b" rx="4"/>
+              <!-- Thu -->
+              <rect x="330" y="70" width="28" height="80" fill="#fecb38" rx="4"/>
+              <rect x="363" y="30" width="28" height="120" fill="#c0392b" rx="4"/>
+              <!-- Fri -->
+              <rect x="415" y="60" width="28" height="90" fill="#fecb38" rx="4"/>
+              <rect x="448" y="15" width="28" height="135" fill="#c0392b" rx="4"/>
+              <!-- Sat -->
+              <rect x="500" y="50" width="28" height="100" fill="#fecb38" rx="4"/>
+              <rect x="533" y="10" width="28" height="140" fill="#c0392b" rx="4"/>
+              <!-- Sun -->
+              <rect x="585" y="65" width="28" height="85" fill="#fecb38" rx="4"/>
+              <rect x="618" y="25" width="28" height="125" fill="#c0392b" rx="4"/>
+              <!-- Day labels -->
+              <text x="105" y="168" font-size="11" text-anchor="middle" fill="#888">Mon</text>
+              <text x="190" y="168" font-size="11" text-anchor="middle" fill="#888">Tue</text>
+              <text x="275" y="168" font-size="11" text-anchor="middle" fill="#888">Wed</text>
+              <text x="360" y="168" font-size="11" text-anchor="middle" fill="#888">Thu</text>
+              <text x="445" y="168" font-size="11" text-anchor="middle" fill="#888">Fri</text>
+              <text x="530" y="168" font-size="11" text-anchor="middle" fill="#888">Sat</text>
+              <text x="615" y="168" font-size="11" text-anchor="middle" fill="#888">Sun</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Section 3: Culinary Category Sales Mix & Contribution Margin -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 16px;">Sales Mix by Menu Division</h4>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                <strong>Wok & Signature Entrees (44%)</strong>
+                <span style="color: #2e7d32; font-weight: 700;">$3,704.80 gross</span>
+              </div>
+              <div style="height: 8px; background: #eee; border-radius: 4px; overflow: hidden;">
+                <div style="width: 44%; height: 100%; background: var(--color-primary);"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                <strong>Artisan Ramen & Hand-Pulled Noodles (26%)</strong>
+                <span style="color: #2e7d32; font-weight: 700;">$2,189.20 gross</span>
+              </div>
+              <div style="height: 8px; background: #eee; border-radius: 4px; overflow: hidden;">
+                <div style="width: 26%; height: 100%; background: #e65100;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                <strong>Dim Sum Baskets & Small Plates (16%)</strong>
+                <span style="color: #2e7d32; font-weight: 700;">$1,347.20 gross</span>
+              </div>
+              <div style="height: 8px; background: #eee; border-radius: 4px; overflow: hidden;">
+                <div style="width: 16%; height: 100%; background: #2e7d32;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 4px;">
+                <strong>Artisan Cocktails & Sommelier Cellar (14%)</strong>
+                <span style="color: #2e7d32; font-weight: 700;">$1,178.80 gross</span>
+              </div>
+              <div style="height: 8px; background: #eee; border-radius: 4px; overflow: hidden;">
+                <div style="width: 14%; height: 100%; background: #7b1fa2;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Hourly Footfall & Dining Peak Service Heatmap -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 14px;">Hourly Service Volume & Turnaround</h4>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Service Hour</th>
+                  <th>Covers Seated</th>
+                  <th>Ticket Velocity</th>
+                  <th>Avg. Check</th>
+                  <th>Revenue Contribution</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>12:00 PM – 1:30 PM (Lunch Rush)</td>
+                  <td>64 Guests</td>
+                  <td>6.2 mins</td>
+                  <td>$32.50</td>
+                  <td>$2,080.00</td>
+                </tr>
+                <tr>
+                  <td>2:00 PM – 5:00 PM (Tea & Dim Sum)</td>
+                  <td>28 Guests</td>
+                  <td>5.5 mins</td>
+                  <td>$24.00</td>
+                  <td>$672.00</td>
+                </tr>
+                <tr>
+                  <td>7:00 PM – 9:00 PM (Dinner Peak)</td>
+                  <td>110 Guests</td>
+                  <td>8.4 mins</td>
+                  <td>$68.20</td>
+                  <td>$7,502.00</td>
+                </tr>
+                <tr>
+                  <td>9:30 PM – 11:00 PM (Late Night Tasting)</td>
+                  <td>36 Guests</td>
+                  <td>7.1 mins</td>
+                  <td>$45.00</td>
+                  <td>$1,620.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 5: Top 5 Highest Performing Dishes vs. Underperformers -->
+        <div class="dash-section-grid" style="margin-bottom: 24px;">
+          <div class="dash-card">
+            <h4 class="dash-card-title">Top 3 Revenue Drivers</h4>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px;">
+              <div style="padding: 12px; background: var(--bg-surface-alt); border-radius: 6px; display: flex; justify-content: space-between;">
+                <div>
+                  <strong>1. Crispy Corn Chicken</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">142 orders sold • 78% margin</span>
+                </div>
+                <strong style="color: #2e7d32;">$3,195.00</strong>
+              </div>
+              <div style="padding: 12px; background: var(--bg-surface-alt); border-radius: 6px; display: flex; justify-content: space-between;">
+                <div>
+                  <strong>2. Artisan Wagyu Ramen</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">98 orders sold • 72% margin</span>
+                </div>
+                <strong style="color: #2e7d32;">$2,597.00</strong>
+              </div>
+              <div style="padding: 12px; background: var(--bg-surface-alt); border-radius: 6px; display: flex; justify-content: space-between;">
+                <div>
+                  <strong>3. Steamed Chilean Sea Bass</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">64 orders sold • 68% margin</span>
+                </div>
+                <strong style="color: #2e7d32;">$2,048.00</strong>
+              </div>
+            </div>
+          </div>
+          <!-- Section 6: Labor Cost Ratio & Floor Staff Productivity -->
+          <div class="dash-card">
+            <h4 class="dash-card-title">Labor & Productivity Metrics</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 15px;">
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Labor Cost %</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: #2e7d32;">26.8%</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">Under 30% cap</span>
+              </div>
+              <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Sales / Labor Hr</span>
+                <div style="font-size: 1.3rem; font-weight: 800; color: var(--text-primary);">$112.50</div>
+                <span style="font-size: 0.75rem; color: #2e7d32;">High efficiency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 7: Customer Acquisition & Society Loyalty Funnel -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Loyalty Retention & Society Growth</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">New Society Members</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary); margin-top: 4px;">28 Patrons</div>
+              <span style="font-size: 0.75rem; color: #2e7d32;">+12% vs. monthly goal</span>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Repeat Dining Rate</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #2e7d32; margin-top: 4px;">68% Return</div>
+              <span style="font-size: 0.75rem; color: #2e7d32;">Avg. frequency: 2.4x / mo</span>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">Digital Promo Redemption</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #1e88e5; margin-top: 4px;">92.4%</div>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">From culinary newsletters</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 8: Financial Audit & Statement Export Center -->
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <div>
+              <h4 class="dash-card-title">Financial Audit & Accounting Export Center</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Reconciliation exports formatted for QuickBooks, Xero, and corporate tax filings.</p>
+            </div>
+            <a href="404.html" class="btn btn-secondary btn-sm">Download CSV Audit</a>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="404.html" class="btn btn-outline btn-sm">Export Daily POS CSV</a>
+            <a href="404.html" class="btn btn-outline btn-sm">QuickBooks Ledger Sync</a>
+            <a href="404.html" class="btn btn-outline btn-sm">Card Settlement Reconciliation</a>
+            <a href="404.html" class="btn btn-outline btn-sm">GST Tax Summary PDF</a>
+          </div>
+        </div>
+      </section>
+
+            <!-- 6. ALERTS & KITCHEN NOTIFICATIONS SUBPAGE VIEW (8 Rich Sections) -->
+      <section id="view-notifications" class="dash-view-panel" style="display: none;">
+        <!-- Section 1: Notification Center Priority Overview -->
+        <div class="dash-section-header" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1.3rem; font-weight: 800;">Real-Time Operational Alerts & Activity Feed</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Live operational warnings, food safety milestones, supplier delivery logs, and VIP service alerts.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Critical Alerts</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #d32f2f; margin: 6px 0 2px;">2 Urgent</div>
+            <span style="font-size: 0.78rem; color: #d32f2f; font-weight: 600;">Immediate action required</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Stock Par Triggers</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #e65100; margin: 6px 0 2px;">4 Active</div>
+            <span style="font-size: 0.78rem; color: #e65100; font-weight: 600;">POs drafted for dispatch</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Guest Service Pings</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #1e88e5; margin: 6px 0 2px;">3 Tables</div>
+            <span style="font-size: 0.78rem; color: #1e88e5; font-weight: 600;">Floor staff attending</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">System Health</span>
+            <div style="font-size: 1.8rem; font-weight: 800; color: #2e7d32; margin: 6px 0 2px;">100% Online</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">POS, KDS, & IoT Synced</span>
+          </div>
+        </div>
+
+        <!-- Section 2: Real-Time Operational Alerts & Activity Stream -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <div class="dash-card-header">
+            <div>
+              <h4 class="dash-card-title">Live Chronological Event Stream</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Filterable log across seating, inventory, kitchen dispatch, and supply manifests.</p>
             </div>
             <button class="btn btn-secondary btn-sm" onclick="showToast('All notifications marked as read.')">Mark All as Read</button>
           </div>
-
-          <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 15px;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
             <div style="background: var(--bg-surface-alt); padding: 16px 20px; border-radius: var(--radius-md); border-left: 4px solid var(--color-primary); display: flex; justify-content: space-between; align-items: center; gap: 16px;">
               <div style="display: flex; gap: 14px; align-items: center;">
                 <span style="font-size: 1.4rem;">🚨</span>
                 <div>
-                  <h4 style="font-size: 0.95rem; margin-bottom: 3px;">Fresh Catch Low Inventory Alert</h4>
+                  <h5 style="font-size: 0.95rem; margin-bottom: 3px;">Fresh Catch Low Inventory Alert</h5>
                   <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Chilean Sea Bass remaining inventory reached 8 portions. Automatic vendor PO #PO-8821 drafted.</p>
                 </div>
               </div>
               <span style="font-size: 0.8rem; color: var(--text-secondary); white-space: nowrap;">4 mins ago</span>
             </div>
-
-            <div style="background: var(--bg-surface-alt); padding: 16px 20px; border-radius: var(--radius-md); border-left: 4px solid #2E7D32; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+            <div style="background: var(--bg-surface-alt); padding: 16px 20px; border-radius: var(--radius-md); border-left: 4px solid #2e7d32; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
               <div style="display: flex; gap: 14px; align-items: center;">
                 <span style="font-size: 1.4rem;">🥦</span>
                 <div>
-                  <h4 style="font-size: 0.95rem; margin-bottom: 3px;">Salem Organic Farm Fresh Delivery Confirmed</h4>
+                  <h5 style="font-size: 0.95rem; margin-bottom: 3px;">Salem Organic Farm Fresh Delivery Confirmed</h5>
                   <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Morning batch of organic baby bok choy and baby king oyster mushrooms received and inspected at cold prep station.</p>
                 </div>
               </div>
               <span style="font-size: 0.8rem; color: var(--text-secondary); white-space: nowrap;">28 mins ago</span>
             </div>
-
-            <div style="background: var(--bg-surface-alt); padding: 16px 20px; border-radius: var(--radius-md); border-left: 4px solid #1E88E5; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+            <div style="background: var(--bg-surface-alt); padding: 16px 20px; border-radius: var(--radius-md); border-left: 4px solid #1e88e5; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
               <div style="display: flex; gap: 14px; align-items: center;">
                 <span style="font-size: 1.4rem;">⭐</span>
                 <div>
-                  <h4 style="font-size: 0.95rem; margin-bottom: 3px;">VIP Omakase Table Seated at Chef's Counter</h4>
+                  <h5 style="font-size: 0.95rem; margin-bottom: 3px;">VIP Omakase Table Seated at Chef's Counter</h5>
                   <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Party of 4 (Jenkins Reservation) seated at Counter 1. Sommelier flight pairing requested.</p>
                 </div>
               </div>
@@ -394,72 +1300,508 @@
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- 7. CONCIERGE & SUPPORT SUBPAGE VIEW -->
-      <section id="view-support" class="dash-view-panel" style="display: none;">
+        <!-- Section 3: Kitchen & Health Safety Compliance Alerts -->
         <div class="dash-card" style="margin-bottom: 24px;">
-          <div class="dash-card-header">
-            <div>
-              <h3 style="font-size: 1.3rem; font-weight: 800;">Concierge Support & Supplier Helpdesk</h3>
-              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">Direct support channel for patrons, floor staff, and accredited food supply partners.</p>
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Kitchen HACCP & Sanitation Verification</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
+            <div style="padding: 14px; background: #e8f5e9; border-radius: 8px; border-left: 3px solid #2e7d32;">
+              <strong>Deep Fryer Oil Quality Test: Passed</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 4px 0 0;">TPM Level: 14.2% (Pure organic cold-pressed peanut oil)</p>
             </div>
-            <span class="badge badge-success">Live Concierge Online</span>
+            <div style="padding: 14px; background: #e8f5e9; border-radius: 8px; border-left: 3px solid #2e7d32;">
+              <strong>Sanitization Rinse Station: 200 PPM Active</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 4px 0 0;">Chlorine strip test verified by Station Lead 2</p>
+            </div>
+            <div style="padding: 14px; background: #e8f5e9; border-radius: 8px; border-left: 3px solid #2e7d32;">
+              <strong>Exhaust Hood Ventilation: 100% CFM</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 4px 0 0;">Fire suppression safety dampers armed</p>
+            </div>
           </div>
+        </div>
 
-          <div class="about-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 20px;">
-            <div style="background: var(--bg-surface-alt); padding: 20px; border-radius: var(--radius-md);">
-              <h4 style="margin-bottom: 10px;">Immediate Kitchen & Reservation Hotline</h4>
-              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;">For urgent table modifications, large banquet arrangements, or immediate vendor dispatch:</p>
-              <div style="font-weight: 700; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 8px;">+91 9876543210</div>
-              <p style="font-size: 0.8rem; color: var(--text-secondary);">Direct dispatch available daily 9:00 AM – 11:30 PM IST</p>
-            </div>
+        <!-- Section 4: Live Table Service & Waitstaff Call Pings -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Floor Service Assistance Requests</h4>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Table #</th>
+                  <th>Assigned Server</th>
+                  <th>Request Details</th>
+                  <th>Wait Time</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Table 04</strong></td>
+                  <td>Elena Gomez</td>
+                  <td>Dessert menu & sommelier recommendation</td>
+                  <td>1.5 mins</td>
+                  <td><button class="btn btn-sm btn-primary" onclick="showToast('Server acknowledged Table 04 request.')">Acknowledge</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Booth 08</strong></td>
+                  <td>Kenji Sato</td>
+                  <td>Water carafe refill & check split request</td>
+                  <td>2.8 mins</td>
+                  <td><button class="btn btn-sm btn-primary" onclick="showToast('Server acknowledged Booth 08 request.')">Acknowledge</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-            <div style="background: var(--bg-surface-alt); padding: 20px; border-radius: var(--radius-md);">
-              <h4 style="margin-bottom: 10px;">Submit a Support or Inquiry Ticket</h4>
-              <form onsubmit="event.preventDefault(); showToast('Your inquiry ticket has been submitted to Concierge!'); this.reset();">
-                <div class="form-group" style="margin-bottom: 12px;">
-                  <label class="form-label" style="font-size: 0.82rem;">Subject Category</label>
-                  <select class="form-control" style="font-size: 0.85rem; padding: 8px 12px;" required>
-                    <option value="">Select subject</option>
-                    <option value="reservation">Table Reservation Modification</option>
-                    <option value="dietary">Custom Dietary / Sommelier Request</option>
-                    <option value="vendor">Vendor Invoice or Supply Manifest</option>
-                    <option value="billing">Corporate Account Billing</option>
-                  </select>
-                </div>
-                <div class="form-group" style="margin-bottom: 14px;">
-                  <label class="form-label" style="font-size: 0.82rem;">Message / Details</label>
-                  <textarea class="form-control" rows="3" style="font-size: 0.85rem;" placeholder="Describe your request..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-sm" style="width: 100%;">Submit Ticket <span class="btn-arrow">→</span></button>
-              </form>
+        <!-- Section 5: Inbound Supplier Deliveries & Logistics Tracking -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Inbound Supplier Freight Status</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Ocean Catch Refrigerated Van</strong>
+              <span style="display: block; font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">Dock 2 Unloading • 40 kg Sashimi Grade Tuna & Bass</span>
+              <span class="badge badge-success" style="margin-top: 6px;">At Gate</span>
             </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Tokyo Imports Specialty Pantry</strong>
+              <span style="display: block; font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px;">In Transit • ETA 18 mins • Artisan Miso & Dashi</span>
+              <span class="badge badge-warning" style="margin-top: 6px;">En Route</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 6: Staff Shift Check-Ins & Floor Roster Alerts -->
+        <div class="dash-section-grid" style="margin-bottom: 24px;">
+          <div class="dash-card">
+            <h4 class="dash-card-title">Staff On-Duty Roster</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px; font-size: 0.88rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span>Executive Chef David Zhang</span>
+                <span class="badge badge-success">On Duty (Station 1)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Sous-Chef Elena Gomez</span>
+                <span class="badge badge-success">On Duty (Expediter)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Head Sommelier Marcus Cole</span>
+                <span class="badge badge-success">On Duty (Lounge)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Floor Captain Priya Sharma</span>
+                <span class="badge badge-success">On Duty (Main Hall)</span>
+              </div>
+            </div>
+          </div>
+          <!-- Section 7: Security, POS Drawer & Cash Float Reconciliation -->
+          <div class="dash-card">
+            <h4 class="dash-card-title">Register Drawer Reconciliation</h4>
+            <div style="margin-top: 12px; font-size: 0.88rem;">
+              <p style="margin-bottom: 8px;"><strong>POS Till #1:</strong> $450.00 Float Verified</p>
+              <p style="margin-bottom: 8px;"><strong>POS Till #2:</strong> $450.00 Float Verified</p>
+              <p style="margin-bottom: 12px; color: #2e7d32;"><strong>Daily Over/Short:</strong> $0.00 (Balanced)</p>
+              <button class="btn btn-outline btn-sm" onclick="showToast('Drawer count logged in ledger.')">Print Drawer Audit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 8: Notification Delivery Preferences & Dispatch Filters -->
+        <div class="dash-card">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Alert Escalation & Push Channels</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <button class="btn btn-secondary btn-sm" onclick="showToast('SMS alerts enabled for critical events.')">SMS Critical Alarms: ON</button>
+            <button class="btn btn-secondary btn-sm" onclick="showToast('Desktop push enabled.')">Desktop Notifications: ON</button>
+            <button class="btn btn-outline btn-sm" onclick="showToast('Sound chime muted.')">Chime Sound: ACTIVE</button>
+            <a href="404.html" class="btn btn-outline btn-sm">Configure Escalation Hierarchy</a>
           </div>
         </div>
       </section>
 
-      <!-- 8. SETTINGS SUBPAGE VIEW -->
-      <section id="view-settings" class="dash-view-panel" style="display: none;">
-        <div class="dash-card" style="max-width: 700px;">
-          <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 8px;">Portal & Dining Preferences</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;">Update profile details, notification preferences, and dietary alerts.</p>
-          
-          <form onsubmit="event.preventDefault(); showToast('Settings saved successfully!');">
-            <div class="form-group">
-              <label class="form-label">Notification Channels</label>
-              <div style="display: flex; gap: 20px; margin-top: 6px;">
-                <label><input type="checkbox" checked> SMS Reservation Alerts</label>
-                <label><input type="checkbox" checked> Email Receipts</label>
-                <label><input type="checkbox"> Seasonal Tasting Invites</label>
+            <!-- 7. CONCIERGE & SUPPORT SUBPAGE VIEW (8 Rich Sections) -->
+      <section id="view-support" class="dash-view-panel" style="display: none;">
+        <!-- Section 1: Support Channels & Emergency Dispatch Desk -->
+        <div class="dash-section-header" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1.3rem; font-weight: 800;">Concierge Support & Supplier Helpdesk</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Direct priority dispatch channel for patrons, floor staff, private dining hosts, and supply partners.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Direct Phone Hotline</span>
+            <div style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary); margin: 6px 0 2px;">+91 9876543210</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">● Live staff answering</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Average Reply Speed</span>
+            <div style="font-size: 1.4rem; font-weight: 800; color: #2e7d32; margin: 6px 0 2px;">&lt; 3 mins</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">Priority concierge queue</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Open Inquiries</span>
+            <div style="font-size: 1.4rem; font-weight: 800; color: #1e88e5; margin: 6px 0 2px;">3 Tickets</div>
+            <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 600;">All assigned to staff</span>
+          </div>
+          <div class="dash-card" style="padding: 18px;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Resolution Rate</span>
+            <div style="font-size: 1.4rem; font-weight: 800; color: #7b1fa2; margin: 6px 0 2px;">99.4%</div>
+            <span style="font-size: 0.78rem; color: #2e7d32; font-weight: 600;">Customer satisfaction top tier</span>
+          </div>
+        </div>
+
+        <!-- Section 2: Submit a Priority Support or Inquiry Ticket -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <div class="dash-card-header">
+            <div>
+              <h4 class="dash-card-title">Submit a Priority Concierge Request</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Directly dispatch inquiries to the Floor Manager, Sommelier, or Executive Chef.</p>
+            </div>
+            <span class="badge badge-success">Concierge Desk Live</span>
+          </div>
+          <form onsubmit="event.preventDefault(); showToast('Your inquiry ticket has been logged and assigned!'); this.reset();">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 14px;">
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" style="font-size: 0.82rem;">Subject Category</label>
+                <select class="form-control" style="font-size: 0.85rem;" required>
+                  <option value="">Select category...</option>
+                  <option value="reservation">Table Reservation Modification</option>
+                  <option value="dietary">Custom Dietary / Sommelier Flight Pairing</option>
+                  <option value="banquet">Private Dining / Banquet Hall Booking</option>
+                  <option value="vendor">Purveyor Invoice / Cold-Chain Manifest</option>
+                  <option value="billing">Corporate Account Billing & GST Invoices</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" style="font-size: 0.82rem;">Priority Level</label>
+                <select class="form-control" style="font-size: 0.85rem;" required>
+                  <option value="normal">Normal Priority (Within 1 hour)</option>
+                  <option value="urgent">Urgent Floor Matter (Immediate Dispatch)</option>
+                  <option value="vip">VIP Society Dining Request</option>
+                </select>
               </div>
             </div>
-            <div class="form-group" style="margin-top: 18px;">
-              <label class="form-label">Dietary Preferences & Allergies</label>
-              <input type="text" class="form-control" value="None (Enjoys extra spicy & artisanal sake)">
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label class="form-label" style="font-size: 0.82rem;">Message / Request Particulars</label>
+              <textarea class="form-control" rows="3" style="font-size: 0.85rem;" placeholder="Please describe your dietary requirements, party modifications, or support questions..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save Preferences <span class="btn-arrow">→</span></button>
+            <button type="submit" class="btn btn-primary btn-sm">Submit Ticket to Concierge <span class="btn-arrow">→</span></button>
           </form>
+        </div>
+
+        <!-- Section 3: Active Support Tickets & Resolution Tracker -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Active Service Tickets</h4>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Ticket #</th>
+                  <th>Requester</th>
+                  <th>Category</th>
+                  <th>Assigned Specialist</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#TKT-1082</strong></td>
+                  <td>Sarah Jenkins</td>
+                  <td>Sommelier Pairing</td>
+                  <td>Head Sommelier Marcus</td>
+                  <td><span class="badge badge-success">In Progress</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-outline">View</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#TKT-1085</strong></td>
+                  <td>Ocean Catch Purveyors</td>
+                  <td>Invoice Reconciliation</td>
+                  <td>Accounts Lead David</td>
+                  <td><span class="badge badge-warning">Awaiting QC</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-outline">Review</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#TKT-1090</strong></td>
+                  <td>Apex Innovations</td>
+                  <td>Banquet AV Setup</td>
+                  <td>Events Director Priya</td>
+                  <td><span class="badge badge-primary">Scheduled</span></td>
+                  <td><a href="404.html" class="btn btn-sm btn-outline">Specs</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 4: Patron Dietary & Allergen Consulting Desk -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Culinary Dietary & Allergen Consultation</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">Direct coordination protocols between front-of-house staff and executive wok chefs for custom menus.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Severe Celiac & Gluten Isolation</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Independent boiling kettles, dedicated tamari sauces, and certified rice noodle stations.</p>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Shellfish & Peanut Safety Protocols</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Pre-shift wok flame sterilization and dedicated cutting boards for anaphylactic allergens.</p>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Plant-Based Vegan Omakase</strong>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">10-course customized tasting utilizing organic wild mushrooms, smoked tofu, and kombu dashi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5: Private Dining, Corporate Buyout & Banquet Concierge -->
+        <div class="dash-section-grid" style="margin-bottom: 24px;">
+          <div class="dash-card">
+            <h4 class="dash-card-title">Banquet & Private Dining Concierge</h4>
+            <div style="margin-top: 14px; font-size: 0.86rem;">
+              <p style="margin-bottom: 10px;"><strong>Bamboo VIP Suite (Capacity 20):</strong> Available for intimate family milestone celebrations and corporate executive dinners.</p>
+              <p style="margin-bottom: 10px;"><strong>Full Flagship Buyout (Capacity 140):</strong> Dedicated sommelier pairing, private DJ/audio staging, and custom printed menus.</p>
+              <a href="404.html" class="btn btn-secondary btn-sm" style="margin-top: 6px;">Request Banquet Floor Plan</a>
+            </div>
+          </div>
+          <!-- Section 6: Supplier Purveyor Onboarding & Compliance FAQ -->
+          <div class="dash-card">
+            <h4 class="dash-card-title">Supplier & Purveyor Portal</h4>
+            <div style="margin-top: 14px; font-size: 0.86rem;">
+              <p style="margin-bottom: 8px;"><strong>Receiving Dock Hours:</strong> Daily 6:00 AM – 9:30 AM IST</p>
+              <p style="margin-bottom: 8px;"><strong>Invoice Terms:</strong> Net-30 via automated ACH transfer</p>
+              <p style="margin-bottom: 12px;"><strong>HACCP Submissions:</strong> Upload batch temp logs prior to dock delivery</p>
+              <a href="404.html" class="btn btn-outline btn-sm">Upload Food Safety Certificate</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 7: Knowledge Base & Frequently Asked Questions -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 14px;">Frequently Consulted Policies</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; font-size: 0.86rem;">
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Reservation Cancellation & Deposit</strong>
+              <p style="color: var(--text-secondary); margin: 6px 0 0;">Free cancellation up to 6 hours before dining time. Deposits credited directly to final dinner tab.</p>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Artisan Wine Corkage Fee</strong>
+              <p style="color: var(--text-secondary); margin: 6px 0 0;">$25 per 750ml bottle (max 2 bottles per party). Waived when purchasing a cellar bottle.</p>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Children & High Chair Dining</strong>
+              <p style="color: var(--text-secondary); margin: 6px 0 0;">Custom mild noodle and dim sum bento boxes available upon seating. High chairs sanitized per use.</p>
+            </div>
+            <div style="padding: 14px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <strong>Dress Code Guidelines</strong>
+              <p style="color: var(--text-secondary); margin: 6px 0 0;">Smart casual encouraged. Athletic apparel and beach footwear restricted in main dining rooms.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 8: Staff Concierge Directory & Station Extensions -->
+        <div class="dash-card">
+          <h4 class="dash-card-title" style="margin-bottom: 12px;">Key Department Extensions</h4>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <a href="404.html" class="btn btn-secondary btn-sm">General Manager (Ext. 101)</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Executive Chef Pass (Ext. 104)</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Sommelier Cellar Desk (Ext. 108)</a>
+            <a href="404.html" class="btn btn-secondary btn-sm">Private Dining Coordinator (Ext. 112)</a>
+            <a href="404.html" class="btn btn-outline btn-sm">Loading Bay & Security (Ext. 120)</a>
+          </div>
+        </div>
+      </section>
+
+            <!-- 8. SETTINGS SUBPAGE VIEW (8 Rich Sections) -->
+      <section id="view-settings" class="dash-view-panel" style="display: none;">
+        <!-- Section 1: Profile & Credentials Management -->
+        <div class="dash-section-header" style="margin-bottom: 16px;">
+          <h3 style="font-size: 1.3rem; font-weight: 800;">Portal & Dining Preferences Configuration</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Manage your personal profile, culinary preferences, multi-channel alerts, and security settings.</p>
+        </div>
+
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 16px;">Profile & Member Credentials</h4>
+          <form onsubmit="event.preventDefault(); showToast('Profile details updated successfully!');">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 16px;">
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" style="font-size: 0.82rem;">First Name</label>
+                <input type="text" class="form-control" value="Sarah" required>
+              </div>
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" style="font-size: 0.82rem;">Last Name</label>
+                <input type="text" class="form-control" value="Jenkins" required>
+              </div>
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" style="font-size: 0.82rem;">Primary Email</label>
+                <input type="email" class="form-control" value="sarah@thestackly.com" required>
+              </div>
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" style="font-size: 0.82rem;">Mobile Phone (for SMS Table Alerts)</label>
+                <input type="tel" class="form-control" value="+91 98765 43210" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">Save Profile Changes <span class="btn-arrow">→</span></button>
+          </form>
+        </div>
+
+        <!-- Section 2: Dining & Dietary Preferences Profile -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 14px;">Culinary Profile & Dietary Specifications</h4>
+          <form onsubmit="event.preventDefault(); showToast('Dietary preferences recorded for kitchen pass.');">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 16px;">
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" style="font-size: 0.82rem;">Preferred Spice Tolerance</label>
+                <select class="form-control" style="font-size: 0.85rem;">
+                  <option value="mild">Mild (Subtle herbs, zero chili heat)</option>
+                  <option value="medium">Medium (Classic wok balance)</option>
+                  <option value="spicy" selected>Authentic Spicy (Sichuan peppercorn & chili oil)</option>
+                  <option value="extra">Wok Fire Extreme (Chef warning required)</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin: 0;">
+                <label class="form-label" style="font-size: 0.82rem;">Seating Table Preference</label>
+                <select class="form-control" style="font-size: 0.85rem;">
+                  <option value="window" selected>Window Garden Promenade</option>
+                  <option value="booth">Cozy Leather Booth</option>
+                  <option value="counter">Chef's Omakase Counter</option>
+                  <option value="quiet">Quiet Corner for Business Discussions</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom: 16px;">
+              <label class="form-label" style="font-size: 0.82rem;">Allergies, Intolerances & Dislikes</label>
+              <input type="text" class="form-control" value="None (Enjoys extra cilantro, artisanal sake pairings, and truffle infusion)">
+            </div>
+            <button type="submit" class="btn btn-secondary btn-sm">Update Dietary Blueprint</button>
+          </form>
+        </div>
+
+        <!-- Section 3: Multi-Channel Notification Preferences -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 14px;">Communication Channels & Alerts</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; cursor: pointer;">
+              <input type="checkbox" checked style="margin-top: 3px;">
+              <div>
+                <strong>SMS Table Reservation Confirmations</strong>
+                <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">Real-time reminders 2 hours prior to reservation.</span>
+              </div>
+            </label>
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; cursor: pointer;">
+              <input type="checkbox" checked style="margin-top: 3px;">
+              <div>
+                <strong>Digital Itemized Receipts & Tax Invoices</strong>
+                <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">Instant email PDF receipt following dining checkout.</span>
+              </div>
+            </label>
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; cursor: pointer;">
+              <input type="checkbox" checked style="margin-top: 3px;">
+              <div>
+                <strong>Seasonal Omakase & Chef Tasting Pre-Releases</strong>
+                <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">Priority 48-hour early booking window for Society members.</span>
+              </div>
+            </label>
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; cursor: pointer;">
+              <input type="checkbox" style="margin-top: 3px;">
+              <div>
+                <strong>Weekly Farm Sourcing Digest</strong>
+                <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">Highlights on Salem organic harvests and wine arrivals.</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Section 4: Stored Payment Methods & Corporate Invoicing Accounts -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <div class="dash-card-header">
+            <div>
+              <h4 class="dash-card-title">Saved Payment Methods & Corporate Accounts</h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Secure PCI-DSS compliant contactless card vault.</p>
+            </div>
+            <a href="404.html" class="btn btn-secondary btn-sm">Add New Card</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="padding: 14px 18px; background: var(--bg-surface-alt); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; gap: 14px; align-items: center;">
+                <span style="font-size: 1.5rem;">💳</span>
+                <div>
+                  <strong>Visa Signature ending in 4242</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">Expires 08/29 • Primary Billing Method</span>
+                </div>
+              </div>
+              <span class="badge badge-success">Default</span>
+            </div>
+            <div style="padding: 14px 18px; background: var(--bg-surface-alt); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; gap: 14px; align-items: center;">
+                <span style="font-size: 1.5rem;">💳</span>
+                <div>
+                  <strong>Amex Platinum Corporate ending in 8891</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">Expires 11/27 • Company Dining Card</span>
+                </div>
+              </div>
+              <a href="404.html" class="btn btn-sm btn-outline">Edit</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 5: Society Membership Tier & Loyalty Card Status -->
+        <div class="dash-card" style="margin-bottom: 24px;">
+          <h4 class="dash-card-title" style="margin-bottom: 14px;">Culinary Society Membership & Rewards</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+            <div style="padding: 16px; background: #fff8e1; border-radius: 8px; border-left: 3px solid #ffb300;">
+              <span style="font-size: 0.8rem; color: #b78103; font-weight: 700;">ACTIVE MEMBERSHIP</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #ff8f00; margin: 4px 0;">Gold Tasting Society</div>
+              <span style="font-size: 0.78rem; color: var(--text-secondary);">Member ID: #STK-88129</span>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">ACCUMULATED REWARDS</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary); margin: 4px 0;">1,450 Points</div>
+              <span style="font-size: 0.78rem; color: #2e7d32;">$72.50 Dining Credit Available</span>
+            </div>
+            <div style="padding: 16px; background: var(--bg-surface-alt); border-radius: 8px;">
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 700;">ANNUAL RENEWAL</span>
+              <div style="font-size: 1.4rem; font-weight: 800; color: var(--text-primary); margin: 4px 0;">October 2027</div>
+              <span style="font-size: 0.78rem; color: var(--text-secondary);">Auto-renewal with Visa ending 4242</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 6: Security, 2-Factor Authentication & Active Sessions -->
+        <div class="dash-section-grid" style="margin-bottom: 24px;">
+          <div class="dash-card">
+            <h4 class="dash-card-title">Security & 2-Factor Authentication</h4>
+            <div style="margin-top: 14px; font-size: 0.86rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div>
+                  <strong>Two-Factor Authentication (2FA)</strong>
+                  <span style="display: block; font-size: 0.78rem; color: var(--text-muted);">SMS Authenticator via mobile number</span>
+                </div>
+                <span class="badge badge-success">Enabled</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Password change prompt triggered.')">Change Password</button>
+            </div>
+          </div>
+          <!-- Section 7: Privacy, Data Sharing & Cookie Preferences -->
+          <div class="dash-card">
+            <h4 class="dash-card-title">Data Privacy & Governance</h4>
+            <div style="margin-top: 14px; font-size: 0.86rem;">
+              <p style="margin-bottom: 12px; color: var(--text-secondary);">Download an export of all past reservations, dining checks, and custom dietary notes.</p>
+              <div style="display: flex; gap: 10px;">
+                <a href="404.html" class="btn btn-outline btn-sm">Export My Dining Archive</a>
+                <a href="404.html" class="btn btn-outline btn-sm">Manage Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 8: Account Deactivation & Danger Zone -->
+        <div class="dash-card" style="border: 1px solid #ffcdd2; background: #fffdfd;">
+          <h4 class="dash-card-title" style="color: #c62828; margin-bottom: 8px;">Account Deactivation & Danger Zone</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">Temporary portal pause, corporate transfer, or irreversible account closure.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+            <button class="btn btn-outline btn-sm" onclick="showToast('Temporary freeze initiated.')">Temporarily Freeze Account</button>
+            <a href="404.html" class="btn btn-outline btn-sm">Transfer Corporate Seat</a>
+            <button class="btn btn-sm" style="background: #ffebee; color: #c62828; border: 1px solid #ffcdd2;" onclick="if(confirm('Are you sure you want to request account deletion?')){showToast('Account deletion request dispatched to Support.');}">Delete Account</button>
+          </div>
         </div>
       </section>
     </main>
