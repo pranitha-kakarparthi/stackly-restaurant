@@ -2344,19 +2344,21 @@ h4 {
 /* Social Media with Icon + Label */
 .footer-social-list {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin-top: 20px;
 }
 
 .social-btn-link {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   color: var(--text-light-muted);
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 6px 14px;
   background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-pill);
   transition: all var(--transition-fast);
   width: fit-content;
@@ -2364,14 +2366,17 @@ h4 {
 
 .social-btn-link:hover {
   background-color: var(--color-primary);
+  border-color: var(--color-primary);
   color: #ffffff;
-  transform: translateX(4px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(234, 78, 24, 0.35);
 }
 
 .social-btn-link svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 .footer-contact-info {
