@@ -510,9 +510,7 @@ function initAOS() {
 /* ==========================================================================
    7. SHOPPING CART DRAWER & NOTIFICATIONS
    ========================================================================== */
-let cartItems = [
-  { id: 1, name: 'Crispy Corn Chicken', price: 22.50, qty: 1, img: 'assets/images/asian-crispy-corn-chicken-dish.webp' }
-];
+let cartItems = [];
 
 function initCartDrawer() {
   const cartButtons = document.querySelectorAll('.cart-btn, [data-open-cart]');
@@ -569,6 +567,7 @@ function addToCart(name, price, img) {
     cartItems.push({ id: Date.now(), name, price, qty: 1, img });
   }
   updateCartBadge();
+  renderCart();
 }
 
 function updateCartBadge() {
@@ -576,6 +575,7 @@ function updateCartBadge() {
   const totalCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
   badges.forEach(b => {
     b.textContent = totalCount;
+    b.style.display = totalCount > 0 ? 'flex' : 'none';
   });
 }
 
